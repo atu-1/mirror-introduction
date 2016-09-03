@@ -1,5 +1,5 @@
 {
-    "gitbook": "2.6.7",
+    "gitbook": "3.0",
     "title": "はじめてのBlenderアドオン開発",
     "description": "これからBlenderのアドオンを開発しようと考えている人向けの技術資料です。",
     "language": "ja",
@@ -13,8 +13,8 @@
         "margin": {
         },
         "headerTemplate":
-        "<html><body></body></html>",
+        "<html><body><div id=\"pdf-header\" class=\"pdf-header\"><span>_SECTION_&nbsp;</span><span class=\"header-pages-count sub\"></span></div><script>if (_PAGENUM_ == 1000) document.getElementById('pdf-header').style.display = 'none'</script></body></html>",
         "footerTemplate":
-        "<html><body></html>"
+        "<html><body><div id=\"pdf-footer\" class=\"pdf-footer\">- <span class=\"footer-pages-count\"> _PAGENUM_ </span> -</div><script>if (_PAGENUM_ == 1000) document.getElementById('pdf-footer').style.display = 'none'</script></body></html>"
     }
 }
