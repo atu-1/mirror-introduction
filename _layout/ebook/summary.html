@@ -30,12 +30,12 @@
 
 {% block page %}
 <div class="section toc">
-    <h1>{{ "SUMMARY"|t }}</h1>
+    <h1>{{ "SUMMARY"|t }}hohojo</h1>
     <ol>
         {% for part in summary.parts %}
             {% if part.title %}
             <li class="part-title">
-                <h2>{{ part.title }}</h2>
+                <h2>testtest{{ part.title }}</h2>
             </li>
             {% endif %}
             {{ articles(part.articles) }}
