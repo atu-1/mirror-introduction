@@ -8,6 +8,7 @@
         "website": "styles/website.scss",
         "pdf": "styles/pdf.scss"
     },
+    "root": "body",
     "pdf": {
         "paperSize": "a3",
         "margin": {
