@@ -1,5 +1,5 @@
 {% extends template.self %}
-{% extends "layout.html" %}
+<!--{% extends "layout.html" %}-->
 
 {% block title %}{{ page.title }}{% endblock %}
 {% block description %}{{ page.description }}{% endblock %}
@@ -31,6 +31,10 @@
         <h1 class="book-chapter book-chapter-{{ page.depth }}">{{ page.title }}</h1>
         <div class="section">
             {{ page.content|safe }}
+        </div>
+        <div>そーす</div>
+        <div class="section">
+            <pre>{{ page.content}} | e }}</pre>
         </div>
     {% endblock %}
 </div>
