@@ -8,9 +8,9 @@
             <span class="inner">
                 {% if article.path or article.url %}
                     {% if article.path %}
-                        <a href="{{ article.path|contentURL }}{{ article.anchor }}">{{ article.title }}</a>
+                        <a href="{{ article.path|contentURL }}{{ article.anchor }}">hoge{{ article.title }}</a>
                     {% else %}
-                        <a target="_blank" href="{{ article.url }}">{{ article.title }}</a>
+                        <a target="_blank" href="{{ article.url }}">piyo{{ article.title }}</a>
                     {% endif %}
                 {% else %}
                     <span>test{{ article.title }}</span>
