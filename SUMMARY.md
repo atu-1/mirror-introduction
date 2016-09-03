@@ -1,10 +1,6 @@
 
-
-<div id="sect_title_text"></div>
-
 # 目次
 
-<div id="sect_title_img_0_0"></div>
 
 1. [Blenderアドオン開発の世界へようこそ](body/chapter_01/SUMMARY.md)
   1. [Blenderって何？アドオンって何？](body/chapter_01/01_What_is_Blender_What_is_Add-on.md)
