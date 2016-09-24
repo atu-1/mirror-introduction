@@ -219,6 +219,7 @@
                 section.normal {
                     @include sidebyside();
                     @include process();
+                    @include process_noimg();
                 }
             }
         }
