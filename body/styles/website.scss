@@ -1,15 +1,74 @@
+@import "include/common.scss";
 
 .book {
     .book-body {
         .page-wrapper {
             .page-inner {
                 section.normal {
-                    table {
-                        th {
-                            border: 0px;
+                    #sidebyside + table {
+                        width: 100%;
+                        max-width: 100%;
+                        table-layout: fixed;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        thead {
+                            border: none;
+                            tr {
+                                border: none;
+                                th:nth-of-type(1) {
+                                    font-family: NotoSansCJKjp;
+                                    font-size: $font_size;
+                                    border: none;
+                                    width: 50%;
+                                    text-align: left;
+                                    background-color: #FFFFFF;
+                                    vertical-align: top;
+                                    color: #000000;
+                                    font-weight: normal;
+                                    white-space: normal;
+                                    padding-top: 0px;
+                                    padding-bottom: 0px;
+                                    padding-left: 5px;
+                                }
+                                th:nth-of-type(2) {
+                                    font-family: NotoSansCJKjp;
+                                    font-size: $font_size;
+                                    border: none;
+                                    width: 50%;
+                                    text-align: center;
+                                    background-color: #FFFFFF;
+                                    color: #000000;
+                                    padding-top: 0px;
+                                    padding-bottom: 0px;
+                                }
+                            }
                         }
-                        td {
-                            border: 0px;
+                        tbody {
+                            border: none;
+                            tr {
+                                border: none;
+                                td:nth-of-type(1) {
+                                    font-family: NotoSansCJKjp;
+                                    font-size: $font_size;
+                                    border: none;
+                                    width: 50%;
+                                    text-align: left;
+                                    background-color: #FFFFFF;
+                                    vertical-align: top;
+                                    padding-top: 0px;
+                                    padding-bottom: 0px;
+                                }
+                                td:nth-of-type(2) {
+                                    font-family: NotoSansCJKjp;
+                                    font-size: $font_size;
+                                    border: none;
+                                    width: 50%;
+                                    text-align: center;
+                                    background-color: #FFFFFF;
+                                    padding-top: 0px;
+                                    padding-bottom: 0px;
+                                }
+                            }
                         }
                     }
                 }
