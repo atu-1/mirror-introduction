@@ -217,6 +217,21 @@
         .page-wrapper {
             .page-inner {
                 section.normal {
+                    font-family: NotoSansCJKjp;
+                    p {
+                        font-family: NotoSansCJKjp;
+                    }
+                    pre {
+                        background: #FBFBFB;
+                        font-family: Hack, NotoSansCJKjp;
+                        >code {
+                            font-family: Hack, NotoSansCJKjp;
+                        }
+                    }
+                    h2 {
+                        font-family: NotoSansCJKjp;
+                        text-align: left;
+                    }
                     @include sidebyside();
                     @include process();
                     @include process_noimg();
