@@ -150,6 +150,7 @@
             .page-inner {
                 section.normal {
                     @include sidebyside();
+                    @include process();
                 }
             }
         }
