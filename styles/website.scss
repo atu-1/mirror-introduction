@@ -106,7 +106,7 @@
                     text-align: center;
                     background-color: #FFFFFF;
                     vertical-align: top;
-                                        font-size: 3.0rem;
+                    font-size: 3.0rem;
                 }
                 th:nth-of-type(2) {
                     font-family: NotoSansCJKjp;
@@ -231,7 +231,7 @@
 }
 
 
-@mixin process_tilte()
+@mixin process_title()
 {
     #process_title + h5 {
         font-family: MPlus;
