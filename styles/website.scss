@@ -217,7 +217,7 @@
 @mixin process_start_end()
 {
     #process_start_end + hr {
-        border-top: none;
+        height: 0px;
     }
 }
 
@@ -226,7 +226,7 @@
     #process_sep + hr {
         height: 1px;
         width: 100%;
-        background-color: #FFFFFF;
+        background-color: #BBBBBF;
     }
 }
 
@@ -242,6 +242,26 @@
         text-decoration: none;
         background-color: #BBBBBB;
         font-size: 2.5rem;
+    }
+}
+
+@mixin chapter_title_text()
+{
+    #ch_title_text + h1 {
+        font-family: MPlus;
+    }
+}
+
+@mixin chapter_body() {
+    #ch_body + p {
+        font-family: MPlus;
+        color: #333333;
+    }
+}
+
+@mixin chapter_toc_title() {
+    #ch_toc_title + h2 {
+        font-family: MPlus;
     }
 }
 
@@ -261,25 +281,31 @@
                             font-family: Hack, NotoSansCJKjp;
                         }
                     }
+                    h1 {
+                        font-family: MPlus;
+                    }
                     h2 {
-                        font-family: NotoSansCJKjp;
+                        font-family: MPlus;
+                        background: #CCCCCC;
                     }
                     h3 {
                         font-family: MPlus;
                     }
                     h4 {
                         font-family: MPlus;
-                        font-weight: bold;
                     }
                     h5 {
                         font-family: MPlus;
-                        font-weight: bold;
                     }
                     @include sidebyside();
                     @include process();
                     @include process_noimg();
                     @include process_start_end();
                     @include process_separator();
+                    @include process_title();
+                    @include chapter_title_text();
+                    @include chapter_body();
+                    @include chapter_toc_title();
                 }
             }
         }
