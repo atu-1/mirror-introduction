@@ -12,7 +12,7 @@
         "paperSize": "a3",
         "margin": {
             "top": 60,
-            "bottom": 20,
+            "bottom": 40,
             "right": 100,
             "left": 100
         },
