@@ -11,10 +11,10 @@
     "pdf": {
         "paperSize": "a3",
         "margin": {
-            "top": 60,
+            "top": 40,
             "bottom": 40,
-            "right": 100,
-            "left": 100
+            "right": 110,
+            "left": 110
         },
         "headerTemplate":
         "<html><body><div id=\"pdf-header\" class=\"pdf-header\"><span>_SECTION_&nbsp;</span><span class=\"header-pages-count sub\"></span></div><script>if (_PAGENUM_ == 1000) document.getElementById('pdf-header').style.display = 'none'</script></body></html>",
