@@ -1,0 +1,30 @@
+@import "../common/_font.scss";
+
+.page {
+    .section {
+        &.toc {
+            >h1 {
+                text-align: center;
+                font-family: MPlus;
+                margin-left:auto;
+                margin-right: auto;
+                overflow: hidden;
+                font-size: 0.65em * 3;
+            }
+            li {
+                margin-top: 10px;
+                .inner {
+                    a {
+                        font-size: 0.5em;
+                        font-family: MPlus;
+                    }
+                    .page {
+                        font-family: MPlus;
+                        font-size: 0.5em;
+                        border-bottom: 1px solid #EEEEEE;
+                    }
+                }
+            }
+        }
+    }
+}

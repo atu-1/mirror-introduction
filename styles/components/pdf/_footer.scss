@@ -1,0 +1,16 @@
+@import "../common/_font.scss";
+
+.pdf-footer {
+    border-top: 1px solid #333333;
+    font-size: 0.45em;
+    color: #333333;
+    font-family: NotoSansCJKjp;
+    margin-top: 20px;
+    padding-top: 0px;
+    text-align: center;
+    .footer-pages-count {
+        text-align: center;
+        color: #333333;
+        float: none;
+    }
+}

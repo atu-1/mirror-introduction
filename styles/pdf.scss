@@ -1,5 +1,13 @@
 @import "include/common.scss";
 
+@import "components/common/_font.scss";
+@import "components/pdf/_header.scss";
+@import "components/pdf/_footer.scss";
+@import "components/pdf/_toc.scss";
+@import "components/pdf/_glossary.scss";
+
+
+
 .page {
     .section {
         @include common(0.65em, 0.8);
@@ -50,87 +58,4 @@
         @include strong(1.04em);
     }
 
-    .section {
-        &.glossary {
-            >h1 {
-                text-align: center;
-                font-family: MPlus;
-                margin-left:auto;
-                text-align: right;
-                padding-right: 7px;
-                width: 100%;
-                overflow: hidden;
-                height: 250px;
-                font-size: 0.65em * 3;
-                background-image: url('https://dl.dropboxusercontent.com/s/o4kgodzmoi21ibn/sect_title_img_0_0.png');
-                background-size: cover;
-                position: relative;
-            }
-        }
-        &.toc {
-            >h1 {
-                text-align: center;
-                font-family: MPlus;
-                margin-left:auto;
-                margin-right: auto;
-                overflow: hidden;
-                font-size: 0.65em * 3;
-            }
-/*            li {
-                ol {
-                    color: #880088;
-                    counter-reset: sect_item 0;
-                }
-                li:before {
-                    content: counter(sect_item) ". ";
-                    counter-increment: sect_item;
-                }
-            }*/
-            li {
-                margin-top: 10px;
-                .inner {
-                    a {
-                        font-size: 0.5em;
-                        font-family: MPlus;
-                    }
-                    .page {
-                        font-family: MPlus;
-                        font-size: 0.5em;
-                        border-bottom: 1px solid #EEEEEE;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.pdf-header {
-    border-bottom: 1px solid #333333;
-    font-size: 0.45em;
-    color: #333333;
-    font-family: NotoSansCJKjp;
-    margin-top: 20px;
-    padding-bottom: 0px;
-    text-align: center;
-}
-
-.pdf-footer {
-    border-top: 1px solid #333333;
-    font-size: 0.45em;
-    color: #333333;
-    font-family: NotoSansCJKjp;
-    margin-top: 20px;
-    padding-top: 0px;
-    text-align: center;
-    .footer-pages-count {
-        text-align: center;
-        color: #333333;
-        float: none;
-    }
-}
-
-.back_cover {
-    overflow: visible;
-    width: 200px;
-    margin-left: -1px;
 }
