@@ -79,6 +79,7 @@ $ch_img_list: 'https://dl.dropboxusercontent.com/s/p8n04m7bbogsm86/ch_title_img_
             position: relative;
             margin: 0 0 6px 2em;
             padding: 4px 8px;
+            padding-top: 3px;
             background: #eeeeee;
         }
         li:before {
@@ -100,27 +101,27 @@ $ch_img_list: 'https://dl.dropboxusercontent.com/s/p8n04m7bbogsm86/ch_title_img_
 @mixin space_chapter() {
     #space_chapter_1 {
         display: block;
-        height: 160px;
+        height: 140px;
     }
     #space_chapter_2 {
         display: block;
-        height: 160px;
+        height: 140px;
     }
     #space_chapter_3 {
         display: block;
-        height: 160px;
+        height: 140px;
     }
     #space_chapter_4 {
         display: block;
-        height: 160px;
+        height: 140px;
     }
 }
 
 .page {
     .section {
         @include chapter_title_img();
-        //@include chapter_title_text(1.95em, -340.0px, -50px);
-        @include chapter_title_text(3.5em, -340.0px, -50px);
+        @include chapter_title_text(1.95em, -340.0px, -50px);
+        //@include chapter_title_text(3.5em, -340.0px, -50px);
         //@include chapter_body(0.65em, 150px, -30px, -110px);
         @include chapter_body(0.8em, 200px, -30px, -110px);
         //@include chapter_toc(0.8em, 0px, 0px);
