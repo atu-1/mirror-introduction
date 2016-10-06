@@ -96,43 +96,34 @@ $ch_img_list: 'https://dl.dropboxusercontent.com/s/p8n04m7bbogsm86/ch_title_img_
     }
 }
 
-@mixin space_chapter_1($space) {
+
+@mixin space_chapter() {
     #space_chapter_1 {
         display: block;
-        height: 120px;
+        height: 160px;
     }
-}
-
-@mixin space_chapter_2($space) {
     #space_chapter_2 {
         display: block;
-        height: 120px;
+        height: 160px;
     }
-}
-
-@mixin space_chapter_3($space) {
     #space_chapter_3 {
         display: block;
-        height: 120px;
+        height: 160px;
     }
-}
-
-@mixin space_chapter_4($space) {
     #space_chapter_4 {
         display: block;
-        height: 120px;
+        height: 160px;
     }
 }
 
 .page {
     .section {
         @include chapter_title_img();
-        @include chapter_title_text(1.95em, -340.0px, -50px);
-        @include chapter_body(0.65em, 150px, -30px, -110px);
+        //@include chapter_title_text(1.95em, -340.0px, -50px);
+        @include chapter_title_text(2.5em, -340.0px, -50px);
+        //@include chapter_body(0.65em, 150px, -30px, -110px);
+        @include chapter_body(1.0em, 150px, -30px, -110px);
         @include chapter_toc(0.8em, 0px, 0px);
-        @include space_chapter_1(240px);
-        @include space_chapter_2(300px);
-        @include space_chapter_3(240px);
-        @include space_chapter_4(240px);
+        @include space_chapter();
     }
 }
