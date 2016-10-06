@@ -120,10 +120,11 @@ $ch_img_list: 'https://dl.dropboxusercontent.com/s/p8n04m7bbogsm86/ch_title_img_
     .section {
         @include chapter_title_img();
         //@include chapter_title_text(1.95em, -340.0px, -50px);
-        @include chapter_title_text(2.5em, -340.0px, -50px);
+        @include chapter_title_text(3.5em, -340.0px, -50px);
         //@include chapter_body(0.65em, 150px, -30px, -110px);
-        @include chapter_body(1.0em, 150px, -30px, -110px);
-        @include chapter_toc(0.8em, 0px, 0px);
+        @include chapter_body(0.8em, 200px, -30px, -110px);
+        //@include chapter_toc(0.8em, 0px, 0px);
+        @include chapter_toc(1.0em, 0px, 0px);
         @include space_chapter();
     }
 }
