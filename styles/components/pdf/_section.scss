@@ -59,7 +59,7 @@ $sect_img_list:
             background-image: url('#{nth($sect_img_list, $i)}');
             background-size: cover;
             width: 100%;
-            height: 250px;
+            height: 280px;
             position: relative;
         }
     }
@@ -85,8 +85,10 @@ $sect_img_list:
 
 .page {
     .section {
-        @include section_title_text(0.65em * 3, -280.0px, -210px);
+        //@include section_title_text(0.65em * 3, -280.0px, -210px);
+        @include section_title_text(1.95em, -280.0px, -210px);
         @include section_title_img();
-        @include section_title_preface(0.65em * 0.7, 150px, -75px, -70px);
+        //@include section_title_preface(0.65em * 0.7, 150px, -75px, -70px);
+        @include section_title_preface(0.5em , 150px, -75px, -70px);
     }
 }
