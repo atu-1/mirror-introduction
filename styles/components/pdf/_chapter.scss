@@ -99,28 +99,28 @@ $ch_img_list: 'https://dl.dropboxusercontent.com/s/p8n04m7bbogsm86/ch_title_img_
 @mixin space_chapter_1($space) {
     #space_chapter_1 {
         display: block;
-        height: $space;
+        height: 120px;
     }
 }
 
 @mixin space_chapter_2($space) {
     #space_chapter_2 {
         display: block;
-        height: $space;
+        height: 120px;
     }
 }
 
 @mixin space_chapter_3($space) {
     #space_chapter_3 {
         display: block;
-        height: $space;
+        height: 120px;
     }
 }
 
 @mixin space_chapter_4($space) {
     #space_chapter_4 {
         display: block;
-        height: $space;
+        height: 120px;
     }
 }
 
