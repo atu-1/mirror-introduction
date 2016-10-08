@@ -11,9 +11,9 @@
     "pdf": {
         "paperSize": "a3",
         "margin": {
-            "top": 55,
-            "bottom": 10,
-            "right": 55,
+            "top": 70,
+            "bottom": 30,
+            "right": 70,
             "left": 55
         },
         "headerTemplate":
