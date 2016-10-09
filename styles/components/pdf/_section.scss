@@ -91,6 +91,6 @@ $sect_img_list:
         @include section_title_text(1.95em, -350.0px, -210px);
         @include section_title_img();
         //@include section_title_preface(0.65em * 0.7, 150px, -75px, -70px);
-        @include section_title_preface(0.6em , 220px, -150px, -130px);
+        @include section_title_preface(0.6em , 220px, -140px, -140px);
     }
 }

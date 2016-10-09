@@ -2,7 +2,7 @@
 
 <div id="sect_title_text"></div>
 
-# Blender の UI <br>を制御する③
+# Blender の UI を制御する③
 
 <div id="preface"></div>
 
