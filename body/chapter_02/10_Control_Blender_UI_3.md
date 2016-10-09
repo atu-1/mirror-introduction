@@ -280,7 +280,7 @@ layout.operator(ShowFileBrowser.bl_idname)
 ```
 
 
-#### 実行確認のポップアップ<br>を表示する
+#### 実行確認のポップアップを表示する
 
 Blender の機能の中には、実行する前に本当にその処理を実行するか確認するためのポップアップを表示するものがあります。
 例えば、 *情報* エリアのメニュー *ファイル* > *スタートアップファイルを保存* が実行確認のポップアップを表示する例です。
@@ -457,6 +457,7 @@ layout.operator(ShowSearchPopup.bl_idname)
 
 ## まとめ
 
+本節のサンプルでも様々な API が
 
 |UI|API|
 |---|---|
@@ -466,15 +467,6 @@ layout.operator(ShowSearchPopup.bl_idname)
 |確認ポップアップ|```context.window_manager.invoke_confirm()```|
 |プロパティ付きポップアップ|```context.window_manager.invoke_props_popup()```|
 |検索ウィンドウ付きポップアップ|```context.window_manager.invoke_search_popup()```|
-|メニューへの項目追加(末尾)|```append()```|
-|メニューへの項目追加(先頭)|```prepend()```|
-
-
-
-|UI|API|
-|---|---|
-|メニューへの項目追加(末尾)|```append()```|
-|メニューへの項目追加(先頭)|```prepend()```|
 
 本節では Blender の UI を構築する方法を説明しましたが、わかりやすい UI を構築するためのポイントについては説明していません。
 わかりやすい UI を構築するのはアドオンの開発と異なり、はっきりとした答えがないため非常に難しいです。
