@@ -457,7 +457,7 @@ layout.operator(ShowSearchPopup.bl_idname)
 
 ## まとめ
 
-本節のサンプルでも様々な API が
+[2-8節](08_Control_Bnder_UI_1.md) に引き続き、本節のサンプルでも様々な API が登場しましたので、本節で紹介した UI 関連の API をまとめておきます。
 
 |UI|API|
 |---|---|
@@ -468,7 +468,7 @@ layout.operator(ShowSearchPopup.bl_idname)
 |プロパティ付きポップアップ|```context.window_manager.invoke_props_popup()```|
 |検索ウィンドウ付きポップアップ|```context.window_manager.invoke_search_popup()```|
 
-本節では Blender の UI を構築する方法を説明しましたが、わかりやすい UI を構築するためのポイントについては説明していません。
+[2-8節](08_Control_Bnder_UI_1.md) から本節まで、3節にわたり Blender の UI を構築する方法を説明しましたが、わかりやすい UI を構築するためのポイントについては説明していません。
 わかりやすい UI を構築するのはアドオンの開発と異なり、はっきりとした答えがないため非常に難しいです。
 他の Blender の アドオンの UI を参考にするだけでなく、他の人が作成した Web ページやアプリの画面などにもアンテナを常に張り巡らせ、自分で良いと思ったデザインを真似して吸収していくのが、わかりやすい UI を構築する最も早い道であると思います。
 
