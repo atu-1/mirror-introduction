@@ -61,7 +61,7 @@ $sect_img_list:
             background-image: url('#{nth($sect_img_list, $i)}');
             background-size: cover;
             width: 100%;
-            height: 250px;
+            height: 300px;
             position: relative;
         }
     }
