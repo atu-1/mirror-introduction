@@ -11,6 +11,7 @@ $sect_list: '0_0',
 '2_4',
 '2_5',
 '2_6',
+'2-10',
 '3_1',
 '3_2',
 '4_1',
@@ -30,6 +31,7 @@ $sect_img_list:
 'https://dl.dropboxusercontent.com/s/hfqplabh46ncnak/sect_title_img_2_4.png',
 'https://dl.dropboxusercontent.com/s/qx3ckkys8xcu5t6/sect_title_img_2_5.png',
 'https://dl.dropboxusercontent.com/s/9064tt04em97qkw/sect_title_img_2_6.png',
+'https://dl.dropboxusercontent.com/s/0n420wkl8s8rldb/sect_title_img_2_10.png',
 'https://dl.dropboxusercontent.com/s/gz6eg4d1yf1aj74/sect_title_img_3_1.png',
 'https://dl.dropboxusercontent.com/s/k87uxsxa6mq99vu/sect_title_img_3_2.png',
 'https://dl.dropboxusercontent.com/s/xp2czcybl5le7nu/sect_title_img_4_1.png',
@@ -73,7 +75,7 @@ $sect_img_list:
         text-align: left;
         padding-right: 7px;
         padding-left: 30px;
-        width: 40%;
+        width: 50%;
         height: $height;
         overflow: hidden;
         font-size: $font_size;
