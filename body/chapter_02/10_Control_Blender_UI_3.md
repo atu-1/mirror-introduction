@@ -6,7 +6,7 @@
 
 <div id="preface"></div>
 
-###### B
+###### [2-8節](08_Control_Bnder_UI_1.md) から続いてきた Blender の UI を制御する方法の最後は、 Blender が提供する UI を
 
 
 
