@@ -133,7 +133,7 @@
                     color: #BBBBBB;
                     border: none;
                     //width: 4%;
-                    width: 3.5%;
+                    width: 3%;
                     text-align: center;
                     background-color: #FFFFFF;
                     vertical-align: top;
@@ -144,7 +144,7 @@
                     font-size: $font_size_2;
                     border: none;
                     //width: 46%;
-                    width: 46.5%;
+                    width: 47%;
                     text-align: left;
                     background-color: #FFFFFF;
                     vertical-align: top;
@@ -886,7 +886,7 @@
         @include em(0.80em);
         //@mixin blockquote($font_size, $margin_left, $top)
         //@include blockquote(0.55em, 18px, 26px);
-        @include blockquote(0.55em, 18px, -30px);
+        //@include blockquote(0.55em, 18px, -30px);
         @include code(0.80em);
         @include a(0.8em);
         @include point_item(0.65em, 1.5, 0.3em, -1.3em, 12px, 12px);
