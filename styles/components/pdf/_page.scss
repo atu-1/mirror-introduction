@@ -510,10 +510,14 @@
 
 @mixin em($font_size) {
     em {
-        //font-size: $font_size;
         font-size: inherit;
         font-style: normal;
-        //background-color: #DDDDDD;
+        &:before {
+            content: "『";
+        }
+        &:after {
+            content: "』";
+        }
     }
 }
 

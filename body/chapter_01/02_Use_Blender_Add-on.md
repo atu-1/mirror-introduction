@@ -89,7 +89,7 @@ Blenderは海外で開発されたソフトであるため、Blenderを初めて
 |https://github.com/mifth/mifthtools/wiki/Mira-Tools|
 |![Mira Tools](https://dl.dropboxusercontent.com/s/gsr52gq7xbx37ch/mira_tools.png "Mira Tools")|
 
-Mira Toolsは日本語未サポートのため、アドオンを使う敷居がやや高くなりますが、サポートレベルがExternalのアドオンの中でも非常に高機能なアドオンですので、ぜひ1度使ってみてください。
+Mira Toolsは日本語をサポートしていないため、アドオンを使う敷居がやや高くなりますが、サポートレベルがExternalのアドオンの中でも非常に高機能なアドオンですので、ぜひ1度使ってみてください。
 
 Mira Toolsのインストール方法は前述のURLにも記載されていますが、改めてここでもインストール方法を紹介します。
 
@@ -135,7 +135,7 @@ Mira Toolsのインストール方法は前述のURLにも記載されていま�
 
 <div id="column"></div>
 
-コピーしたファイルの中に拡張子が.pyであるファイルがあると思います。  
+コピーしたファイルの中に拡張子が.pyであるファイルがあります。  
 このファイルは アドオンのソースコードと呼ばれ、プログラミング言語Pythonによりアドオンの動作が記述されたテキストファイルです。
 
 
