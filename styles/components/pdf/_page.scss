@@ -817,7 +817,8 @@
         background: none;
         >code {
             font-family: Hack, NotoSansCJKjp;
-            font-size: $font_size_base * 0.7;
+            //font-size: $font_size_base * 0.7;
+            font-size: $font_size_base * 0.9;
             line-height: 2.0;
             white-space: pre-wrap;
             background: none;
@@ -890,7 +891,8 @@
         //@mixin blockquote($font_size, $margin_left, $top)
         //@include blockquote(0.55em, 18px, 26px);
         @include blockquote(0.55em, 18px, -30px);
-        @include code(0.80em);
+        //@include code(0.80em);
+        @include code(0.9em);
         @include a(0.8em);
         @include point_item(0.65em, 1.5, 0.3em, -1.3em, 12px, 12px);
         @include space_no(0px);
