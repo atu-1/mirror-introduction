@@ -117,7 +117,7 @@ Mira Toolsのインストール方法は前述のURLにも記載されていま�
 
 <div id="process_noimg"></div>
 
-|<div id="box">3</div>|```mifthtools-master/blender/addons/mira_tools``` がMira Tools本体です。このフォルダ一式を、 **Blenderアドオン用フォルダ** へコピーしたらインストール完了です。|
+|<div id="box">3</div>|```mifthtools-master/blender/addons/mira_tools``` がMira Tools本体です。このフォルダ一式を、 Blender アドオン用フォルダへコピーしたらインストール完了です。|
 |---|---|
 
 なお以下に示すように、Blenderアドオン用フォルダはOSごとにパスが異なります。
@@ -135,7 +135,7 @@ Mira Toolsのインストール方法は前述のURLにも記載されていま�
 
 <div id="column"></div>
 
-コピーしたファイルの中に拡張子が.pyであるファイルがあります。  
+コピーしたファイルの中に拡張子が .py であるファイルがあります。  
 このファイルは アドオンのソースコードと呼ばれ、プログラミング言語Pythonによりアドオンの動作が記述されたテキストファイルです。
 
 
@@ -197,7 +197,7 @@ Mira Toolsのインストール方法は前述のURLにも記載されていま�
 
 <div id="process"></div>
 
-|<div id="box">6</div>|実際にアドオンが有効化されているかは、 *3Dビュー* エリアの左側の *ツールシェルフ* のタブに *Mira* が追加されていることで確認できます。|![アドオンの有効化 手順3](https://dl.dropboxusercontent.com/s/qqvxodqbs67yy45/enable_add-on_3.png "アドオンの有効化 手順3")|
+|<div id="box">6</div>|実際にアドオンが有効化されているかは、 *エディットモード* 時に *3Dビュー* エリアの左側の *ツールシェルフ* のタブに *Mira* が追加されていることで確認できます。|![アドオンの有効化 手順3](https://dl.dropboxusercontent.com/s/qqvxodqbs67yy45/enable_add-on_3.png "アドオンの有効化 手順3")|
 |---|---|---|
 
 <div id="process_start_end"></div>
@@ -268,19 +268,19 @@ Mira Tools - https://github.com/mifth/mifthtools/wiki/Mira-Tools
 
 ---
 
-<div id="process_noimg"></div>
+<div id="process"></div>
 
-|<div id="box">2</div>|アドオン名の隣にある左の矢印をクリックして *Mira Tools* の詳細情報を表示します。|
-|---|---|
+|<div id="box">2</div>|アドオン名の隣にある左の矢印をクリックして *Mira Tools* の詳細情報を表示します。|![アドオンの詳細情報を表示](https://dl.dropboxusercontent.com/s/7onrbdzxctp4uqw/show_add-on_detail.png "アドオンの詳細情報を表示")|
+|---|---|---|
 
 <div id="process_sep"></div>
 
 ---
 
-<div id="process"></div>
+<div id="process_noimg"></div>
 
-|<div id="box">3</div>|詳細情報の *ファイル* がアドオンのソースコードが置かれた場所を示しています。|![アドオンの詳細情報を表示](https://dl.dropboxusercontent.com/s/7onrbdzxctp4uqw/show_add-on_detail.png "アドオンの詳細情報を表示")|
-|---|---|---|
+|<div id="box">3</div>|詳細情報の *ファイル* がアドオンのソースコードが置かれた場所を示しています。|
+|---|---|
 
 <div id="process_sep"></div>
 
@@ -300,7 +300,8 @@ Mira Tools - https://github.com/mifth/mifthtools/wiki/Mira-Tools
 アドオンのソースコードが複数のファイルで構成される場合と、単一のファイルで構成される場合とで削除するファイルが異なります。  
 詳細情報のファイルに書かれているファイル名が \_\_init\_\_.py である場合は、アドオンのソースコードが複数のファイルで構成されています。
 この場合は、 \_\_init\_\_.py が置かれているディレクトリごと削除することでアンインストールが完了します。  
-\_\_init\_\_.py 以外であれば単一ファイルで構成されていることを示していますので、詳細情報の ファイルに示されたファイルを削除すれば、アンインストールが完了します。詳しくは、 [1-4節](04_Understand_Install_Uninstall_Update_Add-on.md) を参照ください。
+\_\_init\_\_.py 以外であれば単一ファイルで構成されていることを示していますので、詳細情報の ファイルに示されたファイルを削除すれば、アンインストールが完了します。  
+詳しくは、 [1-4節](04_Understand_Install_Uninstall_Update_Add-on.md) を参照ください。
 
 ### Blenderユーザ設定からアンインストールする方法
 
@@ -334,7 +335,8 @@ Mira Tools - https://github.com/mifth/mifthtools/wiki/Mira-Tools
 
 <div id="column"> </div>
 
-アドオンのソースコードを直接削除する場合とは異なり、アドオンのソースコードが複数のファイルで構成されている場合でも単一のファイルで構成されている場合でも、同じ方法で削除することができます。
+アドオンのソースコードを直接削除する場合とは異なり、アドオンのソースコードが複数のファイルで構成されている場合でも単一のファイルで構成されている場合でも、同じ方法で削除することができます。  
+詳しくは、 [1-4節](04_Understand_Install_Uninstall_Update_Add-on.md) を参照ください。
 
 ## まとめ
 
