@@ -513,10 +513,10 @@
         font-size: inherit;
         font-style: normal;
         &:before {
-            content: "『";
+            content: "[";
         }
         &:after {
-            content: "』";
+            content: "]";
         }
     }
 }
