@@ -40,7 +40,7 @@ Blenderは海外で開発されたソフトであるため、Blenderを初めて
 
 <div id="process"></div>
 
-|<div id="box">3</div>|*International Fonts* にチェックを入れると、Blenderの言語を変更することができるようになります。|![アドオンの日本語化 手順2](https://dl.dropboxusercontent.com/s/6uwpij0r5riiqk3/localizing_into_japanese_3.png "アドオン日本語化 手順2")|
+|<div id="box">3</div>|*International Fonts* にチェックを入れると、Blenderの言語を変更することができるようになります。|![アドオンの日本語化 手順3](https://dl.dropboxusercontent.com/s/6uwpij0r5riiqk3/localizing_into_japanese_3.png "アドオン日本語化 手順3")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -49,7 +49,7 @@ Blenderは海外で開発されたソフトであるため、Blenderを初めて
 
 <div id="process"></div>
 
-|<div id="box">4</div>|*Language* を *Japanese（日本語）* に変更し、 *Translate* で日本語化する項目を選択すると、選択された項目が日本語化されます。|![アドオンの日本語化 手順3](https://dl.dropboxusercontent.com/s/s5mrd72si2xq910/localizing_into_japanese_4.png "アドオン日本語化 手順3")|
+|<div id="box">4</div>|*Language* を *Japanese（日本語）* に変更し、 *Translate* で日本語化する項目を選択すると、選択された項目が日本語化されます。|![アドオンの日本語化 手順4](https://dl.dropboxusercontent.com/s/s5mrd72si2xq910/localizing_into_japanese_4.png "アドオン日本語化 手順4")|
 |---|---|---|
 
 <div id="process_start_end"></div>
@@ -163,7 +163,7 @@ Mira Toolsのインストール方法は前述のURLにも記載されていま�
 
 <div id="process"></div>
 
-|<div id="box">2</div>|*情報* エリアのメニューから、 *ファイル* > *ユーザ設定* を選択します。|![アドオンの有効化 手順1](https://dl.dropboxusercontent.com/s/9it3p8rth2heyqi/enable_add-on_1.png "アドオンの有効化 手順1")|
+|<div id="box">2</div>|*情報* エリアのメニューから、 *ファイル* > *ユーザ設定* を選択します。|![アドオンの有効化 手順2](https://dl.dropboxusercontent.com/s/9it3p8rth2heyqi/enable_add-on_2.png "アドオンの有効化 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -190,7 +190,7 @@ Mira Toolsのインストール方法は前述のURLにも記載されていま�
 
 <div id="process"></div>
 
-|<div id="box">5</div>|ウィンドウ右側に *Mira Tools* が表示されますので、チェックボックスにチェックを入れるとアドオンが有効化されます。|![アドオンの有効化 手順2](https://dl.dropboxusercontent.com/s/k4xq9zyhk0hbivp/enable_add-on_2.png "アドオンの有効化 手順2")|
+|<div id="box">5</div>|ウィンドウ右側に *Mira Tools* が表示されますので、チェックボックスにチェックを入れるとアドオンが有効化されます。|![アドオンの有効化 手順5](https://dl.dropboxusercontent.com/s/k4xq9zyhk0hbivp/enable_add-on_5.png "アドオンの有効化 手順5")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -199,7 +199,7 @@ Mira Toolsのインストール方法は前述のURLにも記載されていま�
 
 <div id="process"></div>
 
-|<div id="box">6</div>|実際にアドオンが有効化されているかは、 *エディットモード* 時に *3Dビュー* エリアの左側の *ツールシェルフ* のタブに *Mira* が追加されていることで確認できます。|![アドオンの有効化 手順3](https://dl.dropboxusercontent.com/s/qqvxodqbs67yy45/enable_add-on_3.png "アドオンの有効化 手順3")|
+|<div id="box">6</div>|実際にアドオンが有効化されているかは、 *エディットモード* 時に *3Dビュー* エリアの左側の *ツールシェルフ* のタブに *Mira* が追加されていることで確認できます。|![アドオンの有効化 手順6](https://dl.dropboxusercontent.com/s/qqvxodqbs67yy45/enable_add-on_6.png "アドオンの有効化 手順6")|
 |---|---|---|
 
 <div id="process_start_end"></div>
@@ -237,7 +237,7 @@ Mira Tools - https://github.com/mifth/mifthtools/wiki/Mira-Tools
 
 <div id="process"></div>
 
-|<div id="box">2</div>|*アドオン* タブを選択し、 *Mira Tools* のチェックボックスのチェックを外すことでアドオンが無効化されます。|![アドオンの無効化](https://dl.dropboxusercontent.com/s/t15vvgofl5gs50d/disable_add-on.png "アドオンの無効化")|
+|<div id="box">2</div>|*アドオン* タブを選択し、 *Mira Tools* のチェックボックスのチェックを外すことでアドオンが無効化されます。|![アドオンの無効化 手順2](https://dl.dropboxusercontent.com/s/t15vvgofl5gs50d/disable_add-on_2.png "アドオンの無効化 手順2")|
 |---|---|---|
 
 <div id="process_start_end"></div>
@@ -267,7 +267,7 @@ Mira Tools - https://github.com/mifth/mifthtools/wiki/Mira-Tools
 
 <div id="process"></div>
 
-|<div id="box">2</div>|*削除* ボタンをクリックすると、アンインストールが完了します。|![アドオンのアンインストール](https://dl.dropboxusercontent.com/s/0hkgrg49n0kh880/uninstall_add-on.png "アドオンのアンインストール")|
+|<div id="box">2</div>|*削除* ボタンをクリックすると、アンインストールが完了します。|![アドオンのアンインストール 手順2](https://dl.dropboxusercontent.com/s/0hkgrg49n0kh880/uninstall_add-on_2.png "アドオンのアンインストール 手順2")|
 |---|---|---|
 
 <div id="process_start_end"></div>
