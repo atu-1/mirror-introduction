@@ -40,7 +40,7 @@ Blenderは海外で開発されたソフトであるため、Blenderを初めて
 
 <div id="process"></div>
 
-|<div id="box">3</div>|*International Fonts* にチェックを入れると、Blenderの言語を変更することができるようになります。|![アドオンの日本語化 手順2](https://dl.dropboxusercontent.com/s/6uwpij0r5riiqk3/localizing_into_japanese_2.png "アドオン日本語化 手順2")|
+|<div id="box">3</div>|*International Fonts* にチェックを入れると、Blenderの言語を変更することができるようになります。|![アドオンの日本語化 手順2](https://dl.dropboxusercontent.com/s/6uwpij0r5riiqk3/localizing_into_japanese_3.png "アドオン日本語化 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -49,7 +49,7 @@ Blenderは海外で開発されたソフトであるため、Blenderを初めて
 
 <div id="process"></div>
 
-|<div id="box">4</div>|*Language* を *Japanese（日本語）* に変更し、 *Translate* で日本語化する項目を選択すると、選択された項目が日本語化されます。|![アドオンの日本語化 手順3](https://dl.dropboxusercontent.com/s/s5mrd72si2xq910/localizing_into_japanese_3.png "アドオン日本語化 手順3")|
+|<div id="box">4</div>|*Language* を *Japanese（日本語）* に変更し、 *Translate* で日本語化する項目を選択すると、選択された項目が日本語化されます。|![アドオンの日本語化 手順3](https://dl.dropboxusercontent.com/s/s5mrd72si2xq910/localizing_into_japanese_4.png "アドオン日本語化 手順3")|
 |---|---|---|
 
 <div id="process_start_end"></div>
