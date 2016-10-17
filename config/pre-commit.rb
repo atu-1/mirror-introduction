@@ -1,14 +1,11 @@
 require 'fileutils'
 
-src_path = '_sample/'
+dest_path = '_sample/'
 
-print 'aa'
-
-ARGV.all? do |filename|
-    print filename
-    if File.extname(filename) == '.py' then
-        FileUtils.cp(filename, dest + filename)
-        print filename
+ARGV.all? do |filepath|
+    if File.extname(filepath) == '.py' then
+        FileUtils.cp(filepath, dest_path + File.filename(filepath))
+        print filepath
     end
 end
 
