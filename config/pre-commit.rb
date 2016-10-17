@@ -6,6 +6,7 @@ ARGV.all? do |filepath|
     if File.extname(filepath) == '.py' then
         FileUtils.cp(filepath, dest_path + File.filename(filepath))
         print filepath
+        o
     end
 end
 
