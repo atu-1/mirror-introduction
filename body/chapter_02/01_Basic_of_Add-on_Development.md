@@ -137,7 +137,7 @@ import bpy   # アドオン開発者に対して用意しているAPIを利用�
 作成したソースコードがBlenderのアドオンであることをBlender本体に認識させるためには、 ```bl_info``` と呼ばれる変数を作成する必要があります。
 
 
-[import:""blinfop"](../../sample/src/chapter_02/sample_2-1.py)
+[import:"blinfop"](../../sample/src/chapter_02/sample_2-1.py)
 
 ```bl_info``` はディクショナリ型の変数で以下のようなキーと値を設定する必要があります。
 
