@@ -4,11 +4,6 @@
     "description": "これからBlenderのアドオンを開発しようと考えている人向けの技術資料です。",
     "language": "ja",
     "plugins": ["styles-sass", "include-codeblock"],
-    "pluginsConfig": {
-        "include-codeblock": {
-            "template": fs.readFileSync(__dirname + "/user-template.hbs", "utf-8")
-        }
-    }
     "styles": {
         "website": "styles/website.scss",
         "pdf": "styles/pdf.scss"
