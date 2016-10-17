@@ -15,7 +15,7 @@ bl_info = {
     "tracker_url": "",
     "category": "Object"
 }
-##! [bl_info]
+### [bl_info]
 
 # オブジェクト（ICO球）を生成するオペレーション
 class CreateObject(bpy.types.Operator):
