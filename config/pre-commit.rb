@@ -1,11 +1,14 @@
 require 'fileutils'
 
-dest_path = '_sample/'
+src_path = 'sample_raw/'
+dest_path = 'sample/'
 
 ARGV.all? do |filepath|
     if File.extname(filepath) == '.py' then
-        FileUtils.cp(filepath, dest_path + File.basename(filepath))
-        print filepath
+        path = filepath.dup
+        path.slice!(/^\s*\/\/! \[.*\]/);
+        print path
+        #FileUtils.cp(filepath, dest_path + File.basename(filepath))
         o
     end
 end
