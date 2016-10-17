@@ -1,6 +1,6 @@
 import bpy   # アドオン開発者に対して用意しているAPIを利用する
 
-//! [blinfo]
+//! [blinfoe]
 # アドオンに関する情報を保持する、bl_info変数
 bl_info = {
     "name": "サンプル2-1: オブジェクトを生成するアドオン",
@@ -15,7 +15,7 @@ bl_info = {
     "tracker_url": "",
     "category": "Object"
 }
-//! [blinfo]
+//! [blinfoe]
 
 # オブジェクト（ICO球）を生成するオペレーション
 class CreateObject(bpy.types.Operator):
