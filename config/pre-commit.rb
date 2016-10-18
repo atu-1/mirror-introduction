@@ -11,6 +11,7 @@ ARGV.all? do |filepath|
         dest_file = File.open(dest_path + path, 'w')
         src_file.each_line do |line|
             next line if /^\s*\/\/! \[.*\]/ =~ line
+            puts line
             dest_file.puts(line)
         end
     end
