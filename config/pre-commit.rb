@@ -3,6 +3,7 @@ require 'fileutils'
 raw_path = 'sample_raw/'
 target_path = 'sample/'
 
+count = 0
 
 ARGV.all? do |filepath|
     next filepath if filepath.match(/^sample\//)
@@ -18,6 +19,7 @@ ARGV.all? do |filepath|
         next line if /^\s*\/\/! \[.*\]/ =~ line
         dest_file.puts(line)
     end
+    count += 1
 end
 
-exit 0
+exit count == 0 ? 0 : 1
