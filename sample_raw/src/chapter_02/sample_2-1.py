@@ -1,6 +1,6 @@
 import bpy   # アドオン開発者に対して用意しているAPIを利用する
 
-//! [bl_info]@iuo
+//! [bl_info]@iuop
 # アドオンに関する情報を保持する、bl_info変数
 bl_info = {
     "name": "サンプル2-1: オブジェクトを生成するアドオン",
