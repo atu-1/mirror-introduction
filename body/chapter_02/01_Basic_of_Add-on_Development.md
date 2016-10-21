@@ -128,14 +128,14 @@ Blenderのアドオンを開発するためには、 ```bpy``` モジュール�
 
 以下のソースコードにより、bpyモジュールをインポートすることができます。
 
-[import:"import_bpy"](../../sample/src/chapter_02/sample_2-1.py)
+[import:"import_bpy"](../../sample_raw/src/chapter_02/sample_2-1.py)
 
 ### bl_info変数の作成
 
 作成したソースコードがBlenderのアドオンであることをBlender本体に認識させるためには、 ```bl_info``` と呼ばれる変数を作成する必要があります。
 
 
-[import:"bl_info"](../../sample/src/chapter_02/sample_2-1.py)
+[import:"bl_info"](../../sample_raw/src/chapter_02/sample_2-1.py)
 
 
 ```bl_info``` はディクショナリ型の変数で以下のようなキーと値を設定する必要があります。
@@ -365,7 +365,7 @@ bl_infoは必ずしも必要な情報ではなく、あくまでアドオンの�
 
 ここではオペレータクラスの作成方法を紹介します。最初に、オペレータクラスのメンバ変数の宣言例を以下に示します。
 
-[import:"mem_var"](../../sample/src/chapter_02/sample_2-1.py)
+[import:"mem_var"](../../sample_raw/src/chapter_02/sample_2-1.py)
 
 オペレータクラスには、以下のようなメンバ変数を含める必要があります。
 
@@ -388,7 +388,7 @@ bl_infoは必ずしも必要な情報ではなく、あくまでアドオンの�
 
 続いて、メニューを実行した時に呼ばれる関数を作成します。
 
-[import:"execute"](../../sample/src/chapter_02/sample_2-1.py)
+[import:"execute"](../../sample_raw/src/chapter_02/sample_2-1.py)
 
 メニューを実行した時には ```exexute()``` メソッドが呼ばれます。このため、 ```exexute()``` メソッドにはメニューを実行した時の処理を記述します。
 
@@ -459,7 +459,7 @@ Blenderではメニューやボタンをマウスオーバーすることで、�
 
 最初に、メニューに登録時に呼ばれるメニュー構築関数 ```menu_fn()``` を作成します。```menu_fn()``` 関数は、後で解説するアドオン有効化・無効化時に呼ばれる関数の中で利用します。
 
-[import:"build_menu"](../../sample/src/chapter_02/sample_2-1.py)
+[import:"build_menu"](../../sample_raw/src/chapter_02/sample_2-1.py)
 
 メニューの編集は、 ```self.layout``` を用いて行います。
 
@@ -471,7 +471,7 @@ Blenderではメニューやボタンをマウスオーバーすることで、�
 
 アドオン有効化時には ```register()``` 関数が呼ばれます。
 
-[import:"register"](../../sample/src/chapter_02/sample_2-1.py)
+[import:"register"](../../sample_raw/src/chapter_02/sample_2-1.py)
 
 ```bpy.utils.register_module()``` 関数 は、引数に指定したモジュールを登録してBlender内で使えるようにするための関数です。
 引数に ```__name__``` を指定することで、ファイル内のモジュール全てを登録することができます。
@@ -489,7 +489,7 @@ bpy.types.INFO_MT_mesh_addは、bpy.types.INFO_MT_mesh_add.append()関数を確�
 
 アドオン無効化時には ```unregister()``` 関数が呼ばれます。
 
-[import:"unregister"](../../sample/src/chapter_02/sample_2-1.py)
+[import:"unregister"](../../sample_raw/src/chapter_02/sample_2-1.py)
 
 ```bpy.types.INFO_MT_mesh_add.remove()``` 関数に、メニューを構築する関数である ```menu_fn()``` 関数を指定することで、3Dビューエリアのメニューである追加 > メッシュからメニューを削除することができます。
 
@@ -510,7 +510,7 @@ bpy.types.INFO_MT_mesh_addは、bpy.types.INFO_MT_mesh_add.append()関数を確�
 
 アドオンであればメイン処理は必ずしも必要な処理ではありませんが、慣習として書くことが多いので本サンプルでも記載しています。
 
-[import:"main"](../../sample/src/chapter_02/sample_2-1.py)
+[import:"main"](../../sample_raw/src/chapter_02/sample_2-1.py)
 
 ## まとめ
 
