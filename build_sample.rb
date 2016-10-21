@@ -3,9 +3,14 @@ require 'fileutils'
 raw_path = 'sample_raw/'
 target_path = 'sample/'
 
-count = 0
+filelist = []
+entry = Dir.glob(raw_path + '**/**')
+entry.each {|e|
+    next e if File::ftype(e) == 'directory'
+    filelist.push(e)
+}
 
-ARGV.all? do |filepath|
+filelist.each {|filepath|
     next filepath if filepath.match(/^sample\//)
     next filepath if File.extname(filepath) != '.py'
 
@@ -19,7 +24,6 @@ ARGV.all? do |filepath|
         next line if /^\s*\/\/! \[.*\]/ =~ line
         dest_file.puts(line)
     end
-    count += 1
-end
+}
 
-exit count == 0 ? 0 : 1
+exit 0

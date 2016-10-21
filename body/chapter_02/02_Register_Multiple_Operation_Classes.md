@@ -115,28 +115,10 @@
 
 1つのファイルに複数のオペレータクラスを定義するには、作りたいオペレーションの数だけオペレーションクラスを作成する必要があります。今回はオブジェクトの拡大と縮小のために、2つのオペーレーションクラスを以下のように作成しました。
 
-```python
-# オブジェクトを拡大するオペレーション
-class EnlargeObject(bpy.types.Operator):
+[import:"op_enlarge_object"](../../sample/src/chapter_02/sample_2-2.py)
 
-    bl_idname = "object.enlarge_object"
-    bl_label = "選択オブジェクトの拡大"
-    bl_description = "選択中のオブジェクトを拡大します"
-    bl_options = {'REGISTER', 'UNDO'}
+[import:"op_reduce_object"](../../sample/src/chapter_02/sample_2-2.py)
 
-# ・・・(略)・・・
-
-
-# オブジェクトを縮小するオペレーション
-class ReduceObject(bpy.types.Operator):
-
-    bl_idname = "object.reduce_object"
-    bl_label = "選択オブジェクトの縮小"
-    bl_description = "選択中のオブジェクトを縮小します"
-    bl_options = {'REGISTER', 'UNDO'}
-
-# ・・・(略)・・・
-```
 
 ```bl_idname``` はオペレータクラスごとに固有の文字列である必要があるため、重複しないように気をつけてください。重複しないようにするための方法は後ほど紹介します。
 
