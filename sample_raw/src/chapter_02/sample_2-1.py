@@ -19,6 +19,7 @@ bl_info = {
 }
 //! [bl_info]
 
+
 //! [mem_var]
 # オブジェクト（ICO球）を生成するオペレーション
 class CreateObject(bpy.types.Operator):

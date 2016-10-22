@@ -115,9 +115,9 @@
 
 1つのファイルに複数のオペレータクラスを定義するには、作りたいオペレーションの数だけオペレーションクラスを作成する必要があります。今回はオブジェクトの拡大と縮小のために、2つのオペーレーションクラスを以下のように作成しました。
 
-[import:"op_enlarge_object"](../../sample/src/chapter_02/sample_2-2.py)
+[import:"op_enlarge_object"](../../sample_raw/src/chapter_02/sample_2-2.py)
 
-[import:"op_reduce_object"](../../sample/src/chapter_02/sample_2-2.py)
+[import:"op_reduce_object"](../../sample_raw/src/chapter_02/sample_2-2.py)
 
 
 ```bl_idname``` はオペレータクラスごとに固有の文字列である必要があるため、重複しないように気をつけてください。重複しないようにするための方法は後ほど紹介します。
@@ -128,7 +128,7 @@
 
 ここでは ```EnlargeObject``` クラスの ```execute()``` メソッドを用いて、コンソール・ウィンドウへメッセージを出力する方法を紹介します。
 
-[import:"execute_enlarge_object"](../../sample/src/chapter_02/sample_2-2.py)
+[import:"execute_enlarge_object"](../../sample_raw/src/chapter_02/sample_2-2.py)
 
 ```execute()``` メソッドに渡されてくる引数については、 [2-1節](01_Basic_of_Add-on_Development.md)で説明しました。引数 ```context``` を利用することにより、現在のコンテキスト（実行状態）を取得することができます。
 
