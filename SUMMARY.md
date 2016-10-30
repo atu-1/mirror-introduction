@@ -6,11 +6,13 @@
 
 <div id="sect_title_img_0_0"></div>
 
-{% if book.target == "pdf_vol_1" %}
+{% if book.format == "pdf" %}
+{% if book.volume == "1" %}
 {% include "SUMMARY_vol_1.md" %}
-{% elif book.target == "pdf_vol_2" %}
+{% elif book.volume == "2" %}
 {% include "SUMMARY_vol_2.md" %}
-{% elif book.target == "website" %}
+{% endif %}
+{% elif book.format == "website" %}
 {% include "SUMMARY_vol_1.md" %}
 {% include "SUMMARY_vol_2.md" %}
 {% endif %}
