@@ -12,7 +12,7 @@
 {% elif book.volume == "2" %}
 {% include "SUMMARY_vol_2.md" %}
 {% endif %}
-{% elif book.format == "website" %}
+{% elif book.format == "all" %}
 {% include "SUMMARY_vol_1.md" %}
 {% include "SUMMARY_vol_2.md" %}
 {% endif %}
