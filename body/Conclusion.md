@@ -8,7 +8,7 @@
 
 ###### 　
 
-{% if book.format != "pdf" ||  book.volume == "2"}
+{% if book.format != "pdf" or  book.volume == "2"}
 
 ## 本書の執筆を終えて
 
