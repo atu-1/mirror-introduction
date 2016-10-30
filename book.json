@@ -10,7 +10,7 @@
     },
     "variables": {
         "volume": "2",
-        "format": "pdf",
+        "format": "website",
         "edition": "2.0"
     },
     "pdf": {
