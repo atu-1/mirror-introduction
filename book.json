@@ -11,7 +11,7 @@
     "variables": {
         "volume": "2",
         "format": "pdf",
-        "edition": "2.0",
+        "edition": "2.0"
     },
     "pdf": {
         "paperSize": "a3",
