@@ -9,7 +9,7 @@
         "pdf": "styles/pdf.scss"
     },
     "variables": {
-        "target": "website",
+        "target": "vol_1",
         "edition": "2.0"
     },
     "pdf": {
