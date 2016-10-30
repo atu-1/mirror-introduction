@@ -9,7 +9,8 @@
 
 {% if book.volume == "1"  or book.volume == "all" %}
 {% include "SUMMARY_vol_1.md" %}
-{% elif book.volume == "2" or book.volume == "all" %}
+{% endif %}
+{% if book.volume == "2" or book.volume == "all" %}
 {% include "SUMMARY_vol_2.md" %}
 {% endif %}
 
