@@ -8,6 +8,10 @@
         "website": "styles/website.scss",
         "pdf": "styles/pdf.scss"
     },
+    "variables": {
+        "target": "website",
+        "edition": "2.0"
+    },
     "pdf": {
         "paperSize": "a3",
         "margin": {
