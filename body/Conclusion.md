@@ -8,7 +8,7 @@
 
 ###### 　
 
-{% book.volume == "all" or book.volume == "2" %}
+{% if book.volume == "all" || book.volume == "2" %}
 
 ## 本書の執筆を終えて
 
