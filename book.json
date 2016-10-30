@@ -10,8 +10,8 @@
     },
     "variables": {
         "volume": "2",
-        "format": "website",
-        "edition": "2.0"
+        "format": "pdf",
+        "edition": "2.0",
     },
     "pdf": {
         "paperSize": "a3",

@@ -9,6 +9,7 @@
 
 ###### 　
 
+{% if book.edition >= 2.0 %}
 {% if book.format == "pdf" %}
 
 ## 第2版執筆にあたって
@@ -30,6 +31,7 @@
 
 {% endif %}
 
+{% endif %}
 {% endif %}
 
 ## 本書について
