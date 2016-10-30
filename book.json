@@ -9,7 +9,7 @@
         "pdf": "styles/pdf.scss"
     },
     "variables": {
-        "volume": "1",
+        "volume": "2",
         "format": "pdf",
         "edition": "2.0"
     },
