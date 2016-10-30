@@ -24,8 +24,8 @@
 なお、初版と同じようにサンプルを用いて実際に手を動かしながら理解していくスタンスで説明しています。
 
 * より詳細なアドオンのインストール方法・アンインストール方法・アップデート方法（[1-4節](body/chapter_01/04_Understand_Install_Uninstall_Update_Add-on.md)）
-* アドオンのソースコードを複数のファイルに分割する方法([2-7節](body/chapter_02/07_Divide_Add-on_Source_into_Multiple_Files.md))
-* BlenderのUI制御方法([2-8節](body/chapter_02/08_Control_Blender_UI_1.md)、[2-9節](body/chapter_02/09_Control_Blender_UI_2.md)、[2-10節](body/chapter_02/10_Control_Blender_UI_3.md))
+* アドオンのソースコードを複数のファイルに分割する方法（[2-7節](body/chapter_02/07_Divide_Add-on_Source_into_Multiple_Files.md)）
+* BlenderのUI制御方法（[2-8節](body/chapter_02/08_Control_Blender_UI_1.md)、[2-9節](body/chapter_02/09_Control_Blender_UI_2.md)、[2-10節](body/chapter_02/10_Control_Blender_UI_3.md)）
 
 {% elif book.volume == "2" %}
 
