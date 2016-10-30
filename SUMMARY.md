@@ -8,9 +8,9 @@
 
 {% if book.target == "pdf_vol_1" %}
 {% include "SUMMARY_vol_1.md" %}
-{% elif book.target is "pdf_vol_2" %}
+{% elif book.target == "pdf_vol_2" %}
 {% include "SUMMARY_vol_2.md" %}
-{% elif book.target is "website" %}
+{% elif book.target == "website" %}
 {% include "SUMMARY_vol_1.md" %}
 {% include "SUMMARY_vol_2.md" %}
 {% endif %}
