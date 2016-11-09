@@ -9,8 +9,8 @@
         "pdf": "styles/pdf.scss"
     },
     "variables": {
-        "volume": "all",
-        "format": "website",
+        "volume": "1",
+        "format": "pdf",
         "edition": "2.0"
     },
     "pdf": {
