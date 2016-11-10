@@ -146,7 +146,7 @@ https://github.com/nutti/Introduction-to-Add-on-Development-in-Blender
 
 ## 本書へのリクエストについて
 
-本書に追加してほしい話題等がある場合、以下のサポートページや [おわりに](body/Conclusion.md) に記載している連絡先よりリクエストを出すことができます。
+本書に追加を希望する話題等がある場合、以下のサポートページや [おわりに](body/Conclusion.md) に記載している連絡先よりリクエストを出すことができます。
 
 https://github.com/nutti/Introduction-to-Add-on-Development-in-Blender/issues
 https://www.gitbook.com/book/nutti/introduction-to-add-on-development-in-blender/discussions
