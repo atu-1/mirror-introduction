@@ -18,7 +18,7 @@
 
 <div id="process_noimg"></div>
 
-|<div id="box">1</div>|[1-3節](03_Prepare_Add-on_development_environment.md) を参考にしてコンソールからBlenderを起動します。|
+|<div id="box">1</div>|[1-3節](03_Prepare_Add-on_development_environment.md) を参考にしてコンソールウィンドウからBlenderを起動します。|
 |---|---|
 
 <div id="process_sep"></div>
@@ -108,7 +108,7 @@
 
 <div id="process_noimg"></div>
 
-|<div id="box">4</div>|アドオンを有効化すると、コンソールに以下の文字列が出力されます。|
+|<div id="box">4</div>|アドオンを有効化すると、コンソールウィンドウに以下の文字列が出力されます。|
 |---|---|
 
 ```sh
@@ -133,7 +133,7 @@
 |---|---|
 
 
-アドオンを無効化すると、コンソールに以下の文字列が出力されます。
+アドオンを無効化すると、コンソールウィンドウに以下の文字列が出力されます。
 
 ```sh
 サンプル1-5: アドオン「サンプル1-5」が無効化されました。
