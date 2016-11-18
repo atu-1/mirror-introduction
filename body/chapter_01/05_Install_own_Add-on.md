@@ -90,7 +90,7 @@
 
 <div id="process_noimg"></div>
 
-|<div id="box">2</div>|*アドオン* タブを選択し、サポートレベルを *テスト中* に変更すると、今回作成したアドオンが表示されます。|![アドオン有効化 手順2](https://dl.dropboxusercontent.com/s/7p3apgnyvjj8dl0/blender_enable_add-on_1.png "アドオン有効化 手順2")|
+|<div id="box">2</div>|*アドオン* タブを選択し、サポートレベルを *テスト中* に変更すると、今回作成したアドオンが表示されます。|![アドオン有効化 手順2](https://dl.dropboxusercontent.com/s/7p3apgnyvjj8dl0/blender_enable_add-on_2.png "アドオン有効化 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
