@@ -622,7 +622,7 @@ breakpoint = bpy.types.bp.bp
 
 <div id="process"></div>
 
-|<div id="box">1</div>|テキストエディタエリアのメニューで、ビュー > プロパティを実行し、テキストエディタエリアのプロパティを表示します。|![デバッグ 手順1](https://dl.dropboxusercontent.com/s/bu01qdhpcstfb16/start_bp_debug_1.png "デバッグ 手順1")|
+|<div id="box">1</div>|*テキストエディター* エリアのメニューで、ビュー > プロパティを実行し、*テキストエディター* エリアのプロパティを表示します。|![デバッグ 手順1](https://dl.dropboxusercontent.com/s/bu01qdhpcstfb16/start_bp_debug_1.png "デバッグ 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -649,7 +649,7 @@ breakpoint = bpy.types.bp.bp
 
 <div id="process"></div>
 
-|<div id="box">4</div>|テキストエディタエリアのプロパティにブレークポイントの関数に指定した変数の値が表示されます。|![デバッグ 手順4](https://dl.dropboxusercontent.com/s/fmfykni3dax1vgt/start_bp_debug_4.png "デバッグ 手順4")|
+|<div id="box">4</div>|*テキストエディター* エリアのプロパティにブレークポイントの関数に指定した変数の値が表示されます。|![デバッグ 手順4](https://dl.dropboxusercontent.com/s/fmfykni3dax1vgt/start_bp_debug_4.png "デバッグ 手順4")|
 |---|---|---|
 
 <div id="process_start_end"></div>

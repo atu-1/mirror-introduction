@@ -15,7 +15,7 @@ Blenderが提供するAPIの情報を収集する方法としては、以下の�
 
 * Blender公式のAPIリファレンスを読む
 * PythonコンソールウィンドウでAPIを検索・実行する
-* テキストエディタのテンプレートを読む
+* *テキストエディター* のテンプレートを読む
 * Blenderアドオン開発の参考サイトを読む
 * 他者が作成したアドオンのソースコードを読む
 * Blenderのコミュニティサイトで質問する
@@ -164,7 +164,7 @@ Standalone Modulesは、 ```bpy``` モジュールを拡張するモジュール
 このように、Pythonコンソールウィンドウを利用することでAPIの動作を確認できます。APIの効果がわからない場合はPythonコンソールウィンドウを用いて実際に動作させてAPIの効果を確認することで、よりAPIへの理解が深まると思いますので積極的に活用していきましょう。
 
 
-## テキストエディタのテンプレートを読む
+## テキストエディターのテンプレートを読む
 
 <div id="sidebyside"></div>
 
@@ -246,7 +246,7 @@ Blender内でソースコードを確認する例として、3Dビューエリ�
 
 <div id="process"></div>
 
-|<div id="box">2</div>|テキストエディタにソースコードが表示されます。|![アドオンのソースコードを読む3](https://dl.dropboxusercontent.com/s/bdvh1yevo0m6j5s/read_addon_source_code_3.png "アドオンのソースコードを読む3")|
+|<div id="box">2</div>|*テキストエディター* にソースコードが表示されます。|![アドオンのソースコードを読む3](https://dl.dropboxusercontent.com/s/bdvh1yevo0m6j5s/read_addon_source_code_3.png "アドオンのソースコードを読む3")|
 |---|---|---|
 
 <div id="process_start_end"></div>

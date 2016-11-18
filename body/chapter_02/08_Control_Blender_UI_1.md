@@ -38,7 +38,7 @@ BlenderのUIの大半は、Pythonのソースコードで記載されていま�
 
 <div id="process"></div>
 
-|<div id="box">3</div>|*テキストエディタ* エリアにソースコードが表示されます。また、 *現在の視点をOpenGLレンダリング* ボタンを表示するためのコードにマウスカーソルが自動的に移動しています。|![3Dビューエリアのメニューを修正する 手順3](https://dl.dropboxusercontent.com/s/f4j1ny6sxio3hmm/control_UI_on_View3D_3.png "3Dビューエリアのメニューを修正する 手順3")|
+|<div id="box">3</div>|*テキストエディター* エリアにソースコードが表示されます。また、 *現在の視点をOpenGLレンダリング* ボタンを表示するためのコードにマウスカーソルが自動的に移動しています。|![3Dビューエリアのメニューを修正する 手順3](https://dl.dropboxusercontent.com/s/f4j1ny6sxio3hmm/control_UI_on_View3D_3.png "3Dビューエリアのメニューを修正する 手順3")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -56,7 +56,7 @@ BlenderのUIの大半は、Pythonのソースコードで記載されていま�
 
 <div id="process"></div>
 
-|<div id="box">5</div>|*テキストエディタ* エリアのメニュー *テキスト* から *保存* を実行し、上書き保存します。|![3Dビューエリアのメニューを修正する 手順5](https://dl.dropboxusercontent.com/s/8ubgqqmhlunz3oh/control_UI_on_View3D_5.png "3Dビューエリアのメニューを修正する 手順5")|
+|<div id="box">5</div>|*テキストエディター* エリアのメニュー *テキスト* から *保存* を実行し、上書き保存します。|![3Dビューエリアのメニューを修正する 手順5](https://dl.dropboxusercontent.com/s/8ubgqqmhlunz3oh/control_UI_on_View3D_5.png "3Dビューエリアのメニューを修正する 手順5")|
 |---|---|---|
 
 <div id="process_sep"></div>

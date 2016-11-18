@@ -47,7 +47,7 @@
 
 <div id="process"></div>
 
-|<div id="box">4</div>|入力が完了したら、 *テキストエディタ* エリアのメニューバーから *テキスト* > *名前をつけて保存* を実行します。|![アドオン作成 手順4](https://dl.dropboxusercontent.com/s/cbwyg0yebb8loww/blender_make_add-on_4.png "アドオン作成 手順4")|
+|<div id="box">4</div>|入力が完了したら、 *テキストエディター* エリアのメニューバーから *テキスト* > *名前をつけて保存* を実行します。|![アドオン作成 手順4](https://dl.dropboxusercontent.com/s/cbwyg0yebb8loww/blender_make_add-on_4.png "アドオン作成 手順4")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -155,5 +155,5 @@
 
 <div id="point_item"></div>
 
-* アドオンのソースコードは、Blender本体に備わっている *テキストエディタ* を用いて作成・編集できる
+* アドオンのソースコードは、Blender本体に備わっている *テキストエディター* を用いて作成・編集できる
 * アドオンの有効化/無効化は、 *情報* エリアのメニューバーから *ファイル* > *ユーザ設定* で表示される *Blenderユーザ設定* ウィンドウの *アドオン* タブから行う
