@@ -96,7 +96,8 @@
 本節のサンプルは、[2-3節](03_Use_Property_on_Tool_Shelf_1.md) で紹介したサンプルを改造したものです。ここでは、 [2-3節](03_Use_Property_on_Tool_Shelf_1.md) で解説していない部分について解説します。なお、新しく登場するBlender APIの説明は、ソースコードのコメントとして記載しています。
 
 
-<div id="space_l"></div>
+<div id="space_xl"></div>
+
 
 ### セレクトボックスの追加
 
