@@ -940,6 +940,6 @@
         @include space_x8l(600px)
         @include space_page(1500px);
         @include strong(1.04em);
+        @include centerize_img();
     }
-
 }
