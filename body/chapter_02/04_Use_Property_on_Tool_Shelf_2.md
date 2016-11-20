@@ -143,6 +143,9 @@ location = EnumProperty(
 このように、セレクトボックスの選択項目リストを返す関数を ```EnumProperty``` クラスの ```items``` に指定することで、選択項目を動的に追加することができます。
 
 
+<div id="space_m"></div>
+
+
 ### FloatVectorPropertyの引数subtypeとunit
 
 本節のサンプルでは、配置位置の他にも拡大率・回転角度・配置位置からのオフセットを、ツール・シェルフから指定できます。これを実現するため、 ```FloatVectorProperty``` クラスのインスタンス化時に、目的に沿った値に応じて引数 ```subtype``` を指定しています。 ```subtype``` に指定可能な値とUIの例を以下に示します。
