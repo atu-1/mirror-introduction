@@ -113,7 +113,7 @@ Blenderはアプリケーション内で複数のエリアに分割すること�
 
 <div id="process"></div>
 
-|<div id="box">1</div>|左下のエリアのメニューバーの一番左のボタンから、*テキストエディター* をクリックします。|![ウィンドウ表示の変更 手順1](https://dl.dropboxusercontent.com/s/v56yihqny5qy83q/blender_change_window_1.png "ウィンドウ表示の変更 手順1")|
+|<div id="box">1</div>|左下のエリアのメニューの一番左のボタンから、*テキストエディター* をクリックします。|![ウィンドウ表示の変更 手順1](https://dl.dropboxusercontent.com/s/v56yihqny5qy83q/blender_change_window_1.png "ウィンドウ表示の変更 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -131,7 +131,7 @@ Blenderはアプリケーション内で複数のエリアに分割すること�
 
 <div id="process"></div>
 
-|<div id="box">3</div>|左上のエリアのメニューバーの一番左のボタンから、*Pythonコンソール* をクリックします。|![ウィンドウ表示の変更 手順3](https://dl.dropboxusercontent.com/s/owvn6git978ja7i/blender_change_window_3.png "ウィンドウ表示の変更 手順3")|
+|<div id="box">3</div>|左上のエリアのメニューの一番左のボタンから、*Pythonコンソール* をクリックします。|![ウィンドウ表示の変更 手順3](https://dl.dropboxusercontent.com/s/owvn6git978ja7i/blender_change_window_3.png "ウィンドウ表示の変更 手順3")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -161,7 +161,7 @@ Blenderのエリア設定は完了しましたが、このままBlenderを閉じ
 
 <div id="process"></div>
 
-|<div id="box">1</div>|*情報* エリアのメニューバーから、*ファイル* > *スタートアップファイルを保存* を実行します。|![Blenderの初期状態にする 手順1](https://dl.dropboxusercontent.com/s/kbro7t4evkim2au/blender_save_startup_file_1.png "Blenderの初期状態にする 手順1")|
+|<div id="box">1</div>|*情報* エリアのメニューから、*ファイル* > *スタートアップファイルを保存* を実行します。|![Blenderの初期状態にする 手順1](https://dl.dropboxusercontent.com/s/kbro7t4evkim2au/blender_save_startup_file_1.png "Blenderの初期状態にする 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -222,7 +222,7 @@ Blenderのエリア設定は完了しましたが、このままBlenderを閉じ
 
 Blenderはアドオン開発者やPythonスクリプトを実行したい人のために、テキストエディタを標準で備えています。
 
-エリアのメニューバーの一番左のボタンから、*テキストエディター* を選ぶだけでBlender付随のテキストエディタを使うことができます。なお、Blenderのエリア設定をすでに行っている方は、左下のウィンドウが *テキストエディター* です。
+エリアのメニューの一番左のボタンから、*テキストエディター* を選ぶだけでBlender付随のテキストエディタを使うことができます。なお、Blenderのエリア設定をすでに行っている方は、左下のウィンドウが *テキストエディター* です。
 
 <div id="column"></div>
 
@@ -389,7 +389,7 @@ $ /path/blender
 アドオンの開発を効率的に行うために、Blenderの環境を整える方法を紹介しました。ここで紹介した環境はあくまで一例ですので、必ずしも紹介した手順を踏む必要はありません。開発者によって、快適に開発を行える環境は異なると思いますので、試行錯誤しながら自分にあった環境を用意してください。
 
 
-<div id="space_s"></div>
+<div id="space_m"></div>
 
 
 <div id="point"></div>
