@@ -163,9 +163,9 @@
 |第2引数|プロパティ変数名|
 |第3引数（```text```）|表示文字列|
 
-本節のサンプルでは ```bpy.types.Scene``` にプロパティを登録したため、```context.scene``` を第1引数に指定します。第2引数には、 ```bpy.types.Scene``` に登録したプロパティ変数名を文字列で指定します。
+本節のサンプルでは ```bpy.types.Scene``` にプロパティを登録したため、```context.scene``` を第1引数に指定します。第2引数には、```bpy.types.Scene``` に登録したプロパティ変数名を文字列で指定します。
 
-[import:"add_prop"](../../sample_raw/src/chapter_02/sample_2-9.py)
+[import:"add_prop", unindent:"true"](../../sample_raw/src/chapter_02/sample_2-9.py)
 
 
 #### ボタンを一行に並べる
@@ -177,23 +177,23 @@
 [import:"arrange_column", unindent:"true"](../../sample_raw/src/chapter_02/sample_2-9.py)
 
 
-なお、```layout.row()``` 関数の引数に ```align=False``` を指定すると、ボタンとボタンの間に隙間が空くようにして配置されるようになります。以下のコードのように、 ```align=True``` を指定すると、この隙間がなくなります。
+なお、```layout.row()``` 関数の引数に ```align=False``` を指定すると、ボタンとボタンの間に隙間が空くようにして配置されるようになります。一方、以下のコードのように、 ```align=True``` を指定すると、この隙間がなくなります。
 
 [import:"arrange_column_align", unindent:"true"](../../sample_raw/src/chapter_02/sample_2-9.py)
 
 
-なお、```operator()``` の代わりに ```label()``` 、```prop()``` や ```menu()``` 関数を使うことによって、ラベル、プロパティやメニューを一行に並べて配置することができます。
+なお、```operator()``` の代わりに ```label()``` 関数、 ```prop()``` 関数や ```menu()``` 関数を使うことによって、ラベル、プロパティやメニューを一行に並べて配置することができます。
 
 #### ボタンを一列に並べる
 
-```layout.operator()``` 関数を複数回実行することでボタンを一列に配置することができますが、隙間が広いためこの隙間が気に入らない方もいると思います。隙間を縮めた状態でボタンを縦に並べるためには、```layout.column()``` 関数を使って列成分を取得し、取得した列成分に対して ```operator()``` 関数を使ってボタンを配置します。
+```layout.operator()``` 関数を複数回実行することでボタンを一列に配置することができますが、隙間が広く気に入らない方もいると思います。隙間を縮めた状態でボタンを縦に並べるためには、```layout.column()``` 関数を使って列成分を取得し、取得した列成分に対して ```operator()``` 関数を使ってボタンを配置します。
 
 本節のサンプルでは、以下のように3つのボタンを一列に並べています。
 
 [import:"arrange_row", unindent:"true"](../../sample_raw/src/chapter_02/sample_2-9.py)
 
 
-ボタン間の隙間を無くすために ```align=True``` を指定するところは、```layout.row()``` 関数と同様です。
+ボタン間の隙間を無くすために ```align=True``` を指定できる点は、```layout.row()``` 関数と同様です。
 
 [import:"arrange_row_align", unindent:"true"](../../sample_raw/src/chapter_02/sample_2-9.py)
 
