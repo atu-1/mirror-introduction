@@ -30,6 +30,9 @@
 *3Dビュー* エリアのメニューバーの *追加* > *メッシュ* > *ICO球* を実行した時の動作を確認します。
 
 
+<div id="space_x5l"></div>
+
+
 <div id="process_title"></div>
 
 ##### Work
@@ -43,9 +46,6 @@
 <div id="process_sep"></div>
 
 ---
-
-<div id="space_m"></div>
-
 
 <div id="process"></div>
 
