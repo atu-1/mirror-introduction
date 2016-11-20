@@ -49,7 +49,7 @@ Blenderが持つアドオンのインストール機能を用いて、アドオ�
 
 <div id="process"></div>
 
-|<div id="box">1</div>|*情報* エリアの *ファイル* > *ユーザ設定* を実行します。|![アドオンのインストール方法1 手順1](https://dl.dropboxusercontent.com/s/oqbezirt4qwlm87/install_1_use_default_add-on_installation_feature_1.png "アドオンのインストール方法1 手順1")|
+|<div id="box">1</div>|*情報* エリアの *ファイル* > *ユーザ設定...* を実行します。|![アドオンのインストール方法1 手順1](https://dl.dropboxusercontent.com/s/oqbezirt4qwlm87/install_1_use_default_add-on_installation_feature_1.png "アドオンのインストール方法1 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -76,7 +76,7 @@ Blenderが持つアドオンのインストール機能を用いて、アドオ�
 
 <div id="process"></div>
 
-|<div id="box">4</div>|ファイル選択画面でインストールするアドオンのソースコード（拡張子が  ```.py``` または ```.zip```）を選択し、 **ファイルからインストール** ボタンをクリックします。|![アドオンのインストール方法1 手順4](https://dl.dropboxusercontent.com/s/ptcm64jx4xzbfh9/install_1_use_default_add-on_installation_feature_4.png "アドオンのインストール方法1 手順4")|
+|<div id="box">4</div>|ファイル選択画面でインストールするアドオンのソースコード（拡張子が  ```.py``` または ```.zip```）を選択し、*ファイルからインストール* ボタンをクリックします。|![アドオンのインストール方法1 手順4](https://dl.dropboxusercontent.com/s/ptcm64jx4xzbfh9/install_1_use_default_add-on_installation_feature_4.png "アドオンのインストール方法1 手順4")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -103,7 +103,7 @@ Blenderにインストール済のアドオンが配置されているアドオ�
 
 <div id="process"></div>
 
-|<div id="box">1</div>|アドオンのソースコードが単一のファイルで構成される場合は```.py``` 、アドオンのソースコードが複数のファイルで構成される場合は ```__init__.py``` を置かれたディレクトリ一式をBlenderアドオン用フォルダに配置します。|![アドオンのインストール方法2 手順1](https://dl.dropboxusercontent.com/s/u9wc9fat2d8mcj9/install_2_deploy_to_blender_add-on_folder_1.png "アドオンのインストール方法2 手順1")|
+|<div id="box">1</div>|アドオンのソースコードが単一のファイルで構成される場合は```.py``` 、アドオンのソースコードが複数のファイルで構成される場合は ```__init__.py``` が置かれたディレクトリ一式を、Blenderアドオン用フォルダに配置します。|![アドオンのインストール方法2 手順1](https://dl.dropboxusercontent.com/s/u9wc9fat2d8mcj9/install_2_deploy_to_blender_add-on_folder_1.png "アドオンのインストール方法2 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -112,7 +112,7 @@ Blenderにインストール済のアドオンが配置されているアドオ�
 
 <div id="process"></div>
 
-|<div id="box">2</div>|Blenderを再起動するか、 *情報* エリアの *ファイル* > *ユーザ設定* 実行時に開くウィンドウから、 *アドオン* タブにある *更新* ボタンをクリックします。|![アドオンのインストール方法2 手順2](https://dl.dropboxusercontent.com/s/xcfm8zpp1aq7f4v/install_2_deploy_to_blender_add-on_folder_2.png "アドオンのインストール方法2 手順2")|
+|<div id="box">2</div>|Blenderを再起動するか、 *情報* エリアの *ファイル* > *ユーザ設定...* 実行時に開くウィンドウから、*アドオン* タブにある *更新* ボタンをクリックします。|![アドオンのインストール方法2 手順2](https://dl.dropboxusercontent.com/s/xcfm8zpp1aq7f4v/install_2_deploy_to_blender_add-on_folder_2.png "アドオンのインストール方法2 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -148,7 +148,7 @@ Blenderにインストール済のアドオンが配置されているアドオ�
 
 Blenderアドオン用フォルダに配置されているアップデートするアドオンのソースコードを直接置き換えることで、アドオンをアップデートすることができます。インストール時と同様、単一のファイルで構成されているか複数のファイルで構成されているかにかかわらず、アップデートすることができます。
 
-基本的には、インストールの方法2と同様の方法でアップデートできます。しかし、*情報* エリアの *ファイル* > *ユーザ設定* を実行した時に開くウィンドウから、*アドオン* タブにある *更新* ボタンをクリックしてもアップデートされない点に注意が必要です。このため、置き換えたソースコードをBlenderに反映するためには、**Blenderを再起動してアップデートを完了** する必要があります。
+基本的には、インストールの方法2と同様の方法でアップデートできます。しかし、*情報* エリアの *ファイル* > *ユーザ設定...* を実行した時に開くウィンドウから、*アドオン* タブにある *更新* ボタンをクリックしてもアップデートされない点に注意が必要です。このため、置き換えたソースコードをBlenderに反映するためには、**Blenderを再起動してアップデートを完了** する必要があります。
 
 
 ### 方法3: Blenderの『Reload Scripts』機能を利用する
@@ -226,7 +226,7 @@ Blender のアドオンアンインストール機能を使った、アドオン
 
 <div id="process"></div>
 
-|<div id="box">1</div>|*情報* エリアの *ファイル* > *ユーザ設定* を実行します。|![アドオンのアンインストール方法1 手順1](https://dl.dropboxusercontent.com/s/25fooodw4luzou7/uninstall_1_use_default_add-on_uninstallation_feature_1.png "アドオンのアンインストール方法1 手順1")|
+|<div id="box">1</div>|*情報* エリアの *ファイル* > *ユーザ設定...* を実行します。|![アドオンのアンインストール方法1 手順1](https://dl.dropboxusercontent.com/s/25fooodw4luzou7/uninstall_1_use_default_add-on_uninstallation_feature_1.png "アドオンのアンインストール方法1 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -284,7 +284,7 @@ Blenderアドオン用フォルダからソースコードを直接削除し、�
 
 <div id="process"></div>
 
-|<div id="box">1</div>|アドオンのソースコードの場所が分からない場合は、 *Blenderユーザ設定* ウィンドウの *アドオン* タブから確認します。|![アドオンのアンインストール方法2 手順1](https://dl.dropboxusercontent.com/s/4tonmdusbfvobqv/uninstall_2_delete_sources_on_blender_add-on_folder_1.png "アドオンのアンインストール方法2 手順1")|
+|<div id="box">1</div>|アドオンのソースコードの場所が分からない場合は、*ユーザー設定* ウィンドウの *アドオン* タブから確認します。|![アドオンのアンインストール方法2 手順1](https://dl.dropboxusercontent.com/s/4tonmdusbfvobqv/uninstall_2_delete_sources_on_blender_add-on_folder_1.png "アドオンのアンインストール方法2 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -311,7 +311,7 @@ Blenderアドオン用フォルダからソースコードを直接削除し、�
 
 <div id="process_noimg"></div>
 
-|<div id="box">4</div>|ソースコードを削除します。アドオンが複数のソースコードで構成されている場合は、 *ファイル* にはディレクトリではなく ```__init__.py``` のファイルパスが表示されます。完全にアンインストールするためには、 ```__init__.py``` が置かれたディレクトリごと削除する必要があります。|
+|<div id="box">4</div>|ソースコードを削除します。<br>アドオンが複数のソースコードで構成されている場合は、 *ファイル* にはディレクトリではなく ```__init__.py``` のファイルパスが表示されます。完全にアンインストールするためには、 ```__init__.py``` が置かれたディレクトリごと削除する必要があります。|
 |---|---|
 
 <div id="process_start_end"></div>
