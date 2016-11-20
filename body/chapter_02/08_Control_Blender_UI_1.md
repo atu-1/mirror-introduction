@@ -240,6 +240,9 @@ BlenderのUIを変更するためには大変な労力が必要だと思って�
 本節のサンプルでは文字列を追加しないため、引数 ```text``` に空の文字列、引数 ```icon``` にプラグインのアイコンIDを指定しています。
 
 
+<div id="space_ss"></div>
+
+
 ### メニューへ項目を追加する順番を制御する
 
 [2-1節](01_Basic_of_Add-on_Development.md) では、```bpy.types.INFO_MT_mesh_add.append()``` 関数を用いてメニューの末尾へ項目を追加していました。
