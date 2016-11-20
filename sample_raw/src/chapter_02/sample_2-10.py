@@ -82,6 +82,7 @@ class ShowDialogMenu(bpy.types.Operator):
 
     def invoke(self, context, event):
         scene = context.scene
+        wm = context.window_manager
 
         self.prop_int = scene.cm_prop_int
         self.prop_float = scene.cm_prop_float
@@ -89,7 +90,7 @@ class ShowDialogMenu(bpy.types.Operator):
         self.prop_floatv = scene.cm_prop_floatv
 
         # ダイアログメニュー呼び出し
-        return context.window_manager.invoke_props_dialog(self)
+        return wm.invoke_props_dialog(self)
 //! [ops_show_dialog_menu]
 
 
