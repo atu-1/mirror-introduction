@@ -82,7 +82,6 @@ BlenderのUIを変更するためには大変な労力が必要だと思って�
   * 追加したタブは、*オブジェクトモード* の時かつ、最低1つでもオブジェクトが選択されている時のみ表示される
 
 <div id="centerize_img"></div>
-
 ![アドオンの仕様](https://dl.dropboxusercontent.com/s/ial27tu1ousllmx/add-on_spec.png "アドオンの仕様")
 
 * *3Dビュー* エリアのメニューである *オブジェクト* の先頭に *項目1* 、末尾に *項目2* を追加する
