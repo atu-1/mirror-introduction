@@ -25,7 +25,7 @@
 [1-2節](../chapter_01/02_Use_Blender_Add-on.md) のBlenderアドオン用フォルダに、ディレクトリ名 ```sample_2-2``` のディレクトリを作成します。
 [1-5節](../chapter_01/05_Install_own_Add-on.md) を参考にして以下のソースコードを入力し、作成したディレクトリの下にファイル名をそれぞれ ```__init__.py``` , ```enlarge_object.py``` , ```reduce_object.py``` として保存してください。
 
-<div id="space_x5l"></div>
+<div id="space_x6l"></div>
 
 ### \_\_init\_\_.py
 
