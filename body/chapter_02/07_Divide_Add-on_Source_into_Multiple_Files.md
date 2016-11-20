@@ -32,7 +32,7 @@
 [import](../../sample/src/chapter_02/sample_2-7/__init__.py)
 
 
-<div id="space_x3l"></div>
+<div id="space_x5l"></div>
 
 ### enlarge_object.py
 

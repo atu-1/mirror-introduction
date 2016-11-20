@@ -891,10 +891,12 @@
 
 
 @mixin centerize_img () {
-    #centerize_img + img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+    #centerize_img + p {
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 }
 
