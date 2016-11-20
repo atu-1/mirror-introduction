@@ -306,7 +306,7 @@
 ```
 
 
-<div id="space_xs"></div>
+<div id="space_s"></div>
 
 
 ## ソースコードの解説
