@@ -314,6 +314,9 @@ Blenderに限らず、UIはボタンやメニューなど数多くの部品に�
 |グループ化|```layout.box()```|
 
 
+<div id="space_xs"></div>
+
+
 <div id="point"></div>
 
 ### ポイント
