@@ -70,7 +70,7 @@ conchan-akita 様, sariew 様
 
 ## 筆者について
 
-2014年より同人サークル『COLORFUL PICO』の代表として活動中。『COLORFUL PICO』はゲームやアプリの開発を行うサークルであるが、開発で得たノウハウをWeb上で公開したり同人誌として頒布する活動も行っている。最近はBlenderのアドオン開発に没頭しているため、本来のサークルの目的であるゲームやアプリ開発が滞っている。ゲームやアプリの開発が趣味だが、DTMや自作PCにも興味を持っている。
+2014年より同人サークル『COLORFUL PICO』の代表として活動中。『COLORFUL PICO』はゲームやアプリの開発を行うサークルであるが、開発で得たノウハウをWeb上で公開したり同人誌として頒布する活動も行っている。最近はBlenderのアドオン開発に没頭しているため、本来のサークルの目的であるゲームやアプリ開発が滞っている。DTMや自作PCにも興味がある。
 
 
 ### ホームページや連絡先
@@ -98,8 +98,6 @@ conchan-akita 様, sariew 様
 
 <div id="space_page"></div>
 
-
-<div id="space_page"></div>
 
 
 ![背表紙](https://dl.dropboxusercontent.com/s/v6zq4lyp06wo6v7/back_cover.png)
