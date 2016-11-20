@@ -2,7 +2,7 @@
 
 <div id="sect_title_text"></div>
 
-# アドオン開発の基礎
+# アドオン開発の基礎を<br>身につける
 
 <div id="preface"></div>
 
@@ -30,7 +30,7 @@
 *3Dビュー* エリアのメニューバーの *追加* > *メッシュ* > *ICO球* を実行した時の動作を確認します。
 
 
-<div id="space_x5l"></div>
+<div id="space_x8l"></div>
 
 
 <div id="process_title"></div>
