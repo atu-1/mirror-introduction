@@ -31,7 +31,7 @@
 
 ### スクリプト実行ログの表示
 
-Blenderの初期状態では隠れてしまっていますが、*情報* エリアには、アドオンの実行結果やエラーを表示する機能（以降、**スクリプト実行ログ** と呼びます）があります。
+Blenderの初期状態では隠れてしまっていますが、*情報* エリアには、アドオンの実行結果やエラーを表示する機能（以降、スクリプト実行ログと呼びます）があります。
 
 スクリプト実行ログを表示させるための手順を以下に示します。
 
@@ -57,12 +57,12 @@ Blenderの初期状態では隠れてしまっていますが、*情報* エリ�
 
 ---
 
-スクリプト実行ログはアドオン開発時に大変役立つ機能ですので、アドオン開発中は常に表示しておくとよいと思います。
+**スクリプト実行ログはアドオン開発時に大変役立つ機能ですので、アドオン開発中は常に表示しておく** とよいと思います。
 
 
 ### エリアの分割
 
-Blenderはアプリケーション内で複数のエリアに分割することができます。エリアを分割することで、他のエリアで作業したい時に毎回エリアを変更する必要がなくなります。
+Blenderはアプリケーション内で複数のエリアに分割することができます。エリアを分割することで、他のエリアで作業したい時に毎回エリアを変更する必要が無くなります。
 
 アドオンの開発を行いやすくするため、ここでは以下のようにエリアを分割します。
 
@@ -158,7 +158,7 @@ Blenderのエリア設定は完了しましたが、このままBlenderを閉じ
 
 <div id="process"></div>
 
-|<div id="box">1</div>|*情報* エリアのメニューバーから、 *ファイル* > *スタートアップファイルを保存* を実行します。|![Blenderの初期状態にする 手順1](https://dl.dropboxusercontent.com/s/kbro7t4evkim2au/blender_save_startup_file_1.png "Blenderの初期状態にする 手順1")|
+|<div id="box">1</div>|*情報* エリアのメニューバーから、*ファイル* > *スタートアップファイルを保存* を実行します。|![Blenderの初期状態にする 手順1](https://dl.dropboxusercontent.com/s/kbro7t4evkim2au/blender_save_startup_file_1.png "Blenderの初期状態にする 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -167,7 +167,7 @@ Blenderのエリア設定は完了しましたが、このままBlenderを閉じ
 
 <div id="process"></div>
 
-|<div id="box">2</div>|確認ポップアップが表示されるので、 *スタートアップファイルを保存* をクリックします。|![Blenderの初期状態にする 手順2](https://dl.dropboxusercontent.com/s/pm74e5k1atjgu0a/blender_save_startup_file_2.png "Blenderの初期状態にする 手順2")|
+|<div id="box">2</div>|確認ポップアップが表示されるので、*スタートアップファイルを保存* をクリックします。|![Blenderの初期状態にする 手順2](https://dl.dropboxusercontent.com/s/pm74e5k1atjgu0a/blender_save_startup_file_2.png "Blenderの初期状態にする 手順2")|
 |---|---|---|
 
 <div id="process_start_end"></div>
@@ -193,7 +193,7 @@ Blenderのエリア設定は完了しましたが、このままBlenderを閉じ
 
 <div id="process"></div>
 
-|<div id="box">2</div>|確認ポップアップが表示されるので、 *初期設定を読み込む* をクリックします。|![初期設定を読み込む 手順2](https://dl.dropboxusercontent.com/s/sc2dvqqw19twg12/blender_read_factory_setting_2.png "初期状態を読み込む 手順2")|
+|<div id="box">2</div>|確認ポップアップが表示されるので、*初期設定を読み込む* をクリックします。|![初期設定を読み込む 手順2](https://dl.dropboxusercontent.com/s/sc2dvqqw19twg12/blender_read_factory_setting_2.png "初期状態を読み込む 手順2")|
 |---|---|---|
 
 <div id="process_start_end"></div>
@@ -220,8 +220,7 @@ Blenderはアドオン開発者やPythonスクリプトを実行したい人の�
 
 <div id="column"></div>
 
-Blender付随の *テキストエディター* は、*テキストエディター* で開いているソースコードをBlenderで実行できるという、他のテキストエディタにはない機能があります。  
-簡単なPythonスクリプトを試したい時などに重宝するエディタです。
+Blender付随の *テキストエディター* は、*テキストエディター* で開いているソースコードをBlenderで実行できるという、他のテキストエディタにはない機能があります。  簡単なPythonスクリプトを試したい時などに重宝するエディタです。
 
 ### Vim
 
@@ -281,7 +280,7 @@ WindowsのコマンドプロンプトからBlenderを起動する手順を以下
 
 <div id="process_noimg"></div>
 
-|<div id="box">2</div>|以下のコマンドを実行します。<br>（blender.exeが置かれているパスが ```C:\path\blender.exe``` であると仮定します。）|
+|<div id="box">2</div>|以下のコマンドを実行します。<br>（実行ファイル ```blender.exe``` が置かれているパスが ```C:\path\blender.exe``` であると仮定します。）|
 |---|---|
 
 ```dos
@@ -320,7 +319,7 @@ MacのターミナルからBlenderを起動する手順を以下に示します�
 
 <div id="process_noimg"></div>
 
-|<div id="box">2</div>| 以下のコマンドを実行します。<br>（Blender.appが置かれているパスが ```/path/Blender.app``` であると仮定します。）|
+|<div id="box">2</div>| 以下のコマンドを実行します。<br>（実行ファイル ```Blender.app``` が置かれているパスが ```/path/Blender.app``` であると仮定します。）|
 |---|---|
 
 ```sh
@@ -359,7 +358,7 @@ LinuxのターミナルからBlenderを起動する手順を以下に示しま�
 
 <div id="process_noimg"></div>
 
-|<div id="box">2</div>| 以下のコマンドを実行します。<br>（実行ファイルblenderが置かれているパスが ```/path/blender``` であると仮定します。）|
+|<div id="box">2</div>| 以下のコマンドを実行します。<br>（実行ファイル ```blender``` が置かれているパスが ```/path/blender``` であると仮定します。）|
 |---|---|
 
 ```sh

@@ -110,7 +110,7 @@ https://github.com/nutti/Introduction-to-Add-on-Development-in-Blender/tree/v2/s
 * 3DCGの知識
   * 基本用語（メッシュ、UV座標、面、法線など）
 
-<div id="space_m"></div>
+<div id="space_l"></div>
 
 ### 推奨知識
 
@@ -156,3 +156,5 @@ https://www.gitbook.com/book/nutti/introduction-to-add-on-development-in-blender
 
 https://github.com/nutti/Introduction-to-Add-on-Development-in-Blender/issues
 https://www.gitbook.com/book/nutti/introduction-to-add-on-development-in-blender/discussions
+
+<div id="page_page"></div>
