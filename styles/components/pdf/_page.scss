@@ -778,6 +778,13 @@
     }
 }
 
+@mixin space_x6l($space) {
+    #space_x6l {
+        display: block;
+        height: $space;
+    }
+}
+
 @mixin space_x8l($space) {
     #space_x8l {
         display: block;
@@ -911,6 +918,7 @@
         @include space_xxxl(240px);
         @include space_x4l(280px);
         @include space_x5l(320px);
+        @include space_x6l(420px);
         @include space_x8l(600px)
         @include space_page(1500px);
         @include strong(1.04em);

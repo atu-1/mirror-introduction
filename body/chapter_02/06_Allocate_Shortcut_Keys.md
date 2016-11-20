@@ -19,7 +19,7 @@
 [import](../../sample/src/chapter_02/sample_2-6.py)
 
 
-<div id="space_m"></div>
+<div id="space_l"></div>
 
 
 ## アドオンを使用する
