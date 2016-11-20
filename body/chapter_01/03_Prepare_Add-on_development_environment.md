@@ -181,6 +181,9 @@ Blenderのエリア設定は完了しましたが、このままBlenderを閉じ
 
 なお以下の手順を踏むことで、Blenderをダウンロードした直後の状態に戻すことができます。
 
+
+<div id="space_xl"></div>
+
 <div id="process_title"></div>
 
 ##### Work
