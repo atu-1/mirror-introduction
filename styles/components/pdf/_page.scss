@@ -890,6 +890,14 @@
 }
 
 
+@mixin centerize_img () {
+    #centerize_img + img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .page {
     .section {
         @include common(0.65em, 0.8);
