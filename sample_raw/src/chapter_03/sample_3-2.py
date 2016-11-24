@@ -106,7 +106,7 @@ class SpecialObjectEditMode(bpy.types.Operator):
         if self.edit_opt == EditOption['NONE']:
             return {'RUNNING_MODAL'}
 
-        # オブジェクトに変換処理を適用
+        # オブジェクトに変形処理を適用
         # 移動
         if self.edit_type == EditType['TRANSLATE']:
             value = Vector((0.0, 0.0, 0.0))
