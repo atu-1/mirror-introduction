@@ -72,6 +72,7 @@ class SpecialObjectEditMode(bpy.types.Operator):
             return {'FINISHED'}
 //! [exit_modal_mode]
 
+//! [check_key_state]
         # 処理するキーイベントのリスト
         # 要素1：キーの識別子
         # 要素2：状態を格納するメンバ変数名
@@ -97,6 +98,7 @@ class SpecialObjectEditMode(bpy.types.Operator):
                 # （キー：値）＝（メンバ変数名：値）として保存されている
                 self.__dict__[ev_key[1]] = self.__change_state(
                     event.value, ev_key[2], ev_key[3])
+//! [check_key_state]
 
         # オブジェクト変換処理のための条件が揃っていない時は何もしない
         if self.edit_type == EditType['NONE']:
