@@ -34,7 +34,7 @@ BlenderはPythonからOpenGLへアクセスするためのAPIも用意してい�
 
 [1-5節](../chapter_01/05_Install_own_Add-on.md) を参考にして以下のソースコードをテキスト・エディタに入力し、ファイル名 ```sample_3-3.py``` として保存してください。
 
-[import](../../sample/src/chapter_03/sample_3-3.py)
+[import](../../sample/src/chapter_03/sample_3-4.py)
 
 ## アドオンを使用する
 
@@ -206,7 +206,7 @@ def handle_add(self, context):
 
 本節のサンプルでは、第1引数に ```RenderFigure.render``` 、第3引数に ```WINDOW``` を指定しています。第2引数には、自身のクラスインスタンスと実行時コンテキストを渡しています。
 
-```bpy.types.SpaceView3D.draw_handler_add()``` 関数は戻り値としてハンドルを返します。ハンドルはメンバ変数 ```__handle``` に保存し、描画関数の登録解除時に利用します。
+```bpy.types.SpaceView3D.draw_handler_add()``` 関数は戻り値としてハンドルを返します。ハンドルはクラス変数 ```__handle``` に保存し、描画関数の登録解除時に利用します。
 
 ### 図形を描画する関数を作成する
 

@@ -64,18 +64,16 @@ class SpecialObjectEditMode(bpy.types.Operator):
         if context.area:
             context.area.tag_redraw()
 
-        # 起動していない場合は終了
-        if props.is_special_mode is False:
-            return {'FINISHED'}
-
+//! [exit_modal_mode]
         # キーボードのQキーが押された場合は、特殊オブジェクト編集モードを終了
         if event.type == 'Q' and event.value == 'PRESS':
             props.is_special_mode = False
             print("サンプル3-2: 通常モードへ移行しました。")
-            return {'RUNNING_MODAL'}
+            return {'FINISHED'}
+//! [exit_modal_mode]
 
         # 処理するキーイベントのリスト
-        # 要素1：キーコード（event.type）
+        # 要素1：キーの識別子
         # 要素2：状態を格納するメンバ変数名
         # 要素3：'PRESS'イベント発生時の状態遷移先
         # 要素4：'PRESS'以外のイベント発生時の状態遷移先
@@ -95,7 +93,7 @@ class SpecialObjectEditMode(bpy.types.Operator):
         # キーボードのキーイベントが発生しているかを確認し、現在の状態を更新
         for ev_key in ev_key_list:
             if event.type == ev_key[0]:
-                # self.__dict__には、クラスのメンバ変数の一覧が、
+                # self.__dict__には、クラスのメンバ変数の一覧が、ディクショナリ型
                 # （キー：値）＝（メンバ変数名：値）として保存されている
                 self.__dict__[ev_key[1]] = self.__change_state(
                     event.value, ev_key[2], ev_key[3])
@@ -107,7 +105,6 @@ class SpecialObjectEditMode(bpy.types.Operator):
             return {'RUNNING_MODAL'}
         if self.edit_opt == EditOption['NONE']:
             return {'RUNNING_MODAL'}
-
 
         # オブジェクトに変換処理を適用
         # 移動
