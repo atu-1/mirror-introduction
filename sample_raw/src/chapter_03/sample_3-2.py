@@ -38,11 +38,13 @@ class SpecialObjectEditMode(bpy.types.Operator):
     bl_label = "特殊オブジェクト編集モード"
     bl_description = "特殊オブジェクト編集モードへ移行します"
 
-    # メンバ変数の設定
+//! [define_instance_variable]
+    # インスタンス変数の設定
     def __init__(self):
         self.edit_type = EditType['NONE']
         self.edit_axis = EditAxis['NONE']
         self.edit_opt = EditOption['NONE']
+//! [define_instance_variable]
 
     # 発生したイベントをもとに、次の状態を返却するプライベートなメンバ関数
     # 本来であれば本処理を工夫し、本書のコラムに書いたバグを無くすべきだが、
@@ -75,7 +77,7 @@ class SpecialObjectEditMode(bpy.types.Operator):
 //! [check_key_state]
         # 処理するキーイベントのリスト
         # 要素1：キーの識別子
-        # 要素2：状態を格納するメンバ変数名
+        # 要素2：オブジェクトの変形処理の状態を格納するためのインスタンス変数名
         # 要素3：'PRESS'イベント発生時の状態遷移先
         # 要素4：'PRESS'以外のイベント発生時の状態遷移先
         ev_key_list = (
@@ -94,8 +96,8 @@ class SpecialObjectEditMode(bpy.types.Operator):
         # キーボードのキーイベントが発生しているかを確認し、現在の状態を更新
         for ev_key in ev_key_list:
             if event.type == ev_key[0]:
-                # self.__dict__には、クラスのメンバ変数の一覧が、ディクショナリ型
-                # （キー：値）＝（メンバ変数名：値）として保存されている
+                # self.__dict__には、クラスのインスタンス変数の一覧が、ディクショナリ型
+                # （キー：値）＝（インスタンス変数名：値）として保存されている
                 self.__dict__[ev_key[1]] = self.__change_state(
                     event.value, ev_key[2], ev_key[3])
 //! [check_key_state]

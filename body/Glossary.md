@@ -102,5 +102,3 @@ Blenderは3DビューやUVエディターなどの機能ごとに複数の領域
 モーダルモード中は、```context.window_manager.modal_handler_add()``` 関数に指定されたモーダルクラスの ```modal()``` メソッドが、イベント発生の度に呼ばれ続けます。
 
 モーダルモードを終了するためには、```modal()``` メソッドが ```{'FINISHED'}``` または ```{'CANCELLED'}``` を返す必要があります。
-
-<div id="space_page"></div>
