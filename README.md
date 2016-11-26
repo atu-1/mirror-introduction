@@ -150,7 +150,7 @@ https://github.com/nutti/Introduction-to-Add-on-Development-in-Blender/issues
 https://www.gitbook.com/book/nutti/introduction-to-add-on-development-in-blender/discussions
 
 
-## 本書の内容に関する問い合わせについて
+## 本書の内容に関するお問い合わせについて
 
 本書の内容に関する問い合わせについては、以下のサポートページや [おわりに](body/Conclusion.md) に記載している連絡先から問い合わせください。
 

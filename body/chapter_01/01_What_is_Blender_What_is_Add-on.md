@@ -83,3 +83,5 @@ BlenderはPythonのスクリプトエンジンを内蔵し、Python向けのAPI�
 * Blenderは複数のプラットフォームで動作することを前提に作られているため、Windows/Mac/Linux上で動作する
 * Blenderは商用レベルの機能を持つ3DCG制作ソフトであると言われることがある一方、他の3DCG制作ソフトとは一風変わったUIを持つ。UIが気に入らなければユーザはUIを適宜変更することができる
 * Blenderが提供するPython向けのAPIを利用することで、Blenderの拡張機能（アドオン）を作成することができる
+
+<div id="space_page"></div>

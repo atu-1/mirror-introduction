@@ -166,6 +166,9 @@ Blenderのエリア設定は完了しましたが、このままBlenderを閉じ
 
 ---
 
+<div id="space_xs"><div>
+
+
 <div id="process"></div>
 
 |<div id="box">2</div>|確認ポップアップが表示されるので、*スタートアップファイルを保存* をクリックします。|![Blenderの初期状態にする 手順2](https://dl.dropboxusercontent.com/s/pm74e5k1atjgu0a/blender_save_startup_file_2.png "Blenderの初期状態にする 手順2")|

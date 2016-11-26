@@ -455,6 +455,8 @@ Blenderの機能の中には、実行する前に処理を実行するか中断�
 
 [import:"show_search_popup", unindent:"true"](../../sample_raw/src/chapter_02/sample_2-10.py)
 
+<div id="space_s"></div>
+
 ## まとめ
 
 本節では、Blenderが提供するUIをアドオンから呼び出す方法について説明しました。
