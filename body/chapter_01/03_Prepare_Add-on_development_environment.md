@@ -166,7 +166,8 @@ Blenderのエリア設定は完了しましたが、このままBlenderを閉じ
 
 ---
 
-<div id="space_l"><div>
+
+<div id="space_xxl"><div>
 
 
 <div id="process"></div>
