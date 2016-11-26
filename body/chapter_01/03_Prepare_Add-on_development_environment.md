@@ -153,7 +153,7 @@ Blenderはアプリケーション内で複数のエリアに分割すること�
 Blenderのエリア設定は完了しましたが、このままBlenderを閉じてしまうと次にBlenderを起動した時に初期状態に戻ってしまいます。そこで以下の手順に従い、Blenderが起動した時にエリア設定がすでに終わっている状態で起動するようにします。
 
 
-<div id="space_x6l"><div>
+<div id="space_x8l"><div>
 
 
 <div id="process_title"></div>

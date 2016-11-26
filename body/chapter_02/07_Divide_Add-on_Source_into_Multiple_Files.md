@@ -136,6 +136,7 @@ from . import reduce_object
 
 ```enlarge_object.py``` には ```EnlargeObject``` クラス、 ```reduce_object.py``` には ```ReduceObject``` クラスが記載されています。コードの内容は、 [2-1節](../chapter_02/01_Basic_of_Add-on_Development.md) と同じであるため、ここでは説明を省略します。
 
+<div id="space_s"></div>
 
 ## まとめ
 
