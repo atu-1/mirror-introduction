@@ -275,7 +275,7 @@ Macでショートカットキーを利用するためには、Macのショー�
 
 ### ポイント
 
-<div id="space_xs"></div>
+<div id="space_s"></div>
 
 <div id="point_item"></div>
 

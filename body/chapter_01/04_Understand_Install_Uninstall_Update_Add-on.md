@@ -37,7 +37,8 @@ https://github.com/nutti/Mouse-Click-Merge/releases/download/v0.3/Mouse-Click-Me
 * Blenderのアドオンインストール機能を用いる
 * Blenderアドオン用フォルダにソースコードを直接配置する
 
-<div id="space_s"></div>
+
+<div id="space_m"></div>
 
 ### 方法1: Blenderのアドオンインストール機能を用いる
 
