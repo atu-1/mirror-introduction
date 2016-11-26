@@ -533,7 +533,7 @@ ICO球を3Dビューエリア上に生成するアドオンを作成し、アド
 * アドオンの処理は、```bpy.types.Operation``` クラスを継承したオペレータクラスの ```execute()``` メソッドに記述する
 * ```register()``` 関数はアドオン有効化時に呼ばれる関数であり、モジュールの登録やメニューの構築を行う処理を記述する
 
-<div id="space_xs"></div>
+<div id="space_s"></div>
 
 <div id="point_item"></div>
 
