@@ -81,7 +81,7 @@ conchan-akita 様, sariew 様
 |---|---|
 |Mail|nutti.metro@gmail.com |
 |Blog|http://colorful-pico.hatenablog.jp |
-|Twitter|@nutti__（https://twitter.com/nutti__） |
+|Twitter|@nutti__　（https://twitter.com/nutti__） |
 |Google+|https://plus.google.com/100058529622539760372 |
 |GitHub|https://github.com/nutti |
 |GitBook|https://www.gitbook.com/@nutti |
