@@ -96,11 +96,11 @@
 
 タイマイベントを扱うためには、タイマを登録する必要があります。
 
-タイマの登録処理は、次に示す ```handle_add()``` スタティックメソッドで行っています。```handle_add()``` は関数でも問題はありませんが、関連する処理をクラスとして1つにまとめるため、本節のサンプルではスタティックメソッドとして定義しています。
+タイマの登録処理は、次に示す ```__handle_add()``` メソッドで行っています。
 
-[import:"add_timer", unindent:"true"](../../sample/src/chapter_03/sample_3-3.py)
+[import:"add_timer", unindent:"true"](../../sample_raw/src/chapter_03/sample_3-3.py)
 
-タイマの登録は、```context.window_manager.event_timer_add()``` 関数で行っています。```context.window_manager.event_timer_add()``` 関数は次に示す引数を取り、戻り値としてタイマのハンドラを返します。戻り値として返されたハンドラはタイマの登録を解除する時に使用するため、クラス変数 ```timer``` に保存します。
+タイマの登録は、```context.window_manager.event_timer_add()``` 関数で行っています。```context.window_manager.event_timer_add()``` 関数は次に示す引数を取り、戻り値としてタイマのハンドラを返します。戻り値として返されたハンドラはタイマの登録を解除する時に使用するため、インスタンス変数 ```timer``` に保存します。
 
 |引数|値の意味|
 |---|---|
@@ -109,18 +109,18 @@
 
 本節のサンプルでは第1引数に ```0.1``` を指定することで、タイマイベントを0.1秒ごとに発生させています。第2引数には、作業時間の測定を開始した時に押したボタンが存在するウィンドウにタイマイベントを発生させたいため、```context.window``` を指定します。
 
-最後にモーダルモードへ移行する処理を行っていますが、必ずしも ```handle_add()``` スタティックメソッドで行う必要はありません。```handle_add()``` スタティックメソッド自体が ```invoke()``` メソッドから呼び出されているので、[3-1節](01_Handle_Mouse_Click_Event.md) や [3-2節](02_Handle_Keyboard_Event.md) と同様、```invoke()``` メソッドの処理内で ```context.window_manager.modal_handler_add()``` 関数を呼んでモーダルモードへ移行しても良いです。
+最後にモーダルモードへ移行する処理を行っていますが、必ずしも ```__handle_add()``` メソッドで行う必要はありません。```__handle_add()``` メソッド自体が ```invoke()``` メソッドから呼び出されているので、[3-1節](01_Handle_Mouse_Click_Event.md) や [3-2節](02_Handle_Keyboard_Event.md) と同様、```invoke()``` メソッドの処理内で ```context.window_manager.modal_handler_add()``` 関数を呼んでモーダルモードへ移行しても良いです。
 
 
 ### タイマの登録を解除
 
 タイマを登録すると、登録を解除するまでタイマイベントを送り続けます。このため、タイマが不要になったら登録を解除する必要があります。
 
-タイマの登録解除処理は、次に示す ```handle_remove()``` スタティックメソッドで行っています。
+タイマの登録解除処理は、次に示す ```__handle_remove()``` メソッドで行っています。
 
-[import:"remove_timer", unindent:"true"](../../sample/src/chapter_03/sample_3-3.py)
+[import:"remove_timer", unindent:"true"](../../sample_raw/src/chapter_03/sample_3-3.py)
 
-タイマの登録解除は ```context.window_manager.event_timer_remove()``` 関数で行いますが、引数には ```context.window_manager.modal_handler_add()``` 関数の戻り値として返されたタイマのハンドラを渡す必要があります。本節のサンプルでは、タイマのハンドラを保存したクラス変数 ```timer``` を引数に渡しています。
+タイマの登録解除は ```context.window_manager.event_timer_remove()``` 関数で行いますが、引数には ```context.window_manager.modal_handler_add()``` 関数の戻り値として返されたタイマのハンドラを渡す必要があります。本節のサンプルでは、タイマのハンドラを保存したインスタンス変数 ```timer``` を引数に渡しています。
 
 登録解除後のタイマのハンドラは、測定を再開する時のために ```None``` を代入します。
 
@@ -131,7 +131,7 @@
 
 タイマイベントが発生すると、```modal()``` メソッドが呼ばれますが、[3-1節](01_Handle_Mouse_Click_Event.md) や [3-2節](02_Handle_Keyboard_Event.md) で見てきたように、```modal()``` メソッドはキーボードやマウスのイベントが発生した時にも呼ばれます。このため、作業中にマウスやキーボードを使っていると、常にデータベースの更新を行う無駄な処理が発生します。そこで次のようにして、発生したイベントがタイマイベントによるものでなければ、```{'PASS_THROUGH'}``` を返すことでマウスやキーボードからのイベントが発生した時にデータベースを更新しないようにします。
 
-[import:"handle_timer_event", unindent:"true"](../../sample/src/chapter_03/sample_3-3.py)
+[import:"handle_timer_event", unindent:"true"](../../sample_raw/src/chapter_03/sample_3-3.py)
 
 最後に、```__update_db()``` メソッドを呼びだしてデータベースを更新します。
 
@@ -140,7 +140,7 @@
 
 作業時間の測定結果を保存しているデータベースを更新する処理は、```__update_db()``` メソッドで行います。
 
-[import:"update_db", unindent:"true"](../../sample/src/chapter_03/sample_3-3.py)
+[import:"update_db", unindent:"true"](../../sample_raw/src/chapter_03/sample_3-3.py)
 
 最初に、すべてのメッシュ型オブジェクトを取得しています。Blender上のオブジェクトには次のような型がありますが、本節のサンプルではメッシュ型のオブジェクトを作業時間の測定対象としています。このため、```obj.type == 'MESH'``` のオブジェクトの名前（```obj.name```）のみを取得しています。
 
@@ -173,7 +173,7 @@
 
 前回タイマイベントが呼ばれた時からの時間の差分は、```__calc_delta()``` メソッドで取得します。
 
-[import:"calc_delta", unindent:"true"](../../sample/src/chapter_03/sample_3-3.py)
+[import:"calc_delta", unindent:"true"](../../sample_raw/src/chapter_03/sample_3-3.py)
 
 現在時刻を取得するため、```datetime``` モジュールを利用します。本節のサンプルでは処理を単純化するため、タイマイベントが前回発生した時から今回タイマイベントが発生するまでにオブジェクトやモードが変更された場合は、計測した値は無効としています。
 
