@@ -52,7 +52,6 @@
 |<div id="box">1</div>|*3Dビュー* エリアのプロパティパネルの *テキスト描画* に配置されている *開始* ボタンを押します。|![3-5節 アドオンの使用 手順1](https://dl.dropboxusercontent.com/s/bsvlf2uu2qfcuba/use_add-on_1.png "3-5節 アドオンの使用 手順1")|
 |---|---|---|
 
-https://dl.dropboxusercontent.com/s/bsvlf2uu2qfcuba/use_add-on_1.png
 
 <div id="process_sep"></div>
 
