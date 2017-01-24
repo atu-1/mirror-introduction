@@ -200,6 +200,10 @@ IT用語でロケールとは、言語や国・地域ごとに異なる表記方
 
 自動翻訳関数 ```bpy.app.translations.pgettext()``` の引数には、翻訳辞書に登録されている表示したい文字列のキー文字列を指定します。上記の例では、キーに ```"Sample3-7: Enabled add-on 'Sample3-7'"``` を指定することで、ロケールが ```"en_US"``` の場合は ```"Sample3-7: Enabled add-on 'Sample3-7'"``` が、```"ja_JP"``` の場合は ```"サンプル3-7: アドオン「サンプル3-7」が有効化されました。"``` が戻り値として返ってきます。このため、ロケールが変更された時に自動的に文字列が切り替えられるようになり、翻訳が完了します。
 
+基本的には ```bpy.app.translations.pgettext()``` を用いることで文字列の翻訳が完了しますが、本節のサンプルの以下のコードのように文字列フォーマットによる文字列を翻訳する場合は、代わりに ```bpy.app.translations.pgettext_iface()``` を用いる必要があります。
+
+[import:"translation_func_with_format", unindent:"true"](../../sample_raw/src/chapter_03/sample_3-7.py)
+
 
 ## まとめ
 
