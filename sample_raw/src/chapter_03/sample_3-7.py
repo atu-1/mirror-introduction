@@ -162,7 +162,7 @@ class DeleteFaceByRClick(bpy.types.Operator):
                 props.running = False
                 self.report({'INFO'}, bpy.app.translations.pgettext_iface("Sample3-7: %d face(s) are deleted" % (props.deleted_count)))
 //! [translation_func_with_format]
-                print(bpy.app.translations.pgettext_iface("Sample3-7: %d face(s) are deleted" % (props.deleted_count)))
+                print(bpy.app.translations.pgettext_iface("Sample3-7: %d face(s) are deleted") % (props.deleted_count))
 //! [translation_func_with_format]
                 return {'FINISHED'}
         else:
