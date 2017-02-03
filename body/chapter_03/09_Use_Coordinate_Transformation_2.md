@@ -1,8 +1,8 @@
-<div id="sect_title_img_3_8"></div>
+<div id="sect_title_img_3_9"></div>
 
 <div id="sect_title_text"></div>
 
-# 座標変換を活用する
+# 座標変換を活用する②
 
 <div id="preface"></div>
 
@@ -290,7 +290,7 @@ Blenderは、適用されているビューポート変換行列を参照する�
 
 [import](../../sample/src/chapter_03/transform_w_view3d_utils.py)
 
-2つのスクリプトを *テキストエディタ* エリアに入力し、メニューから *テキスト* > *スクリプト実行* を実行してコンソールウィンドウの出力結果を見てみましょう。
+ここで、```transform_wo_view3d_utils.py``` と ```transform_w_view3d_utils.py``` の2つのスクリプトを *テキストエディタ* エリアに入力し、メニューから *テキスト* > *スクリプト実行* を実行してコンソールウィンドウの出力結果を見てみましょう。
 
 最初に、2つの頂点を選択した状態における ```transform_wo_view3d_utils.py``` の実行結果を次に示します。
 
