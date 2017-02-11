@@ -59,6 +59,8 @@
 
 ---
 
+<div id="process"></div>
+
 |<div id="box">2</div>|*オブジェクト* を選択します。|![作業時間計測ツール 手順2](https://dl.dropboxusercontent.com/s/vyxov95xx3724pj/use_add-on_2.png "作業時間計測ツール 手順2")|
 |---|---|---|
 
@@ -66,6 +68,8 @@
 <div id="process_sep"></div>
 
 ---
+
+<div id="process"></div>
 
 |<div id="box">3</div>|選択したオブジェクトに関する作業時間が *ウィンドウ* リージョンに表示されます。|![作業時間計測ツール 手順3](https://dl.dropboxusercontent.com/s/cwuhsydrgsq3kw6/use_add-on_3.png "作業時間計測ツール 手順3")|
 |---|---|---|
@@ -75,12 +79,16 @@
 
 ---
 
+<div id="process"></div>
+
 |<div id="box">4</div>|ユーザー・プリファレンスのアドオン設定から、表示位置やフォントサイズを変更することができます。|![作業時間計測ツール 手順4](https://dl.dropboxusercontent.com/s/vdx506zccdjwvds/use_add-on_4.png "作業時間計測ツール 手順4")|
 |---|---|---|
 
 <div id="process_sep"></div>
 
 ---
+
+<div id="process"></div>
 
 |<div id="box">5</div>|*3Dビュー* エリアのプロパティパネルの *作業時間計測* にある *終了* ボタンをクリックすると作業時間の計測が停止し、表示されていた作業時間も表示されなくなります。|![作業時間計測ツール 手順5](https://dl.dropboxusercontent.com/s/wx4r06m51km2khd/use_add-on_5.png "作業時間計測ツール 手順5")|
 |---|---|---|
