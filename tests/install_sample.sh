@@ -19,7 +19,7 @@ for file in `\find ${src} -type f -name '*.py'`; do
             found=1
         fi
     done
-    if [ ${found} -eq 1 ];
+    if [ ${found} -eq 1 ]; then
         continue
     fi
     # check package
