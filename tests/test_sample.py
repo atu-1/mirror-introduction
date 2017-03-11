@@ -596,4 +596,4 @@ if __name__ == "__main__":
     for case in test_cases:
         suite.addTest(unittest.makeSuite(case))
     ret = unittest.TextTestRunner().run(suite).wasSuccessful()
-    sys.exit(!ret)
+    sys.exit(not ret)
