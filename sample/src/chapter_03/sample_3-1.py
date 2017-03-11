@@ -2,6 +2,7 @@ import bpy
 import bmesh
 from bpy.props import IntProperty, BoolProperty, PointerProperty
 
+
 bl_info = {
     "name": "サンプル3-1: マウスの右クリックで面を削除する",
     "author": "Nutti",
@@ -19,26 +20,28 @@ bl_info = {
 
 # プロパティ
 class DFRC_Properties(bpy.types.PropertyGroup):
+
     running = BoolProperty(
-        name = "動作中",
-        description = "削除処理が動作中か？",
-        default = False)
+        name="動作中",
+        description="削除処理が動作中か？",
+        default=False)
     right_mouse_down = BoolProperty(
-        name = "右クリックされた状態",
-        description = "右クリックされた状態か？",
-        default = False)
+        name="右クリックされた状態",
+        description="右クリックされた状態か？",
+        default=False)
     deleted = BoolProperty(
-        name = "面が削除された状態",
-        description = "面が削除された状態か？",
-        default = False)
+        name="面が削除された状態",
+        description="面が削除された状態か？",
+        default=False)
     deleted_count = IntProperty(
-        name = "削除した面数",
-        description = "削除した面の数",
-        default = 0)
+        name="削除した面数",
+        description="削除した面の数",
+        default=0)
 
 
 # マウスの右クリックで面を削除
 class DeleteFaceByRClick(bpy.types.Operator):
+
     bl_idname = "mesh.delete_face_by_rclick"
     bl_label = "マウスの右クリックで面を削除"
     bl_description = "マウスの右クリックで面を削除します"
@@ -121,12 +124,12 @@ class DeleteFaceByRClick(bpy.types.Operator):
 
 # UI
 class OBJECT_PT_DFRC(bpy.types.Panel):
+
     bl_label = "マウスの右クリックで面を削除"
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
 
     def draw(self, context):
-        sc = context.scene
         layout = self.layout
         props = context.scene.dfrc_props
         # 開始/停止ボタンを追加
@@ -140,9 +143,10 @@ def register():
     bpy.utils.register_module(__name__)
     sc = bpy.types.Scene
     sc.dfrc_props = PointerProperty(
-        name = "プロパティ",
-        description = "本アドオンで利用するプロパティ一覧",
-        type = DFRC_Properties)
+        name="プロパティ",
+        description="本アドオンで利用するプロパティ一覧",
+        type=DFRC_Properties
+    )
     print("サンプル3-1: アドオン「サンプル3-1」が有効化されました。")
 
 

@@ -2,6 +2,7 @@ import bpy
 from bpy.props import BoolProperty, PointerProperty
 from mathutils import Vector
 
+
 bl_info = {
     "name": "サンプル3-2: キーボードのキー入力に応じてオブジェクトを並進移動させる",
     "author": "Nutti",
@@ -19,14 +20,17 @@ bl_info = {
 
 # プロパティ
 class TOM_Properties(bpy.types.PropertyGroup):
+
     running = BoolProperty(
         name="オブジェクト並進移動モード中",
         description="オブジェクト並進移動モード中か？",
-        default=False)
+        default=False
+    )
 
 
 # オブジェクト並進移動モード時の処理
 class TranslateObjectMode(bpy.types.Operator):
+
     bl_idname = "object.translate_object_mode"
     bl_label = "オブジェクト並進移動モード"
     bl_description = "オブジェクト並進移動モードへ移行します"
@@ -73,17 +77,13 @@ class TranslateObjectMode(bpy.types.Operator):
                 context.window_manager.modal_handler_add(self)
                 print("サンプル3-2: オブジェクト並進移動モードへ移行しました。")
                 return {'RUNNING_MODAL'}
-            # 終了ボタンが押された時の処理
-            else:
-                props.running = False
-                print("サンプル3-2: 通常モードへ移行しました。")
-                return {'FINISHED'}
         else:
             return {'CANCELLED'}
 
 
 # UI
 class OBJECT_PT_SOEM(bpy.types.Panel):
+
     bl_label = "オブジェクト並進移動モード"
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
@@ -105,7 +105,8 @@ def register():
     sc.tom_props = PointerProperty(
         name="プロパティ",
         description="本アドオンで利用するプロパティ一覧",
-        type=TOM_Properties)
+        type=TOM_Properties
+    )
     print("サンプル3-2: アドオン「サンプル3-2」が有効化されました。")
 
 
