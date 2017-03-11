@@ -12,4 +12,4 @@ install:
   - tar jxf blender-2.75-linux-glibc211-x86_64.tar.bz2
   - bash tests/install_sample.sh sample blender-2.75-linux-glibc211-x86_64/2.75/scripts/addons
 
-script: blender-2.75-linux-glibc211-x86_64/blender -noaudio --factory-startup --background --python tests/test_sample.py
+script: blender-2.75-linux-glibc211-x86_64/blender --factory-startup --background --python tests/test_sample.py
