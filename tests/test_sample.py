@@ -595,4 +595,6 @@ if __name__ == "__main__":
     suite = unittest.TestSuite()
     for case in test_cases:
         suite.addTest(unittest.makeSuite(case))
-    unittest.TextTestRunner().run(suite)
+    ret = unittest.TextTestRunner().run(suite)
+
+    print(ret)
