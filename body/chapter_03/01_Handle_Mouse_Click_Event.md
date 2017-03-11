@@ -2,7 +2,7 @@
 
 <div id="sect_title_text"></div>
 
-# マウスクリックのイベントを扱う
+# マウスクリックのイベントを扱うd
 
 <div id="preface"></div>
 
