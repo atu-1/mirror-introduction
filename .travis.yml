@@ -18,4 +18,4 @@ install:
   - cp tests/test_sample.py blender-2.75-linux-glibc211-x86_64
   - cd blender-2.75-linux-glibc211-x86_64
 
-script: blender --factory-startup --background --python test_sample.py
+script: ./blender --factory-startup --background --python test_sample.py

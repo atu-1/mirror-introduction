@@ -10,7 +10,7 @@ tgt=${2}
 # search package
 packages=()
 files=()
-ignores=("transform_w_view3d_utils.py" "transform_wo_view3d_utils.py" "test.py" "test_alt.py")
+ignores=("transform_w_view3d_utils.py" "transform_wo_view3d_utils.py" "test.py" "test_alt.py" "sample_4-2")
 for file in `\find ${src} -type f -name '*.py'`; do
     # ignore file in ignores
     found=0
