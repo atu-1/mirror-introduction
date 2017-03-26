@@ -1,7 +1,6 @@
 import bpy
 import bmesh
 from bpy_extras import view3d_utils
-from mathutils import Vector
 
 
 # 指定したエリア、リージョン、スペースを取得する関数
@@ -33,14 +32,15 @@ def get_region_and_space(area_type, region_type, space_type):
 
 def main():
     # 3Dビューエリアのウィンドウリージョンのリージョンとスペースを取得
-    (area, region, space) = get_region_and_space('VIEW_3D', 'WINDOW', 'VIEW_3D')
+    (_, region, space) = get_region_and_space('VIEW_3D', 'WINDOW', 'VIEW_3D')
     if space is not None:
         # 選択中の頂点のローカル座標を取得する
         obj = bpy.context.active_object
         bm = bmesh.from_edit_mesh(obj.data)
         vert_local = [v.co for v in bm.verts if v.select]
         # ローカル座標からリージョン座標への変換
-        vert_region = [view3d_utils.location_3d_to_region_2d(
+        vert_region = [
+            view3d_utils.location_3d_to_region_2d(
                 region,
                 space.region_3d,
                 obj.matrix_world * v

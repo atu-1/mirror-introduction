@@ -139,7 +139,7 @@ def init_props():
     )
     sc.rf_figure = EnumProperty(
         name="図形",
-        description ="表示する図形",
+        description="表示する図形",
         items=[
             ('TRIANGLE', "三角形", "三角形を表示します"),
             ('RECTANGLE', "四角形", "四角形を表示します")

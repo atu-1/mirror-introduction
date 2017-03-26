@@ -116,8 +116,6 @@ class SelectAudioFile(bpy.types.Operator):
     )
 
     def execute(self, context):
-        sc = context.scene
-
         # 初回時のみサウンドデバイスを作成
         if AudioDevice.device is None:
             AudioDevice.device = aud.device()
@@ -176,8 +174,6 @@ class ResumeAudioFile(bpy.types.Operator):
     bl_description = "オーディオファイルの再生を再開します"
 
     def execute(self, context):
-        sc = context.scene
-
         if AudioDevice.handle is None:
             return {'CANCELLED'}
 
@@ -197,8 +193,6 @@ class PauseAudioFile(bpy.types.Operator):
     bl_description = "オーディオファイルの再生を一時停止します"
 
     def execute(self, context):
-        sc = context.scene
-
         if AudioDevice.handle is None:
             return {'CANCELLED'}
 
@@ -218,8 +212,6 @@ class StopAudioFile(bpy.types.Operator):
     bl_description = "オーディオファイルの再生を停止します"
 
     def execute(self, context):
-        sc = context.scene
-
         if AudioDevice.handle is None:
             return {'CANCELLED'}
 
@@ -264,7 +256,9 @@ class VIEW3D_PT_PlayAudioFileMenu(bpy.types.Panel):
             AudioDevice.handle = None
 
         if AudioDevice.handle is not None:
-            layout.label("再生時間： " + self.__make_time_fmt(AudioDevice.handle.position))
+            layout.label(
+                "再生時間： " + self.__make_time_fmt(AudioDevice.handle.position)
+            )
             layout.prop(sc, "ap_loop", text="ループ再生")
 
             # 再生中または一時停止中の状態
@@ -272,16 +266,22 @@ class VIEW3D_PT_PlayAudioFileMenu(bpy.types.Panel):
                 # 一時停止の時
                 if AudioDevice.paused:
                     row = layout.row()
-                    row.operator(ResumeAudioFile.bl_idname, text="再生再開", icon='PLAY')
+                    row.operator(
+                        ResumeAudioFile.bl_idname, text="再生再開", icon='PLAY'
+                    )
                     row.operator(StopAudioFile.bl_idname, text="停止", icon='X')
                 # 再生中の時
                 else:
                     row = layout.row()
-                    row.operator(PauseAudioFile.bl_idname, text="一時停止", icon='PAUSE')
+                    row.operator(
+                        PauseAudioFile.bl_idname, text="一時停止", icon='PAUSE'
+                    )
                     row.operator(StopAudioFile.bl_idname, text="停止", icon='X')
             # 再生を停止した状態または、再生時間を超過して再生が停止された状態
             else:
-                layout.operator(PlayAudioFile.bl_idname, text="再生", icon='PLAY')
+                layout.operator(
+                    PlayAudioFile.bl_idname, text="再生", icon='PLAY'
+                )
 
             row = layout.row()
             row.prop(sc, "ap_volume", text="音量")
@@ -289,7 +289,9 @@ class VIEW3D_PT_PlayAudioFileMenu(bpy.types.Panel):
         else:
             # 選択中のオーディオファイルがない
             if AudioDevice.filename is not None:
-                layout.operator(PlayAudioFile.bl_idname, text="再生", icon='PLAY')
+                layout.operator(
+                    PlayAudioFile.bl_idname, text="再生", icon='PLAY'
+                )
 
 
 # プロパティを初期化

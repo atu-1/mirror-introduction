@@ -1,5 +1,6 @@
 import bpy
-from bpy.props import BoolProperty, IntProperty, PointerProperty, IntVectorProperty
+from bpy.props import BoolProperty, IntProperty
+from bpy.props import PointerProperty, IntVectorProperty
 from bpy_extras import view3d_utils
 from mathutils import Vector
 import blf
@@ -11,7 +12,8 @@ bl_info = {
     "version": (2, 0),
     "blender": (2, 75, 0),
     "location": "3Dビュー > プロパティパネル > オブジェクト名の表示サポート",
-    "description": "オブジェクトの位置にオブジェクト名を表示し、マウスカーソルの位置に向けて発したレイと交差するオブジェクト名を表示するアドオン",
+    "description": """オブジェクトの位置にオブジェクト名を表示し、マウスカーソルの位置に
+                      向けて発したレイと交差するオブジェクト名を表示するアドオン""",
     "warning": "",
     "support": "TESTING",
     "wiki_url": "",
@@ -35,7 +37,8 @@ class ShowObjectName(bpy.types.Operator):
 
     bl_idname = "view3d.show_object_name"
     bl_label = "オブジェクト名の表示サポート"
-    bl_description = "オブジェクトの位置にオブジェクト名を表示し、マウスカーソルの位置に向けて発したレイと交差するオブジェクト名を表示します"
+    bl_description = """オブジェクトの位置にオブジェクト名を表示し、マウスカーソルの位置に
+                        向けて発したレイと交差するオブジェクト名を表示します"""
 
     __handle = None           # 描画関数ハンドラ
 
@@ -46,14 +49,18 @@ class ShowObjectName(bpy.types.Operator):
         if ShowObjectName.__handle is None:
             # 描画関数の登録
             ShowObjectName.__handle = bpy.types.SpaceView3D.draw_handler_add(
-                ShowObjectName.__render, (self, context), 'WINDOW', 'POST_PIXEL')
+                ShowObjectName.__render, (self, context),
+                'WINDOW', 'POST_PIXEL'
+            )
             # モーダルモードへの移行
             context.window_manager.modal_handler_add(self)
 
     def __handle_remove(self, context):
         if ShowObjectName.__handle is not None:
             # 描画関数の登録を解除
-            bpy.types.SpaceView3D.draw_handler_remove(ShowObjectName.__handle, 'WINDOW')
+            bpy.types.SpaceView3D.draw_handler_remove(
+                ShowObjectName.__handle, 'WINDOW'
+            )
             ShowObjectName.__handle = None
 
     @staticmethod
@@ -90,18 +97,19 @@ class ShowObjectName(bpy.types.Operator):
 
     @staticmethod
     def __render(self, context):
-        sc = context.scene
-        props = sc.son_props
         prefs = context.user_preferences.addons[__name__].preferences
 
-        region, space  = ShowObjectName.__get_region_space(context, 'VIEW_3D', 'WINDOW', 'VIEW_3D')
+        region, space = ShowObjectName.__get_region_space(
+            context, 'VIEW_3D', 'WINDOW', 'VIEW_3D'
+        )
         if (region is None) or (space is None):
             return
 
         # オブジェクトの位置にオブジェクト名を表示
         objs = [o for o in bpy.data.objects]
         # オブジェクトの位置座標（3D座標）をリージョン座標（2D座標）に変換
-        locs_on_screen = [view3d_utils.location_3d_to_region_2d(
+        locs_on_screen = [
+            view3d_utils.location_3d_to_region_2d(
                 region,
                 space.region_3d,
                 o.location
@@ -113,7 +121,9 @@ class ShowObjectName(bpy.types.Operator):
         for obj, loc in zip(objs, locs_on_screen):
             # 表示範囲外なら表示しない
             if loc is not None:
-                ShowObjectName.__render_message(prefs.font_size_2, loc.x, loc.y, obj.name)
+                ShowObjectName.__render_message(
+                    prefs.font_size_2, loc.x, loc.y, obj.name
+                )
         blf.disable(0, blf.SHADOW)
 
         # マウスカーソルの位置に向けて発したレイと交差するオブジェクト名を表示
@@ -133,14 +143,17 @@ class ShowObjectName(bpy.types.Operator):
                 ShowObjectName.__render_message(
                     int(prefs.font_size_1 * 0.8),
                     prefs.left_top[0],
-                    region.height - prefs.left_top[1] - int(prefs.font_size_1 * 1.3) - i * int(prefs.font_size_1 * 0.9),
+                    (region.height - prefs.left_top[1]
+                     - int(prefs.font_size_1 * 1.3)
+                     - i * int(prefs.font_size_1 * 0.9)),
                     o.name
                 )
         else:
             ShowObjectName.__render_message(
                 int(prefs.font_size_1 * 0.8),
                 prefs.left_top[0],
-                region.height - prefs.left_top[1] - int(prefs.font_size_1 * 1.3),
+                (region.height - prefs.left_top[1]
+                 - int(prefs.font_size_1 * 1.3)),
                 "Objectモード以外では利用できません"
             )
 
@@ -151,7 +164,9 @@ class ShowObjectName(bpy.types.Operator):
             # マウスカーソルのリージョン座標を取得
             mv = Vector((event.mouse_region_x, event.mouse_region_y))
             # 3Dビューエリアのウィンドウリージョンと、スペースを取得する
-            region, space  = ShowObjectName.__get_region_space(context, 'VIEW_3D', 'WINDOW', 'VIEW_3D')
+            region, space = ShowObjectName.__get_region_space(
+                context, 'VIEW_3D', 'WINDOW', 'VIEW_3D'
+            )
             # マウスカーソルの位置に向けて発したレイの方向を求める
             ray_dir = view3d_utils.region_2d_to_vector_3d(
                 region,
@@ -180,8 +195,9 @@ class ShowObjectName(bpy.types.Operator):
                     if result[2] != -1:
                         self.__intersected_objs.append(o)
                 # メッシュタイプのオブジェクトが作られているが、ray_cast対象の面が存在しない場合
-                except RuntimeError as e:
-                    print("サンプル5-4: オブジェクト生成タイミングの問題により、例外エラー「レイキャスト可能なデータなし」が発生")
+                except RuntimeError:
+                    print("""サンプル5-4: オブジェクト生成タイミングの問題により、
+                             例外エラー「レイキャスト可能なデータなし」が発生""")
 
         # 3Dビューの画面を更新
         if context.area:

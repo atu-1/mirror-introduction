@@ -1,5 +1,6 @@
 import bpy
-from bpy.props import BoolProperty, PointerProperty, IntProperty, EnumProperty, IntVectorProperty
+from bpy.props import BoolProperty, PointerProperty, IntProperty
+from bpy.props import EnumProperty, IntVectorProperty
 import blf
 import datetime
 import math
@@ -52,15 +53,20 @@ class CalculateWorkingHours(bpy.types.Operator):
             self.__timer = context.window_manager.event_timer_add(
                 0.10, context.window)
             # 描画関数の登録
-            CalculateWorkingHours.__handle = bpy.types.SpaceView3D.draw_handler_add(
-                CalculateWorkingHours.__render_working_hours, (self, context), 'WINDOW', 'POST_PIXEL')
+            space = bpy.types.SpaceView3D
+            CalculateWorkingHours.__handle = space.draw_handler_add(
+                CalculateWorkingHours.__render_working_hours,
+                (self, context), 'WINDOW', 'POST_PIXEL'
+            )
             # モーダルモードへの移行
             context.window_manager.modal_handler_add(self)
 
     def __handle_remove(self, context):
         if CalculateWorkingHours.__handle is not None:
             # 描画関数の登録を解除
-            bpy.types.SpaceView3D.draw_handler_remove(CalculateWorkingHours.__handle, 'WINDOW')
+            bpy.types.SpaceView3D.draw_handler_remove(
+                CalculateWorkingHours.__handle, 'WINDOW'
+            )
             CalculateWorkingHours.__handle = None
         if self.__timer is not None:
             # タイマの登録を解除
@@ -116,7 +122,9 @@ class CalculateWorkingHours(bpy.types.Operator):
             return
 
         # リージョン幅を取得するため、描画先のリージョンを得る
-        region = CalculateWorkingHours.__get_region(context, 'VIEW_3D', 'WINDOW')
+        region = CalculateWorkingHours.__get_region(
+            context, 'VIEW_3D', 'WINDOW'
+        )
 
         # 描画先のリージョンへ文字列を描画
         if region is not None:
@@ -143,14 +151,22 @@ class CalculateWorkingHours(bpy.types.Operator):
             CalculateWorkingHours.__render_message(
                 prefs.font_size,
                 prefs.left_top[0],
-                region.height - int(prefs.left_top[1] + prefs.font_size * (1.5 + 2.5)),
-                "Object Mode: " + CalculateWorkingHours.__make_time_fmt(props.working_hour_db[sc.cwh_prop_object]['OBJECT'])
+                region.height - int(
+                    prefs.left_top[1] + prefs.font_size * (1.5 + 2.5)
+                ),
+                "Object Mode: " + CalculateWorkingHours.__make_time_fmt(
+                    props.working_hour_db[sc.cwh_prop_object]['OBJECT']
+                )
             )
             CalculateWorkingHours.__render_message(
                 prefs.font_size,
                 prefs.left_top[0],
-                region.height - int(prefs.left_top[1] + prefs.font_size * (1.5 + 4.0)),
-                "Edit Mode: " + CalculateWorkingHours.__make_time_fmt(props.working_hour_db[sc.cwh_prop_object]['EDIT'])
+                region.height - int(
+                    prefs.left_top[1] + prefs.font_size * (1.5 + 4.0)
+                ),
+                "Edit Mode: " + CalculateWorkingHours.__make_time_fmt(
+                    props.working_hour_db[sc.cwh_prop_object]['EDIT']
+                )
             )
 
     # 前回の呼び出しからの時間差分を計算
@@ -179,7 +195,7 @@ class CalculateWorkingHours(bpy.types.Operator):
         obj_list = [obj.name for obj in bpy.data.objects if obj.type == 'MESH']
         # データベースに存在しないオブジェクトをデータベースに追加
         for o in obj_list:
-            if not o in props.working_hour_db.keys():
+            if o not in props.working_hour_db.keys():
                 props.working_hour_db[o] = {}
                 props.working_hour_db[o]['OBJECT'] = 0
                 props.working_hour_db[o]['EDIT'] = 0
@@ -242,9 +258,13 @@ class OBJECT_PT_CWH(bpy.types.Panel):
         props = sc.cwh_props
         # 開始/停止ボタンを追加
         if props.is_calc_mode is False:
-            layout.operator(CalculateWorkingHours.bl_idname, text="開始", icon="PLAY")
+            layout.operator(
+                CalculateWorkingHours.bl_idname, text="開始", icon="PLAY"
+            )
         else:
-            layout.operator(CalculateWorkingHours.bl_idname, text="終了", icon="PAUSE")
+            layout.operator(
+                CalculateWorkingHours.bl_idname, text="終了", icon="PAUSE"
+            )
 
         layout.separator()
 

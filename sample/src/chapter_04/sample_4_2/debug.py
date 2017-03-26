@@ -2,7 +2,9 @@ import sys
 
 
 DEBUGGING = True     # デバッグ有効化
-PYDEV_SRC_DIR = "(eclipseディレクトリへのパス)/plugins/org.python.pydev_XXXXX/pysrc"    # PyDevのパス（環境に応じて書き換えが必要）
+# PyDevのパス（環境に応じて書き換えが必要）
+PYDEV_SRC_DIR = """(eclipseディレクトリへのパス)/plugins/
+                org.python.pydev_XXXXX/pysrc"""
 
 
 def start_debug():

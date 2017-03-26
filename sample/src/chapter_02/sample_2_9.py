@@ -1,5 +1,6 @@
 import bpy
-from bpy.props import IntProperty, FloatProperty, EnumProperty, FloatVectorProperty
+from bpy.props import IntProperty, FloatProperty
+from bpy.props import EnumProperty, FloatVectorProperty
 
 
 bl_info = {
@@ -66,7 +67,8 @@ class ShowAllIcons(bpy.types.Operator):
 
         # 利用可能なアイコンをすべて表示
         layout.label(text="利用可能なアイコン一覧:")
-        for i, key in enumerate(bpy.types.UILayout.bl_rna.functions['prop'].parameters['icon'].enum_items.keys()):
+        icon = bpy.types.UILayout.bl_rna.functions['prop'].parameters['icon']
+        for i, key in enumerate(icon.enum_items.keys()):
             if i % self.num_column == 0:
                 row = layout.row()
             row.label(text=key, icon=key)

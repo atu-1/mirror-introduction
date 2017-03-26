@@ -23,7 +23,10 @@ def location_list_fn(scene, context):
     items = [
         ('3D_CURSOR', "3Dカーソル", "3Dカーソル上に配置します"),
         ('ORIGIN', "原点", "原点に配置します")]
-    items.extend([('OBJ_' + o.name, o.name, "オブジェクトに配置します") for o in bpy.data.objects])
+    items.extend([
+        ('OBJ_' + o.name, o.name, "オブジェクトに配置します")
+        for o in bpy.data.objects
+    ])
 
     return items
 
@@ -62,7 +65,7 @@ class ReplicateObject(bpy.types.Operator):
         subtype='TRANSLATION',
         unit='LENGTH'
     )
-    src_obj_name = bpy.props.StringProperty()
+    src_obj_name = StringProperty()
 
     def execute(self, context):
         # bpy.ops.object.duplicate()は選択中のオブジェクトをコピーするため、
@@ -86,7 +89,8 @@ class ReplicateObject(bpy.types.Operator):
         elif self.location == 'ORIGIN':
             active_obj.location = Vector((0.0, 0.0, 0.0))
         elif self.location[0:4] == 'OBJ_':
-            active_obj.location = bpy.data.objects[self.location[4:]].location.copy()
+            objs = bpy.data.objects
+            active_obj.location = objs[self.location[4:]].location.copy()
 
         # 複製したオブジェクトの拡大率を設定
         active_obj.scale.x = active_obj.scale.x * self.scale[0]
@@ -94,9 +98,10 @@ class ReplicateObject(bpy.types.Operator):
         active_obj.scale.z = active_obj.scale.z * self.scale[2]
 
         # 複製したオブジェクトの回転角度を設定
-        active_obj.rotation_euler.x = active_obj.rotation_euler.x + self.rotation[0]
-        active_obj.rotation_euler.y = active_obj.rotation_euler.y + self.rotation[1]
-        active_obj.rotation_euler.z = active_obj.rotation_euler.z + self.rotation[2]
+        rot_euler = active_obj.rotation_euler
+        active_obj.rotation_euler.x = rot_euler.x + self.rotation[0]
+        active_obj.rotation_euler.y = rot_euler.y + self.rotation[1]
+        active_obj.rotation_euler.z = rot_euler.z + self.rotation[2]
 
         # 複製したオブジェクトの最終位置を設定
         active_obj.location = active_obj.location + Vector(self.offset)
@@ -119,7 +124,9 @@ class ReplicateObjectSubMenu(bpy.types.Menu):
         layout = self.layout
         # サブサブメニューの登録
         for o in bpy.data.objects:
-            layout.operator(ReplicateObject.bl_idname, text=o.name).src_obj_name = o.name
+            layout.operator(
+                ReplicateObject.bl_idname, text=o.name
+            ).src_obj_name = o.name
 //! [sub_menu_cls]
 
 

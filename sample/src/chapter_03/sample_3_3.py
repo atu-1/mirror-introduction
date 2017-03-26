@@ -62,7 +62,9 @@ class MoveObjectInterval(bpy.types.Operator):
         angular_velocity = 3.0  # 角速度
         angle = angular_velocity * self.__count * math.pi / 180
         for obj, loc in self.__orig_obj_loc.items():
-            obj.location = loc + Vector((radius * math.sin(angle), radius * math.cos(angle), 0.0))
+            obj.location = loc + Vector(
+                (radius * math.sin(angle), radius * math.cos(angle), 0.0)
+            )
 
     def modal(self, context, event):
         props = context.scene.moi_props
@@ -93,7 +95,11 @@ class MoveObjectInterval(bpy.types.Operator):
         if context.area.type == 'VIEW_3D':
             # 開始ボタンが押された時の処理
             if props.running is False:
-                self.__orig_obj_loc = {obj: obj.location.copy() for obj in bpy.data.objects if obj.type == 'MESH' and obj.select}
+                self.__orig_obj_loc = {
+                    obj: obj.location.copy()
+                    for obj in bpy.data.objects
+                    if obj.type == 'MESH' and obj.select
+                }
                 props.running = True
                 self.__handle_add(context)
                 print("サンプル3-3: 一定間隔でオブジェクトが移動するようになります。")
@@ -116,7 +122,11 @@ class OBJECT_PT_MOI(bpy.types.Panel):
 
     @classmethod
     def poll(cls, context):
-        objs = [obj for obj in bpy.data.objects if obj.type == 'MESH' and obj.select and obj.mode == 'OBJECT']
+        objs = [
+            obj
+            for obj in bpy.data.objects
+            if obj.type == 'MESH' and obj.select and obj.mode == 'OBJECT'
+        ]
         if len(objs) == 0:
             return False
         return True
@@ -127,9 +137,13 @@ class OBJECT_PT_MOI(bpy.types.Panel):
         props = sc.moi_props
         # 開始/停止ボタンを追加
         if props.running is False:
-            layout.operator(MoveObjectInterval.bl_idname, text="開始", icon="PLAY")
+            layout.operator(
+                MoveObjectInterval.bl_idname, text="開始", icon="PLAY"
+            )
         else:
-            layout.operator(MoveObjectInterval.bl_idname, text="終了", icon="PAUSE")
+            layout.operator(
+                MoveObjectInterval.bl_idname, text="終了", icon="PAUSE"
+            )
 
 
 # プロパティの作成

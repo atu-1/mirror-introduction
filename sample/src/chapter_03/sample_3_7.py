@@ -20,48 +20,48 @@ bl_info = {
 
 # 翻訳辞書
 translation_dict = {
-    "en_US" : {
-        ("*", "Delete Face By Right Click") :
+    "en_US": {
+        ("*", "Delete Face By Right Click"):
             "Delete Face By Right Click",
-        ("*", "Sample3-7: Out of range") :
+        ("*", "Sample3-7: Out of range"):
             "Sample3-7: Out of range",
-        ("*", "Sample3-7: No face is selected") :
+        ("*", "Sample3-7: No face is selected"):
             "Sample3-7: No face is selected",
-        ("*", "Sample3-7: Deleted Face") :
+        ("*", "Sample3-7: Deleted Face"):
             "Sample3-7: Deleted Face",
-        ("*", "Sample3-7: Start deleting faces") :
+        ("*", "Sample3-7: Start deleting faces"):
             "Sample3-7: Start deleting faces",
-        ("*", "Sample3-7: %d face(s) are deleted") :
+        ("*", "Sample3-7: %d face(s) are deleted"):
             "Sample3-7: %d face(s) are deleted",
-        ("*", "Start") :
+        ("*", "Start"):
             "Start",
-        ("*", "End") :
+        ("*", "End"):
             "End",
-        ("*", "Sample3-7: Enabled add-on 'Sample3-7'") :
+        ("*", "Sample3-7: Enabled add-on 'Sample3-7'"):
             "Sample3-7: Enabled add-on 'Sample3-7'",
-        ("*", "Sample3-7: Disabled add-on 'Sample3-7'") :
+        ("*", "Sample3-7: Disabled add-on 'Sample3-7'"):
             "Sample3-7: Disabled add-on 'Sample3-7'"
     },
-    "ja_JP" : {
-        ("*", "Delete Face By Right Click") :
+    "ja_JP": {
+        ("*", "Delete Face By Right Click"):
             "マウスの右クリックで面を削除",
-        ("*", "Sample3-7: Out of range") :
+        ("*", "Sample3-7: Out of range"):
             "サンプル3-7: 選択範囲外です。",
-        ("*", "Sample3-7: No face is selected") :
+        ("*", "Sample3-7: No face is selected"):
             "サンプル3-7: 面以外を選択しました。",
-        ("*", "Sample3-7: Deleted Face") :
+        ("*", "Sample3-7: Deleted Face"):
             "サンプル3-7: 面を削除しました。",
-        ("*", "Sample3-7: Start deleting faces") :
+        ("*", "Sample3-7: Start deleting faces"):
             "サンプル3-7: 削除処理を開始しました。",
-        ("*", "Sample3-7: %d face(s) are deleted") :
+        ("*", "Sample3-7: %d face(s) are deleted"):
             "サンプル3-7: %d個の面を削除しました。",
-        ("*", "Start") :
+        ("*", "Start"):
             "開始",
-        ("*", "End") :
+        ("*", "End"):
             "終了",
-        ("*", "Sample3-7: Enabled add-on 'Sample3-7'") :
+        ("*", "Sample3-7: Enabled add-on 'Sample3-7'"):
             "サンプル3-7: アドオン「サンプル3-7」が有効化されました。",
-        ("*", "Sample3-7: Disabled add-on 'Sample3-7'") :
+        ("*", "Sample3-7: Disabled add-on 'Sample3-7'"):
             "サンプル3-7: アドオン「サンプル3-7」が無効化されました。"
     }
 }
@@ -97,7 +97,9 @@ class DeleteFaceByRClick(bpy.types.Operator):
 
     bl_idname = "mesh.delete_face_by_rclick"
     bl_label = bpy.app.translations.pgettext("Delete Face By Right Click")
-    bl_description = bpy.app.translations.pgettext("Delete Face By Right Click")
+    bl_description = bpy.app.translations.pgettext(
+        "Delete Face By Right Click"
+    )
 
     def modal(self, context, event):
         props = context.scene.dfrc_props
@@ -133,7 +135,11 @@ class DeleteFaceByRClick(bpy.types.Operator):
             e = bm.select_history[-1]
             if not isinstance(e, bmesh.types.BMFace):
                 bm.select_history.remove(e)
-                print(bpy.app.translations.pgettext("Sample3-7: No face is selected"))
+                print(
+                    bpy.app.translations.pgettext(
+                        "Sample3-7: No face is selected"
+                    )
+                )
                 return {'PASS_THROUGH'}
             # 選択面を削除
             bm.select_history.remove(e)
@@ -163,13 +169,28 @@ class DeleteFaceByRClick(bpy.types.Operator):
                 props.deleted_count = 0
                 # modal処理クラスを追加
                 context.window_manager.modal_handler_add(self)
-                print(bpy.app.translations.pgettext("Sample3-7: Start deleting faces"))
+                print(
+                    bpy.app.translations.pgettext(
+                        "Sample3-7: Start deleting faces"
+                    )
+                )
                 return {'RUNNING_MODAL'}
             # 終了ボタンが押された時の処理
             else:
                 props.running = False
-                self.report({'INFO'}, bpy.app.translations.pgettext_iface("Sample3-7: %d face(s) are deleted") % (props.deleted_count))
-                print(bpy.app.translations.pgettext_iface("Sample3-7: %d face(s) are deleted") % (props.deleted_count))
+                self.report(
+                    {'INFO'},
+                    bpy.app.translations.pgettext_iface(
+                        "Sample3-7: %d face(s) are deleted"
+                    )
+                    % (props.deleted_count)
+                )
+                print(
+                    bpy.app.translations.pgettext_iface(
+                        "Sample3-7: %d face(s) are deleted"
+                    )
+                    % (props.deleted_count)
+                )
                 return {'FINISHED'}
         else:
             return {'CANCELLED'}
@@ -187,9 +208,17 @@ class OBJECT_PT_DFRC(bpy.types.Panel):
         props = context.scene.dfrc_props
         # 開始/停止ボタンを追加
         if props.running is False:
-            layout.operator(DeleteFaceByRClick.bl_idname, text=bpy.app.translations.pgettext("Start"), icon="PLAY")
+            layout.operator(
+                DeleteFaceByRClick.bl_idname,
+                text=bpy.app.translations.pgettext("Start"),
+                icon="PLAY"
+            )
         else:
-            layout.operator(DeleteFaceByRClick.bl_idname, text=bpy.app.translations.pgettext("End"), icon="PAUSE")
+            layout.operator(
+                DeleteFaceByRClick.bl_idname,
+                text=bpy.app.translations.pgettext("End"),
+                icon="PAUSE"
+            )
 
 
 def register():
@@ -202,7 +231,11 @@ def register():
     )
     # 翻訳辞書の登録
     bpy.app.translations.register(__name__, translation_dict)
-    print(bpy.app.translations.pgettext("Sample3-7: Enabled add-on 'Sample3-7'"))
+    print(
+        bpy.app.translations.pgettext(
+            "Sample3-7: Enabled add-on 'Sample3-7'"
+        )
+    )
 
 
 def unregister():
@@ -210,7 +243,11 @@ def unregister():
     bpy.app.translations.unregister(__name__)
     del bpy.types.Scene.dfrc_props
     bpy.utils.unregister_module(__name__)
-    print(bpy.app.translations.pgettext("Sample3-7: Disabled add-on 'Sample3-7'"))
+    print(
+        bpy.app.translations.pgettext(
+            "Sample3-7: Disabled add-on 'Sample3-7'"
+        )
+    )
 
 
 if __name__ == "__main__":

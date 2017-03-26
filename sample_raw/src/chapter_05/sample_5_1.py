@@ -1,5 +1,6 @@
 import bpy
-from bpy.props import BoolProperty, PointerProperty, EnumProperty, FloatProperty
+from bpy.props import BoolProperty, PointerProperty
+from bpy.props import EnumProperty, FloatProperty
 import enum
 from mathutils import Vector
 
@@ -81,7 +82,7 @@ class SpecialObjectEditMode(bpy.types.Operator):
         # マウスの右クリック・左クリック・マウス移動のイベントは無視し、
         # 他の処理へ通知可能とする
         # マウス移動のイベントを無視しないと、ボタンのクリックが正常に行われない。
-        if event.type == 'LEFTMOUSE' or event.type == 'RIGHTMOUSE' or event.type == 'MOUSEMOVE':
+        if event.type in ['LEFTMOUSE', 'RIGHTMOUSE', 'MOUSEMOVE']:
             return {'PASS_THROUGH'}
 
         # 処理するキーイベントのリスト
@@ -91,7 +92,10 @@ class SpecialObjectEditMode(bpy.types.Operator):
         # 要素4：'PRESS'以外のイベント発生時の状態遷移先
         ev_key_list = (
             # 編集タイプ（並進移動、拡大・縮小、回転）
-            (prefs.translate, "edit_type", EditType['TRANSLATE'], EditType['NONE']),
+            (
+                prefs.translate, "edit_type",
+                EditType['TRANSLATE'], EditType['NONE']
+            ),
             (prefs.scale, "edit_type", EditType['SCALE'], EditType['NONE']),
             (prefs.rotate, "edit_type", EditType['ROTATE'], EditType['NONE']),
             # 軸（X軸、Y軸、Z軸）
@@ -211,9 +215,13 @@ class OBJECT_PT_SOEM(bpy.types.Panel):
         props = context.scene.soem_props
         # 開始/停止ボタンを追加
         if props.is_special_mode is False:
-            layout.operator(SpecialObjectEditMode.bl_idname, text="開始", icon="PLAY")
+            layout.operator(
+                SpecialObjectEditMode.bl_idname, text="開始", icon="PLAY"
+            )
         else:
-            layout.operator(SpecialObjectEditMode.bl_idname, text="終了", icon="PAUSE")
+            layout.operator(
+                SpecialObjectEditMode.bl_idname, text="終了", icon="PAUSE"
+            )
             layout.prop(sc, "movement", text="移動量")
             layout.prop(sc, "magnification", text="拡大率")
             layout.prop(sc, "reduction", text="縮小率")
@@ -224,8 +232,8 @@ def key_pref_list(self, context):
     # キーの識別子
     key_id = [
         'ZERO', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT',
-        'NINE', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-        'N', 'O', 'P', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+        'NINE', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+        'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
         'LEFT_CTRL', 'LEFT_ALT', 'LEFT_SHIFT', 'RIGHT_ALT', 'RIGHT_CTRL',
         'RIGHT_SHIFT', 'TAB', 'SPACE', 'BACK_SPACE', 'DEL', 'SEMI_COLON',
         'PERIOD', 'COMMA', 'QUOTE', 'MINUS', 'SLASH', 'BACK_SLASH', 'EQUAL',
@@ -233,15 +241,18 @@ def key_pref_list(self, context):
     ]
     # 表示文字列（説明文を兼ねる）
     key_name = [
-        "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "[C]", "[D]",
-        "E", "F", "G", "H", "I", "J", "K", "L", "M", "[N]", "O", "P", "R",
-        "S", "T", "U", "V", "W", "X", "Y", "Z", "[Left Ctrl]", "[Left Alt]",
-        "[Left Shift]", "[Right Alt]", "[Right Ctrl]", "[Right Shift]",
-        "[Tab]", "[Space]", "[Back Space]", "[Delete]", "[;]", "[.]", "[,]",
-        "[`]", "[-]", "[/]", "[¥]", "[=]", "←", "↓", "→", "↑"
+        "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "[C]",
+        "[D]", "E", "F", "G", "H", "I", "J", "K", "L", "M", "[N]", "O", "P",
+        "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "[Left Ctrl]",
+        "[Left Alt]", "[Left Shift]", "[Right Alt]", "[Right Ctrl]",
+        "[Right Shift]", "[Tab]", "[Space]", "[Back Space]", "[Delete]", "[;]",
+        "[.]", "[,]", "[`]", "[-]", "[/]", "[¥]", "[=]", "←", "↓", "→", "↑"
     ]
 
-    return [(id, name, name, i) for i, (name, id) in enumerate(zip(key_name, key_id))]
+    return [
+        (id, name, name, i)
+        for i, (name, id) in enumerate(zip(key_name, key_id))
+    ]
 
 
 # 登録済みのキーを取得
@@ -263,53 +274,63 @@ def get_reserved_key_list(self):
 # ユーザー・プリファレンスの設定情報「移動」の値を取得
 def get_pref_translate(self):
     key_list = key_pref_list(self, None)
-    return self.get('translate', [key[3] for key in key_list if key[0] == 'T'][0])
+    return self.get(
+        'translate',
+        [key[3] for key in key_list if key[0] == 'T'][0]
+    )
 
 
 # ユーザー・プリファレンスの設定情報「移動」の値を設定
 def set_pref_translate(self, value):
     reserved = get_reserved_key_list(self)
     # 他の操作にキーが割り当たっている場合は値を設定しない
-    if not value in reserved:
+    if value not in reserved:
         self['translate'] = value
 
 
 # ユーザー・プリファレンスの設定情報「拡大縮小」の値を取得
 def get_pref_scale(self):
     key_list = key_pref_list(self, None)
-    return self.get('scale', [key[3] for key in key_list if key[0] == 'S'][0])
+    return self.get(
+        'scale',
+        [key[3] for key in key_list if key[0] == 'S'][0]
+    )
 
 
 # ユーザー・プリファレンスの設定情報「拡大縮小」の値を設定
 def set_pref_scale(self, value):
     reserved = get_reserved_key_list(self)
-    if not value in reserved:
+    if value not in reserved:
         self['scale'] = value
 
 
 # ユーザー・プリファレンスの設定情報「回転」の値を取得
 def get_pref_rotate(self):
     key_list = key_pref_list(self, None)
-    return self.get('rotate', [key[3] for key in key_list if key[0] == 'R'][0])
+    return self.get(
+        'rotate', [key[3] for key in key_list if key[0] == 'R'][0]
+    )
 
 
 # ユーザー・プリファレンスの設定情報「回転」の値を設定
 def set_pref_rotate(self, value):
     reserved = get_reserved_key_list(self)
-    if not value in reserved:
+    if value not in reserved:
         self['rotate'] = value
 
 
 # ユーザー・プリファレンスの設定情報「X軸」の値を取得
 def get_pref_x_axis(self):
     key_list = key_pref_list(self, None)
-    return self.get('x_axis', [key[3] for key in key_list if key[0] == 'X'][0])
+    return self.get(
+        'x_axis', [key[3] for key in key_list if key[0] == 'X'][0]
+    )
 
 
 # ユーザー・プリファレンスの設定情報「X軸」の値を設定
 def set_pref_x_axis(self, value):
     reserved = get_reserved_key_list(self)
-    if not value in reserved:
+    if value not in reserved:
         self['x_axis'] = value
 
 
@@ -322,7 +343,7 @@ def get_pref_y_axis(self):
 # ユーザー・プリファレンスの設定情報「Y軸」の値を設定
 def set_pref_y_axis(self, value):
     reserved = get_reserved_key_list(self)
-    if not value in reserved:
+    if value not in reserved:
         self['y_axis'] = value
 
 
@@ -335,33 +356,37 @@ def get_pref_z_axis(self):
 # ユーザー・プリファレンスの設定情報「Z軸」の値を設定
 def set_pref_z_axis(self, value):
     reserved = get_reserved_key_list(self)
-    if not value in reserved:
+    if value not in reserved:
         self['z_axis'] = value
 
 
 # ユーザー・プリファレンスの設定情報「+」の値を取得
 def get_pref_increment(self):
     key_list = key_pref_list(self, None)
-    return self.get('increment', [key[3] for key in key_list if key[0] == 'RIGHT_ARROW'][0])
+    return self.get(
+        'increment', [key[3] for key in key_list if key[0] == 'RIGHT_ARROW'][0]
+    )
 
 
 # ユーザー・プリファレンスの設定情報「+」の値を設定
 def set_pref_increment(self, value):
     reserved = get_reserved_key_list(self)
-    if not value in reserved:
+    if value not in reserved:
         self['increment'] = value
 
 
 # ユーザー・プリファレンスの設定情報「-」の値を取得
 def get_pref_decrement(self):
     key_list = key_pref_list(self, None)
-    return self.get('decrement', [key[3] for key in key_list if key[0] == 'LEFT_ARROW'][0])
+    return self.get(
+        'decrement', [key[3] for key in key_list if key[0] == 'LEFT_ARROW'][0]
+    )
 
 
 # ユーザー・プリファレンスの設定情報「-」の値を設定
 def set_pref_decrement(self, value):
     reserved = get_reserved_key_list(self)
-    if not value in reserved:
+    if value not in reserved:
         self['decrement'] = value
 
 

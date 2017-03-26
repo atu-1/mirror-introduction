@@ -119,7 +119,10 @@ class DeleteFaceByRClick(bpy.types.Operator):
             # 終了ボタンが押された時の処理
             else:
                 props.running = False
-                self.report({'INFO'}, "サンプル3-1: %d個の面を削除しました。" % (props.deleted_count))
+                self.report(
+                    {'INFO'},
+                    "サンプル3-1: %d個の面を削除しました。" % (props.deleted_count)
+                )
                 print("サンプル3-1: %d個の面を削除しました。" % (props.deleted_count))
                 return {'FINISHED'}
         else:
@@ -138,9 +141,13 @@ class OBJECT_PT_DFRC(bpy.types.Panel):
         props = context.scene.dfrc_props
         # 開始/停止ボタンを追加
         if props.running is False:
-            layout.operator(DeleteFaceByRClick.bl_idname, text="開始", icon="PLAY")
+            layout.operator(
+                DeleteFaceByRClick.bl_idname, text="開始", icon="PLAY"
+            )
         else:
-            layout.operator(DeleteFaceByRClick.bl_idname, text="終了", icon="PAUSE")
+            layout.operator(
+                DeleteFaceByRClick.bl_idname, text="終了", icon="PAUSE"
+            )
 
 
 def register():

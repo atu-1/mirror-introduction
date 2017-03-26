@@ -46,15 +46,20 @@ class DrawObjectTrajectory(bpy.types.Operator):
     def __handle_add(self, context):
         if DrawObjectTrajectory.__handle is None:
             # 描画関数の登録
-            DrawObjectTrajectory.__handle = bpy.types.SpaceView3D.draw_handler_add(
-                DrawObjectTrajectory.__render, (self, context), 'WINDOW', 'POST_PIXEL')
+            space = bpy.types.SpaceView3D
+            DrawObjectTrajectory.__handle = space.draw_handler_add(
+                DrawObjectTrajectory.__render, (self, context),
+                'WINDOW', 'POST_PIXEL'
+            )
             # モーダルモードへの移行
             context.window_manager.modal_handler_add(self)
 
     def __handle_remove(self, context):
         if DrawObjectTrajectory.__handle is not None:
             # 描画関数の登録を解除
-            bpy.types.SpaceView3D.draw_handler_remove(DrawObjectTrajectory.__handle, 'WINDOW')
+            bpy.types.SpaceView3D.draw_handler_remove(
+                DrawObjectTrajectory.__handle, 'WINDOW'
+            )
             DrawObjectTrajectory.__handle = None
 
     @staticmethod
@@ -87,7 +92,9 @@ class DrawObjectTrajectory(bpy.types.Operator):
     def __render(self, context):
 //! [loc_to_region]
         # 指定したリージョンとスペースを取得する
-        region, space = DrawObjectTrajectory.__get_region_space(context, 'VIEW_3D', 'WINDOW', 'VIEW_3D')
+        region, space = DrawObjectTrajectory.__get_region_space(
+            context, 'VIEW_3D', 'WINDOW', 'VIEW_3D'
+        )
         if (region is None) or (space is None):
             return
 
@@ -167,9 +174,13 @@ class OBJECT_PT_DOT(bpy.types.Panel):
         props = sc.dot_props
         # 開始/停止ボタンを追加
         if props.running is False:
-            layout.operator(DrawObjectTrajectory.bl_idname, text="開始", icon="PLAY")
+            layout.operator(
+                DrawObjectTrajectory.bl_idname, text="開始", icon="PLAY"
+            )
         else:
-            layout.operator(DrawObjectTrajectory.bl_idname, text="終了", icon="PAUSE")
+            layout.operator(
+                DrawObjectTrajectory.bl_idname, text="終了", icon="PAUSE"
+            )
 
 
 # プロパティの作成

@@ -48,7 +48,9 @@ class RenderText(bpy.types.Operator):
     def __handle_remove(self, context):
         if RenderText.__handle is not None:
             # 描画関数の登録を解除
-            bpy.types.SpaceView3D.draw_handler_remove(RenderText.__handle, 'WINDOW')
+            bpy.types.SpaceView3D.draw_handler_remove(
+                RenderText.__handle, 'WINDOW'
+            )
             RenderText.__handle = None
 
     @staticmethod
@@ -93,10 +95,14 @@ class RenderText(bpy.types.Operator):
             blf.shadow_offset(0, 2, -2)
             # 影の効果を有効化
             blf.enable(0, blf.SHADOW)
-            RenderText.__render_text(40, 40, region.height - 120, "Hello Blender world!!")
+            RenderText.__render_text(
+                40, 40, region.height - 120, "Hello Blender world!!"
+            )
             # 影の効果を無効化
             blf.disable(0, blf.SHADOW)
-            RenderText.__render_text(30, 40, region.height - 180, "Suzanne on your lap")
+            RenderText.__render_text(
+                30, 40, region.height - 180, "Suzanne on your lap"
+            )
 
     def modal(self, context, event):
         props = context.scene.rt_props

@@ -1,5 +1,6 @@
 import bpy
-from bpy.props import IntProperty, FloatProperty, EnumProperty, FloatVectorProperty, StringProperty
+from bpy.props import IntProperty, FloatProperty, EnumProperty
+from bpy.props import FloatVectorProperty, StringProperty
 
 
 bl_info = {
@@ -86,11 +87,9 @@ class ShowDialogMenu(bpy.types.Operator):
         self.report(
             {'INFO'},
             "サンプル2-10: [1] %d, [2] %f, [3] %s, [4] (%f, %f, %f)"
-                % (
-                    self.prop_int, self.prop_float, self.prop_enum,
-                    self.prop_floatv[0], self.prop_floatv[1],
-                    self.prop_floatv[2]
-                )
+            % (self.prop_int, self.prop_float, self.prop_enum,
+               self.prop_floatv[0], self.prop_floatv[1],
+               self.prop_floatv[2])
         )
 
         return {'FINISHED'}
@@ -122,7 +121,9 @@ class ShowFileBrowser(bpy.types.Operator):
     directory = StringProperty(subtype="FILE_PATH")
 
     def execute(self, context):
-        self.report({'INFO'}, "サンプル2-10: [FilePath] %s, [FileName] %s, [Directory] %s"
+        self.report(
+            {'INFO'},
+            "サンプル2-10: [FilePath] %s, [FileName] %s, [Directory] %s"
             % (self.filepath, self.filename, self.directory)
         )
         return {'FINISHED'}
@@ -197,9 +198,13 @@ class ShowPropertyPopup(bpy.types.Operator):
     )
 
     def execute(self, context):
-        self.report({'INFO'}, "サンプル2-10: [1] %d, [2] %f, [3] %s, [4] (%f, %f, %f)"
-            % (self.prop_int, self.prop_float, self.prop_enum, self.prop_floatv[0],
-            self.prop_floatv[1], self.prop_floatv[2]))
+        self.report(
+            {'INFO'},
+            "サンプル2-10: [1] %d, [2] %f, [3] %s, [4] (%f, %f, %f)"
+            % (self.prop_int, self.prop_float, self.prop_enum,
+               self.prop_floatv[0], self.prop_floatv[1],
+               self.prop_floatv[2])
+        )
         return {'FINISHED'}
 
     def invoke(self, context, event):

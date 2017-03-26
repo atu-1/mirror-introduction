@@ -108,10 +108,16 @@ class VIEW3D_PT_PlayAudioFileMenu(bpy.types.Panel):
                 layout.operator(StopAudioFile.bl_idname, text="停止", icon='X')
             # 再生を停止した状態
             else:
-                layout.operator(SelectAudioFile.bl_idname, text="オーディオファイルを選択", icon='PLAY')
+                layout.operator(
+                    SelectAudioFile.bl_idname, text="オーディオファイルを選択",
+                    icon='PLAY'
+                )
         else:
             # ファイルブラウザを表示する
-            layout.operator(SelectAudioFile.bl_idname, text="オーディオファイルを選択", icon='PLAY')
+            layout.operator(
+                SelectAudioFile.bl_idname, text="オーディオファイルを選択",
+                icon='PLAY'
+            )
         layout.prop(sc, "paf_volume", text="音量")
 
 

@@ -10,11 +10,15 @@ if __name__ == "__main__":
         assert result == {'FINISHED'}, "test_ops_1にエラーが存在します"
         # bl_name = object.test_ops_2 のテスト
         assert bpy.ops.object.test_ops_2 != None, "test_ops_2が有効化されていません"
-        bpy.ops.object.select_all(action='DESELECT')    # $オブジェクトの選択を解除
-        bpy.data.objects['Cube'].select = True          # $オブジェクト名が「Cube」のオブジェクトを削除
-        bpy.ops.object.delete()                         # $選択中のオブジェクトを削除
+        # $オブジェクトの選択を解除
+        bpy.ops.object.select_all(action='DESELECT')
+        # $オブジェクト名が「Cube」のオブジェクトを削除
+        bpy.data.objects['Cube'].select = True
+        # $選択中のオブジェクトを削除
+        bpy.ops.object.delete()
         result = bpy.ops.object.test_ops_2()
-        assert result == {'FINISHED'}, "test_ops_2にエラーが存在します"       # オブジェクト「Cube」は削除済みのためエラーとなる
+        # オブジェクト「Cube」は削除済みのためエラーとなる
+        assert result == {'FINISHED'}, "test_ops_2にエラーが存在します"
     # テスト失敗時の処理
     except AssertionError as e:
         print(e)        # テストが失敗した原因（assert文の第2引数）を表示

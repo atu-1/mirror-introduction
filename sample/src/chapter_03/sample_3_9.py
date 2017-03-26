@@ -72,7 +72,9 @@ class SelectObjectOnMouseover(bpy.types.Operator):
             # マウスカーソルのリージョン座標を取得
             mv = Vector((event.mouse_region_x, event.mouse_region_y))
             # 3Dビューエリアのウィンドウリージョンと、スペースを取得する
-            region, space = SelectObjectOnMouseover.__get_region_space(context, 'VIEW_3D', 'WINDOW', 'VIEW_3D')
+            region, space = SelectObjectOnMouseover.__get_region_space(
+                context, 'VIEW_3D', 'WINDOW', 'VIEW_3D'
+            )
             # マウスカーソルの位置に向けて発したレイの方向を求める
             ray_dir = view3d_utils.region_2d_to_vector_3d(
                 region,
@@ -97,12 +99,17 @@ class SelectObjectOnMouseover(bpy.types.Operator):
                     # レイとオブジェクトの交差判定
                     mwi = o.matrix_world.inverted()
                     result = o.ray_cast(mwi * start, mwi * end)
-                    # オブジェクトとレイが交差した場合は交差した面のインデックス、交差しない場合は-1が返ってくる
+                    # オブジェクトとレイが交差した場合は交差した面のインデックス、
+                    # 交差しない場合は-1が返ってくる
                     if result[2] != -1:
                         self.__intersected_objs.append(o)
-                # メッシュタイプのオブジェクトが作られているが、ray_cast対象の面が存在しない場合
+                # メッシュタイプのオブジェクトが作られているが、
+                # ray_cast対象の面が存在しない場合
                 except RuntimeError:
-                    print("サンプル3-9: オブジェクト生成タイミングの問題により、例外エラー「レイキャスト可能なデータなし」が発生")
+                    print(
+                        """サンプル3-9: オブジェクト生成タイミングの問題により、
+                        例外エラー「レイキャスト可能なデータなし」が発生"""
+                    )
 
         # レイと交差したオブジェクトを選択
         for o in bpy.data.objects:
@@ -149,9 +156,13 @@ class OBJECT_PT_SOOM(bpy.types.Panel):
         props = sc.soom_props
         # 開始/停止ボタンを追加
         if props.running is False:
-            layout.operator(SelectObjectOnMouseover.bl_idname, text="開始", icon="PLAY")
+            layout.operator(
+                SelectObjectOnMouseover.bl_idname, text="開始", icon="PLAY"
+            )
         else:
-            layout.operator(SelectObjectOnMouseover.bl_idname, text="終了", icon="PAUSE")
+            layout.operator(
+                SelectObjectOnMouseover.bl_idname, text="終了", icon="PAUSE"
+            )
 
 
 # プロパティの作成

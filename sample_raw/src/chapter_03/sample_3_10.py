@@ -17,6 +17,12 @@ bl_info = {
     "category": "Object"
 }
 
+key_list = [
+    ('X', "X", 'X'),
+    ('Y', "Y", 'Y'),
+    ('Z', "Z", 'Z')
+]
+
 
 # プロパティ
 class TOM_Properties(bpy.types.PropertyGroup):
@@ -97,16 +103,14 @@ class OBJECT_PT_SOEM(bpy.types.Panel):
         props = context.scene.tom_props
         # 開始/停止ボタンを追加
         if props.running is False:
-            layout.operator(TranslateObjectMode.bl_idname, text="開始", icon="PLAY")
+            layout.operator(
+                TranslateObjectMode.bl_idname, text="開始", icon="PLAY"
+            )
         else:
-            layout.operator(TranslateObjectMode.bl_idname, text="終了", icon="PAUSE")
+            layout.operator(
+                TranslateObjectMode.bl_idname, text="終了", icon="PAUSE"
+            )
 
-
-key_list = [
-    ('X', "X", 'X'),
-    ('Y', "Y", 'Y'),
-    ('Z', "Z", 'Z')
-]
 
 //! [addon_prefs]
 # ユーザー・プリファレンスのアドオン設定情報
