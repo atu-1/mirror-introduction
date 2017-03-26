@@ -6,7 +6,7 @@ fi
 
 tgt=${1}
 
-files=`find ${tgt} -name ".py"`
+files=`find ${tgt} -name "*.py"`
 
 # pylint
 for file in ${files[@]}; do
