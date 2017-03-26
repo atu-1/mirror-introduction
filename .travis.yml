@@ -7,6 +7,7 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install blender
   - pip install pylint
+  - pip install pep8
 
 install:
   - wget http://mirror.cs.umn.edu/blender.org/release/Blender2.75/blender-2.75-linux-glibc211-x86_64.tar.bz2
@@ -15,7 +16,7 @@ install:
   - cp tests/test_sample.py blender-2.75-linux-glibc211-x86_64
 
 before_script:
-  - sh tests/pylint_sample.sh sample
+  - sh sh tests/check_sample_code.sh sample
   - cd blender-2.75-linux-glibc211-x86_64
 
 script: ./blender --factory-startup --background -noaudio --python test_sample.py

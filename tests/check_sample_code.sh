@@ -8,6 +8,12 @@ tgt=${1}
 
 files=`find ${tgt} -name ".py"`
 
+# pylint
 for file in ${files[@]}; do
     pylint ${file}
+done
+
+# pep8
+for file in ${files[@]}; do
+    pep8 ${file}
 done
