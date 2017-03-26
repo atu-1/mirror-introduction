@@ -69,9 +69,9 @@
 
 ## アドオンを作成する
 
-[1-5節](../chapter_01/05_Install_own_Add-on.md) を参考にして以下のソースコードをテキスト・エディタに入力し、ファイル名 ```sample_3-10.py``` として保存してください。
+[1-5節](../chapter_01/05_Install_own_Add-on.md) を参考にして以下のソースコードをテキスト・エディタに入力し、ファイル名 ```sample_3_10.py``` として保存してください。
 
-[import](../../sample/src/chapter_03/sample_3-10.py)
+[import](../../sample/src/chapter_03/sample_3_10.py)
 
 ## アドオンを使用する
 
@@ -149,7 +149,7 @@
 
 ユーザー・プリファレンスにアドオンの設定情報を追加するためには、```bpy.types.AddonPreferences``` クラスを継承したクラス（アドオン設定クラスと呼ぶことにします）を定義する必要があります。
 
-[import:"addon_prefs", unindent:"true"](../../sample_raw/src/chapter_03/sample_3-10.py)
+[import:"addon_prefs", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_10.py)
 
 アドオン設定クラスのメンバ変数 ```bl_idname``` には、ユーザー・プリファレンスにアドオンの設定情報を追加するパッケージ名やモジュール名を指定します。ユーザー・プリファレンスに追加するアドオンの設定情報は、プロパティクラスとしてメンバ変数に定義します。アドオンが単一のファイルで構成される場合は、自身のモジュール名を表す ```__name__``` を指定します。一方、アドオンが複数のファイルで構成される場合にはパッケージ名を指定する必要がありますが、1点注意が必要です。アドオン設定クラスが ```__init__.py``` に定義されている場合は、```__name__``` がパッケージ名を表すため ```__name__``` を指定すれば問題ありませんが、```__init__.py``` 以外に定義されている場合はパッケージ名を表す ```__package__``` を指定する必要があります。
 
@@ -165,13 +165,13 @@
 
 アドオン設定クラスにプロパティクラスをメンバ変数に定義することで、ユーザー・プリファレンスにアドオンの設定情報を追加することができました。続いて、アドオンの処理でユーザが設定した設定情報を取得する必要があります。本節のサンプルでは、以下の処理によりアドオン設定クラスに定義した設定情報を取得します。
 
-[import:"get_prefs", unindent:"true"](../../sample_raw/src/chapter_03/sample_3-10.py)
+[import:"get_prefs", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_10.py)
 
 ユーザー・プリファレンスに追加された全てのアドオンの設定情報は、```context.user_preferences.addons``` にパッケージ名やモジュール名をキーとした辞書型で保存されていて、設定情報は ```preferences``` から参照することができます。本節のサンプルは単一ファイルで構成され、かつ自分自身のアドオンの設定情報を取得するため、```context.user_preferences.addons[__name__].preferences``` で取得することができます。仮にアドオンが複数のファイルで構成されている場合は ```bl_idname``` の時と同様、```__init__.py``` の場合は、```context.user_preferences.addons[__name__].preferences``` 、それ以外の場合は ```context.user_preferences.addons[__package__].preferences``` のように指定することでアドオンの設定情報を取得できます。
 
 取得したアドオンの設定情報は、アドオン設定クラスで定義したメンバ変数 ```x_axis``` であれば ```context.user_preferences.addons[__name__].x_asis``` のように取得することができます。最後にアドオンの設定情報を使ってオブジェクトを移動する処理を次に示します。
 
-[import:"get_prefs", unindent:"true"](../../sample_raw/src/chapter_03/sample_3-10.py)
+[import:"get_prefs", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_10.py)
 
 ```event.type``` の判定にアドオンの設定情報を用いていることを除いては、[3-2節](02_Handle_Keyboard_Key_Event.md) と同じですので、説明は省略します。
 

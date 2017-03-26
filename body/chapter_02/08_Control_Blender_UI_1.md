@@ -90,9 +90,9 @@ BlenderのUIを変更するためには大変な労力が必要だと思って�
 
 ## アドオンを作成する
 
-[1-5節](../chapter_01/05_Install_own_Add-on.md) を参考にして以下のソースコードを入力し、ファイル名を ```sample_2-8.py``` として保存してください。
+[1-5節](../chapter_01/05_Install_own_Add-on.md) を参考にして以下のソースコードを入力し、ファイル名を ```sample_2_8.py``` として保存してください。
 
-[import](../../sample/src/chapter_02/sample_2-8.py)
+[import](../../sample/src/chapter_02/sample_2_8.py)
 
 
 ## アドオンを使用する
@@ -132,7 +132,7 @@ BlenderのUIを変更するためには大変な労力が必要だと思って�
 
 ツール・シェルフのタブに追加するためには、以下に示すような ```bpy.types.Panel``` クラスを継承した **パネルクラスを作成する** 必要があります。
 
-[import:"panel_cls"](../../sample_raw/src/chapter_02/sample_2-8.py)
+[import:"panel_cls"](../../sample_raw/src/chapter_02/sample_2_8.py)
 
 
 本節のサンプルでは、 ```bpy.types.Panel``` クラスを継承した ```VIEW3D_PT_CustomMenu``` クラスを作成しています。クラス名は基本的に自由につけることができますが、Blender本体では ```<エリア名>_<タイプ>_<クラスを表す適切な名前>``` と命名されていることが多いようですので、本節のサンプルではそれに合わせてみました。ここで ```<タイプ>``` には、継承する型に応じて以下のような文字列が入ります。
@@ -217,7 +217,7 @@ BlenderのUIを変更するためには大変な労力が必要だと思って�
 
 また、```poll()``` メソッドでは、オブジェクトが選択されている時にのみ描画する処理を追加しています。
 
-[import:"poll", unindent:"true"](../../sample_raw/src/chapter_02/sample_2-8.py)
+[import:"poll", unindent:"true"](../../sample_raw/src/chapter_02/sample_2_8.py)
 
 ```poll()``` メソッドはクラス単位の処理となるため、クラスメソッドとして定義する必要があります。このため、メソッドの前にデコレータ ```@classmethod``` をつける必要があります。
 
@@ -235,7 +235,7 @@ BlenderのUIを変更するためには大変な労力が必要だと思って�
 
 タブに追加したメニューのヘッダーのUIを変更するためには、パネルクラスの ```draw_header()``` メソッドを定義します。```draw()``` メソッドでは、ヘッダーのUIを変更できない点に注意が必要です。
 
-[import:"draw_header", unindent:"true"](../../sample_raw/src/chapter_02/sample_2-8.py)
+[import:"draw_header", unindent:"true"](../../sample_raw/src/chapter_02/sample_2_8.py)
 
 
 ```draw_header()``` メソッドの引数は、以下の通りです。
@@ -264,7 +264,7 @@ BlenderのUIを変更するためには大変な労力が必要だと思って�
 
 本節のサンプルでは、```bpy.types.VIEW3D_MT_object.prepend()``` 関数を用いてメニューの先頭にも項目を追加しています。
 
-[import:"append_item_to_menu", unindent:"true"](../../sample_raw/src/chapter_02/sample_2-8.py)
+[import:"append_item_to_menu", unindent:"true"](../../sample_raw/src/chapter_02/sample_2_8.py)
 
 
 
