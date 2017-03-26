@@ -11,7 +11,7 @@ if __name__ == "__main__":
         # bl_name = object.test_ops_2 のテスト
         assert bpy.ops.object.test_ops_2 != None, "test_ops_2が有効化されていません"
         result = bpy.ops.object.test_ops_2()
-        assert result == {'FINISHED'}, "test_ops_2にエラーが存在します"       # オブジェクト「Cube」は削除済みのためエラーとなる
+        assert result == {'FINISHED'}, "test_ops_2にエラーが存在します"
     # テスト失敗時の処理
     except AssertionError as e:
         print(e)        # テストが失敗した原因（assert文の第2引数）を表示

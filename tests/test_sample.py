@@ -315,12 +315,14 @@ class Test_Sample_3_1(TestBase):
     ]
 
     def test_addon(self):
-        bpy.ops.object.mode_set(mode='EDIT')
-        context = get_invoke_context('VIEW_3D', 'WINDOW')
-        result = bpy.ops.mesh.delete_face_by_rclick(context, 'INVOKE_DEFAULT')
-        self.assertSetEqual(result, {'PASS_THROUGH'})
-        result = bpy.ops.mesh.delete_face_by_rclick(context, 'INVOKE_DEFAULT')
-        self.assertSetEqual(result, {'FINISHED'})
+        # invoke operator is not able to test from cmdline
+        pass
+        # bpy.ops.object.mode_set(mode='EDIT')
+        # context = get_invoke_context('VIEW_3D', 'WINDOW')
+        # result = bpy.ops.mesh.delete_face_by_rclick(context, 'INVOKE_DEFAULT')
+        # self.assertSetEqual(result, {'PASS_THROUGH'})
+        # result = bpy.ops.mesh.delete_face_by_rclick(context, 'INVOKE_DEFAULT')
+        # self.assertSetEqual(result, {'FINISHED'})
 
 
 class Test_Sample_3_2(TestBase):
@@ -428,14 +430,22 @@ class Test_Sample_3_10(TestBase):
 
 class Test_Sample_4_5(TestBase):
 
-    modname = 'sample_4-5.testee'
+    modname = 'testee'
     idname = [
         ('OPERATOR', 'object.test_ops_1'),
         ('OPERATOR', 'object.test_ops_2')
     ]
 
     def test_addon(self):
-        pass
+        result = bpy.ops.object.test_ops_1()
+        self.assertSetEqual(result, {'FINISHED'})
+        result = bpy.ops.object.test_ops_2()
+        self.assertSetEqual(result, {'FINISHED'})
+        bpy.ops.object.select_all(action='DESELECT')
+        bpy.data.objects['Cube'].select = True
+        bpy.ops.object.delete()
+        result = bpy.ops.object.test_ops_2()
+        self.assertSetEqual(result, {'CANCELLED'})
 
 
 class Test_Sample_5_1(TestBase):
@@ -520,6 +530,7 @@ if __name__ == "__main__":
         Test_Sample_3_8,
         Test_Sample_3_9,
         Test_Sample_3_10,
+        Test_Sample_4_5,
         Test_Sample_5_1,
         Test_Sample_5_2,
         Test_Sample_5_3,
