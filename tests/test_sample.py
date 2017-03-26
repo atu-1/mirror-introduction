@@ -94,7 +94,7 @@ class TestBase(unittest.TestCase):
 
 class Test_Sample_1_5(TestBase):
 
-    modname = 'sample_1-5'
+    modname = 'sample_1_5'
     idname = []
 
     def test_addon(self):
@@ -103,7 +103,7 @@ class Test_Sample_1_5(TestBase):
 
 class Test_Sample_2_1(TestBase):
 
-    modname = 'sample_2-1'
+    modname = 'sample_2_1'
     idname = [
         ('OPERATOR', 'object.create_object')
     ]
@@ -115,7 +115,7 @@ class Test_Sample_2_1(TestBase):
 
 class Test_Sample_2_2(TestBase):
 
-    modname = 'sample_2-2'
+    modname = 'sample_2_2'
     idname = [
         ('OPERATOR', 'object.enlarge_object'),
         ('OPERATOR', 'object.reduce_object')
@@ -130,7 +130,7 @@ class Test_Sample_2_2(TestBase):
 
 class Test_Sample_2_3(TestBase):
 
-    modname = 'sample_2-3'
+    modname = 'sample_2_3'
     idname = [
         ('OPERATOR', 'object.enlarge_object_2'),
         ('OPERATOR', 'object.reduce_object_2')
@@ -145,7 +145,7 @@ class Test_Sample_2_3(TestBase):
 
 class Test_Sample_2_4(TestBase):
 
-    modname = 'sample_2-4'
+    modname = 'sample_2_4'
     idname = [
         ('OPERATOR', 'object.replicate_object')
     ]
@@ -165,7 +165,7 @@ class Test_Sample_2_4(TestBase):
 
 class Test_Sample_2_5(TestBase):
 
-    modname = 'sample_2-5'
+    modname = 'sample_2_5'
     idname = [
         ('MENU', 'object.replicate_object_menu'),
         ('OPERATOR', 'object.replicate_object')
@@ -185,7 +185,7 @@ class Test_Sample_2_5(TestBase):
 
 class Test_Sample_2_5_alt(TestBase):
 
-    modname = 'sample_2-5_alt'
+    modname = 'sample_2_5_alt'
     idname = [
         ('MENU', 'object.replicate_object_menu'),
         ('MENU', 'object.replicate_object_sub_menu'),
@@ -206,7 +206,7 @@ class Test_Sample_2_5_alt(TestBase):
 
 class Test_Sample_2_6(TestBase):
 
-    modname = 'sample_2-6'
+    modname = 'sample_2_6'
     idname = [
         ('OPERATOR', 'object.replicate_object')
     ]
@@ -225,7 +225,7 @@ class Test_Sample_2_6(TestBase):
 
 class Test_Sample_2_7(TestBase):
 
-    modname = 'sample_2-7'
+    modname = 'sample_2_7'
     idname = [
         ('OPERATOR', 'object.enlarge_object'),
         ('OPERATOR', 'object.reduce_object')
@@ -240,7 +240,7 @@ class Test_Sample_2_7(TestBase):
 
 class Test_Sample_2_8(TestBase):
 
-    modname = 'sample_2-8'
+    modname = 'sample_2_8'
     idname = [
         ('OPERATOR', 'object.null_operation')
     ]
@@ -252,7 +252,7 @@ class Test_Sample_2_8(TestBase):
 
 class Test_Sample_2_9(TestBase):
 
-    modname = 'sample_2-9'
+    modname = 'sample_2_9'
     idname = [
         ('OPERATOR', 'object.null_operation'),
         ('MENU', 'object.null_operation_menu'),
@@ -268,7 +268,7 @@ class Test_Sample_2_9(TestBase):
 
 class Test_Sample_2_10(TestBase):
 
-    modname = 'sample_2-10'
+    modname = 'sample_2_10'
     idname = [
         ('OPERATOR', 'object.show_popup_message'),
         ('OPERATOR', 'object.show_dialog_menu'),
@@ -309,7 +309,7 @@ class Test_Sample_2_10(TestBase):
 
 class Test_Sample_3_1(TestBase):
 
-    modname = 'sample_3-1'
+    modname = 'sample_3_1'
     idname = [
         ('OPERATOR', 'mesh.delete_face_by_rclick')
     ]
@@ -327,7 +327,7 @@ class Test_Sample_3_1(TestBase):
 
 class Test_Sample_3_2(TestBase):
 
-    modname = 'sample_3-2'
+    modname = 'sample_3_2'
     idname = [
         ('OPERATOR', 'object.translate_object_mode')
     ]
@@ -338,7 +338,7 @@ class Test_Sample_3_2(TestBase):
 
 class Test_Sample_3_3(TestBase):
 
-    modname = 'sample_3-3'
+    modname = 'sample_3_3'
     idname = [
         ('OPERATOR', 'object.move_object_interval')
     ]
@@ -349,7 +349,7 @@ class Test_Sample_3_3(TestBase):
 
 class Test_Sample_3_4(TestBase):
 
-    modname = 'sample_3-4'
+    modname = 'sample_3_4'
     idname = [
         ('OPERATOR', 'view_3d.render_figure')
     ]
@@ -360,7 +360,7 @@ class Test_Sample_3_4(TestBase):
 
 class Test_Sample_3_5(TestBase):
 
-    modname = 'sample_3-5'
+    modname = 'sample_3_5'
     idname = [
         ('OPERATOR', 'view_3d.render_text')
     ]
@@ -371,7 +371,7 @@ class Test_Sample_3_5(TestBase):
 
 class Test_Sample_3_6(TestBase):
 
-    modname = 'sample_3-6'
+    modname = 'sample_3_6'
     idname = [
         ('OPERATOR', 'view_3d.select_audio_file'),
         ('OPERATOR', 'view_3d.stop_audio_file')
@@ -388,7 +388,7 @@ class Test_Sample_3_6(TestBase):
 
 class Test_Sample_3_7(TestBase):
 
-    modname = 'sample_3-7'
+    modname = 'sample_3_7'
     idname = [
         ('OPERATOR', 'mesh.delete_face_by_rclick')
     ]
@@ -399,7 +399,7 @@ class Test_Sample_3_7(TestBase):
 
 class Test_Sample_3_8(TestBase):
 
-    modname = 'sample_3-8'
+    modname = 'sample_3_8'
     idname = [
         ('OPERATOR', 'view3d.draw_object_trajectory')
     ]
@@ -410,7 +410,7 @@ class Test_Sample_3_8(TestBase):
 
 class Test_Sample_3_9(TestBase):
 
-    modname = 'sample_3-9'
+    modname = 'sample_3_9'
     idname = [
         ('OPERATOR', 'view3d.select_object_on_mouseover')
     ]
@@ -421,7 +421,7 @@ class Test_Sample_3_9(TestBase):
 
 class Test_Sample_3_10(TestBase):
 
-    modname = 'sample_3-10'
+    modname = 'sample_3_10'
     idname = [
         ('OPERATOR', 'object.translate_object_mode')
     ]
@@ -452,7 +452,7 @@ class Test_Sample_4_5(TestBase):
 
 class Test_Sample_5_1(TestBase):
 
-    modname = 'sample_5-1'
+    modname = 'sample_5_1'
     idname = [
         ('OPERATOR', 'mesh.special_object_edit_mode')
     ]
@@ -463,7 +463,7 @@ class Test_Sample_5_1(TestBase):
 
 class Test_Sample_5_2(TestBase):
 
-    modname = 'sample_5-2'
+    modname = 'sample_5_2'
     idname = [
         ('OPERATOR', 'ui.calculate_working_hours')
     ]
@@ -474,7 +474,7 @@ class Test_Sample_5_2(TestBase):
 
 class Test_Sample_5_3(TestBase):
 
-    modname = 'sample_5-3'
+    modname = 'sample_5_3'
     idname = [
         ('OPERATOR', 'ui.audio_play_time_updater'),
         ('OPERATOR', 'ui.select_audio_file'),
@@ -500,7 +500,7 @@ class Test_Sample_5_3(TestBase):
 
 class Test_Sample_5_4(TestBase):
 
-    modname = 'sample_5-4'
+    modname = 'sample_5_4'
     idname = [
         ('OPERATOR', 'view3d.show_object_name')
     ]
@@ -533,6 +533,7 @@ if __name__ == "__main__":
         Test_Sample_3_8,
         Test_Sample_3_9,
         Test_Sample_3_10,
+        # Test_Sample_4_2,   # can not test because there is no eclipse
         Test_Sample_4_5,
         Test_Sample_5_1,
         Test_Sample_5_2,

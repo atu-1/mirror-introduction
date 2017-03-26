@@ -10,6 +10,7 @@ files=`find ${tgt} -name "*.py"`
 
 # pylint
 for file in ${files[@]}; do
+    echo "======= pylint test "${file}" ======="
     pylint ${file}
     ret=`echo $?`
     if [ ${ret} -ne 0 ]; then
@@ -20,6 +21,7 @@ done
 
 # pep8
 for file in ${files[@]}; do
+    echo "======= pep8 test "${file}" ======="
     pep8 ${file}
     ret=`echo $?`
     if [ ${ret} -ne 0 ]; then
