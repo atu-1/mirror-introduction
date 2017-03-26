@@ -15,5 +15,7 @@ install:
   - ls
   - ls blender-2.75-linux-glibc211-x86_64
   - bash tests/install_sample.sh sample blender-2.75-linux-glibc211-x86_64/2.75/scripts/addons
+  - cp tests/test_sample.py blender-2.75-linux-glibc211-x86_64
+  - cd blender-2.75-linux-glibc211-x86_64
 
-script: blender-2.75-linux-glibc211-x86_64/blender --factory-startup --background --python tests/test_sample.py
+script: blender --factory-startup --background --python test_sample.py
