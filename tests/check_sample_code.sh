@@ -10,7 +10,7 @@ files=`find ${tgt} -name "*.py"`
 
 # pylint
 for file in ${files[@]}; do
-    pylint ${file}
+    pylint --rcfile=.pylintrc ${file}
 done
 
 # pep8
