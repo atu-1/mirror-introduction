@@ -13,6 +13,7 @@ for file in ${files[@]}; do
     pylint ${file}
     ret=`echo $?`
     if [ ${ret} -ne 0 ]; then
+        echo "Test failed (error code: "${ret}")"
         exit 1
     fi
 done
