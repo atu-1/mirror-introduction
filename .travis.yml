@@ -16,6 +16,7 @@ install:
   - cp tests/test_sample.py blender-2.75-linux-glibc211-x86_64
 
 before_script:
+  - cp .pylintrc ~/
   - bash tests/check_sample_code.sh sample
   - cd blender-2.75-linux-glibc211-x86_64
 
