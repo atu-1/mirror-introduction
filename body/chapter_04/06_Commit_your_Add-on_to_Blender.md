@@ -226,6 +226,12 @@ Blenderのリポジトリを取得します。
 |Release|```git://git.blender.org/blender-addons.git```|
 |Contrib|```git://git.blender.org/blender-addons-contrib.git```|
 
+
+<div id="tips"></div>
+
+サポートレベルがReleaseとして登録されるアドオンは、アドオンがすでに完成していてすぐにでもBlenderに取り込むべきものであると判断された場合です。一方サポートレベルがContribは、レビュー時に開発中のアドオンである場合やアドオンの有用度をユーザに判断を仰ぎたい場合に登録されます。
+
+
 <div id="process_title"></div>
 
 ##### Work
@@ -470,13 +476,173 @@ Blender本体にアドオンが取り込まれるとユーザも増えますの�
 
 宣伝も含めて、開発したアドオンのサポートページを作成しましょう。サポートページは、[4-3節](03_Publish_your_Add-on.md) で紹介した方法で開設すると良いと思います。
 
-### サポートレベル Release への審査
+## サポートレベル　Contrib から Release へ
 
-もしアドオンのレビューの結果、サポートレベルContribとしてアドオンを登録することになった場合、ユーザへの要望を聞いてアドオンを継続的に改良することによって、サポートレベルをReleaseに上げることができるかもしれません。
+アドオンのレビューの結果、サポートレベルContribとしてアドオンを登録することになった場合、レビューを依頼することでReleaseレベルへサポートレベルを上げることができます。
 
-ContribからReleaseへサポートレベルを上げるための審査は、Blenderのメーリングリストbf-python(bf-python@blender.org)へメールを出すことで申請できます。
+ContribからReleaseへサポートレベルを上げるためには、例えば以下の方法があります。なお、筆者が開発しているアドオン『Magic UV』は、Blender 2.79に登録すべきアドオンをBlender Artistsでユーザから募集しているときに、ユーザから推薦いただいたのがきっかけとなり、Blenderのアドオン開発代表者であるMeta-Androcto氏からReleaseレベルに招待をいただきました。
+
+* Blenderのアドオン関係のメーリングリストbf-python(bf-python@blender.org)へReleaseサポートレベルへのレビュー申請メールを出し、ユーザの判断を仰ぐ
+* Blenderの新バージョンをリリースする時に、Blenderのアドオン開発代表者（Meta-Androcto氏など）から招待を受ける
+* ユーザからReleaseレベルへの推薦を受ける
+
+このように、アドオンのサポートレベルをReleaseに上げるためには、ユーザからアドオンに対して一定の支持を受ける必要があります。ユーザからアドオンに対して支持を受けるために確実な方法はありませんが、Releaseのサポートレベルとして登録されたアドオンを見てみると、以下のようなアドオンが登録されているように思えます。
+
+* アドオンの機能が優れていて、かつ完成している
+  * ここで優れているとは、既存の機能の組み合わせによる改良ではなくBlenderに新たな機能を提供してくれるアドオンを指す
+* ユーザが多く、アドオンの機能が有用であると評価を多数もらっている
+  * 開発代表者は海外の方が多いので、海外ユーザが多いほうが開発代表者の目にとまりやすいという意味では海外ユーザが多い方が良いです
+* 積極的にユーザからの意見（機能追加リクエスト、バグ報告）を聞き、アドオンの改良を続けている
+  * Releaseレベルのアドオンは、Contribレベルに比べて多くのユーザに使ってもらうことになるため、開発が継続して行われ将来にわたってきちんと動作することが約束できるアドオンが望まれているようです
+
+### Releaseリポジトリへの登録手順
+
+Releaseリポジトリへの登録は、Contribサポートとほぼ同じ手順で行うことができます。
+
+1. アドオンの機能がすでに存在するか確認する
+2. Blenderアドオンのコーディング規約を守る
+3. アドオンの機能レビューを受ける
+4. アドオンのWikiページを作成する
+5. アドオンのソースコードレビューを受ける
+6. Blenderリポジトリへ登録する
+7. サポートページを開設する
+8. Release Noteを書く
+
+上記のうち、1〜4,7については、Contribレベルと同じであるため割愛します。
+ここでは、これ以外の手順について異なる部分について説明します。
+
+
+### 5. アドオンのソースコードレビューを受ける
+
+Contribの項でも前述しましたが、Releaseレベルのリポジトリは ```git://git.blender.org/blender-addons.git``` です。リポジトリの取得元が異なること以外はContribと同じですが、あえてもう一度手順を書いておきます。
+
+
+##### Work
+
+<div id="process_noimg"></div>
+
+|<div id="box">1</div>|以下のコマンドを実行し、最新のBlenderのリポジトリを取得します。サポートレベルがContribレベルと異なることに注意が必要です。|
+|---|---|
+
+```sh
+$ cd [作業用ディレクトリ]
+$ git clone git://git.blender.org/blender-addons.git
+```
+
+<div id="process_sep"></div>
+
+---
+
+<div id="process_noimg"></div>
+
+|<div id="box">2</div>|以下のコマンドを実行し、リポジトリ取得後に作成したアドオンをリポジトリへコピーします。|
+|---|---|
+
+```sh
+$ cd blender-addons
+$ cp [作成したプラグイン] .
+```
+
+<div id="process_sep"></div>
+
+---
+
+<div id="process_noimg"></div>
+
+|<div id="box">3</div>|Contribレベルの方法を参考にソースコードの差分を、D.B.Oに登録します。なお、Create Diffページの入力欄Repositoryには、BlenderのReleaseアドオンレベルのリポジトリであるrBA Blender Add-onsを指定する必要があります。|
+|---|---|
+
+
+<div id="process_start_end"></div>
+
+---
+
+### 6. Blenderリポジトリへ登録する
+
+リポジトリへのソースコード登録についても、サポートレベルがReleaseとContribとの間で大きな違いはありません。唯一リポジトリのURIが異なることに注意するすれば問題ありません。
+
+```sh
+# Releaseレベルのアドオンリポジトリを取得
+$ cd [作業用ディレクトリ]
+$ git clone git://git.blender.org/blender-addons.git
+$ cd blender-addons
+$ git submodule update --init --recursive
+$ git submodule foreach --recursive git checkout master
+$ git submodule foreach --recursive git pull --rebase origin master
+$ git pull --rebase
+$ git submodule foreach --recursive git pull --rebase origin master
+
+# コミット情報（名前と連絡先）
+$ git config --global user.name "[名前（ニックネーム可）]"
+$ git config --global user.email "[連絡先メールアドレス]"
+
+# リモートリポジトリに、Releaseレベルのアドオンリポジトリを取得
+$ git remote set-url origin git@git.blender.org:blender-addons.git
+
+# 作成したアドオンのソースコードをローカルリポジトリへ配置
+$ cd blender-addons-contrib
+$ cp [作成したアドオンのソースコード] .
+
+# アドオンのソースコードをローカルリポジトリへコミット
+$ git add [作成したアドオンのソースコード]
+$ git commit
+
+# 最後にリポジトリの更新をローカルリポジトリに反映し、ソースコードをリモートリポジトリへ登録
+$ git pull --rebase
+$ git push
+```
+
+### 8. Release Noteを書く
+
+最後に、Release Noteを書きます。Release Noteとは、ソフトウェアを公開または更新した時に公表する、ソフトウェアの特徴点や利用にあたって注意することをまとめた文章のことを指します。Blenderでも新しいバージョンがリリースされるたびに、Release Noteが公開され、開発者はBlenderがリリースされる前にRelease Noteを書く必要があります。
+
+<div id="webpage"></div>
+
+|Blender Wiki (Release Notes 2.75)|
+|---|
+|https://wiki.blender.org/index.php/Dev:Ref/Release_Notes/2.75|
+|![Blender Wiki (Release Notes 2.75)]( "Blender Wiki (Release Notes 2.75)")|
+
+Blender本体の機能のみならずReleaseレベルのアドオンは、Blender本体と一緒に提供される標準のアドオンであることから、アドオンに機能を追加した場合や機能を更新した場合でも、Release Noteを書く必要があります。実際にBlenderのRelease Noteを確認すると、アドオンのRelease Noteを書くページが用意されています。
+
+なお、Contribレベルのアドオンはあくまでコミニティが提供するアドオンとして位置付けられており、Release Noteを書く必要は必ずしもありません。むしろ、テストビルドのみしかユーザへ提供されないため、ユーザを混乱させないためにも書かない方がよいかもしれません。もしどうしてもRelease Noteを書きたいのであれば、テストビルドとして提供されることを書くいて、標準のアドオンとして提供されないことを明示すべきです。Externalレベルのアドオンは公式のいずれのリポジトリにも含まれていないことから、Release Noteを書いてはいけません。
+
+Release Noteの書き方について特に明確なルールは設けられていませんが、基本的にはすでに書かれたRelease Noteを参考に書くべきです。Release Noteに書くべき内容としては、以下のようなものがあります。
+
+* アドオン名
+* アドオンの更新内容の概要
+* アドオンの作者
+* アドオンカタログ、サポートページ、D.B.Oのタスクページなど、アドオンの情報が得られるWebサイトへのリンク
+* 新規機能
+* チュートリアル(動画やWikiページへのリンクでもよい)
+* 追加機能や更新内容の詳細な説明
+
+Blender 2.79に『Magic UV』が登録された時に筆者が書いたRelease Noteを以下に載せておきますので、参考にしてみてください。
+
+<div id="webpage"></div>
+
+|Blender Wiki (Release Note 2.79 Add-ons)|
+|---|
+|https://wiki.blender.org/index.php/Dev:Ref/Release_Notes/2.79/Add-ons|
+|![Blender Wiki (Release Note 2.79 Add-ons)]( "Release Note 2.79 Add-ons")|
+
+
+### Releaseレベルへの登録に当たって注意したいこと
 
 サポートレベルがReleaseのアドオンはBlender本体と一緒に提供されるため、サポートレベルがContribのアドオンに比べてユーザが多くなるメリットがあります。しかしサポートレベルがReleaseになるとレビューがより一層厳しくなるため、機能追加を容易に行うことができないというデメリットもあります。このようにサポートレベルによってメリット・デメリットがありますので、よく考えてからレビュー依頼を出すようにしましょう。
+
+
+## より詳細な情報源
+
+本節で取り上げた手順に従うことででアドオンを本体へ取り込むことができますが、より詳細な情報を得たい場合は以下のBlender Wikiページが参考になります。ただし、このページに書かれている内容にすべて従う必要があるかというと、必ずしもそうではありません。リポジトリ登録時には必ず1人以上のサポーターがつきますので、サポーターに従って作業を進めれば問題ないと思います。もし不安な点があるようでしたら、筆者は1度ContribレベルとReleaseレベルへの登録を1度経験しているため、問い合わせいただければと思います。
+
+<div id="webpage"></div>
+
+|Blender Wiki (Process Addons)|
+|---|
+|https://wiki.blender.org/index.php/Dev:Doc/Process/Addons|
+|![Blender Wiki (Process Addons)]( "Blender Wiki (Process Addons)")|
+
 
 ## まとめ
 
