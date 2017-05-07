@@ -6,11 +6,13 @@
 
 <div id="preface"></div>
 
-###### これまではボタンやメニューなどのBlenderの決まったフレームワークの中で、UIを構築する方法を紹介しました。しかし、アドオンの機能によっては独自のUIを構築する必要がある場合があると思います。その時に独自のUIを構築する方法として、例えばOpenGLを利用する方法が考えられます。本節ではBlenderが提供しているOpenGL向けのAPIを利用し、3Dビューエリア上に図形を表示するサンプルを紹介します。
+###### [2-9節](../chapter_02/09_Control_Blender_UI_2.md) では、Blenderが用意しているフレームワークの中で、ボタンやメニューなどのUIを構築する方法を紹介しました。しかし、アドオンの機能によっては独自のUIを構築するほうが便利な場合があります。例えば、押したキーボードやマウスのボタンを表示するアドオン「Screencast Key Status」は独自のUIを構築しているアドオンの1つです。押したキーボードのキーをメニューなどに表示しても見づらいため、「Screencast Key Status」はBlenderが提供しているOpenGL向けのAPIを使い、独自のUIを構築しています。本節ではOpenGL向けのAPIの使い方を紹介します。
 
 ## OpenGLとは？
 
-2D/3D向けのグラフィックAPIはOpenGL (Open Graphic Library)とDirectXの2つが主流です。3DCGに何かしら関わっている方はご存知かもしれませんが、OpenGLとDirectXの違いがわからない方向けにOpenGLとDirectXの違いをまとめました。
+3DCGに何かしら関わっている方であればすでになじみがあると思いますが、OpenGL向けのAPIの使い方を説明する前にOpenGLについて簡単に説明します。OpenGLはOpen Graphic Libraryの略で、2D/3DグラフィックAPIの1つです。OpenGLを利用することで、画像や3Dモデルを比較的簡単に表示することができます。近年ではゲームエンジンや3DCGツールの発展にともなってOpenGLを直接触ることはほとんどなくなりましたが、これらのツールの内部でも最終的にOpenGLを使って画像や3Dモデルを表示しています。
+
+2D/3D向けグラフィックAPIはOpenGLの他にもDirectXがあり、OpenGLとDirectXとで以下の違いがあります。
 
 |　|DirectX|OpenGL|
 |---|---|---|
