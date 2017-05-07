@@ -128,7 +128,6 @@ class OBJECT_PT_RF(bpy.types.Panel):
 //! [panel_class]
 
 
-//! [init_props]
 # プロパティの作成
 def init_props():
     sc = bpy.types.Scene
@@ -169,10 +168,8 @@ def init_props():
         size=2,
         default=(100.0, 50.0)
     )
-//! [init_props]
 
 
-//! [clear_props]
 # プロパティの削除
 def clear_props():
     sc = bpy.types.Scene
@@ -182,7 +179,6 @@ def clear_props():
     del sc.rf_vert_2
     del sc.rf_vert_3
     del sc.rf_vert_4
-//! [clear_props]
 
 
 def register():
