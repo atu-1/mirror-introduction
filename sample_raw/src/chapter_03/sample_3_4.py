@@ -74,19 +74,6 @@ class RenderFigure(bpy.types.Operator):
         bgl.glDisable(bgl.GL_BLEND)
 //! [render]
 
-    def modal(self, context, event):
-        sc = context.scene
-        # 3Dビューの画面を更新
-        if context.area:
-            context.area.tag_redraw()
-
-        # 作業時間計測を停止
-        if sc.rf_running is False:
-            self.__handle_remove(context)
-            return {'FINISHED'}
-
-        return {'PASS_THROUGH'}
-
     def invoke(self, context, event):
         sc = context.scene
         if context.area.type == 'VIEW_3D':
@@ -95,12 +82,15 @@ class RenderFigure(bpy.types.Operator):
                 sc.rf_running = True
                 self.__handle_add(context)
                 print("サンプル3-4: 図形の描画を開始しました。")
-                return {'RUNNING_MODAL'}
             # 終了ボタンが押された時の処理
             else:
                 sc.rf_running = False
+                self.__handle_remove(context)
                 print("サンプル3-4: 図形の描画を終了しました。")
-                return {'FINISHED'}
+            # 3Dビューの画面を更新
+            if context.area:
+                context.area.tag_redraw()
+            return {'FINISHED'}
         else:
             return {'CANCELLED'}
 
