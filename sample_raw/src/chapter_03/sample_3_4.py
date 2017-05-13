@@ -35,7 +35,8 @@ class RenderFigure(bpy.types.Operator):
         if RenderFigure.__handle is None:
             RenderFigure.__handle = bpy.types.SpaceView3D.draw_handler_add(
                 RenderFigure.__render,
-                (self, context), 'WINDOW', 'POST_PIXEL')
+                (self, context), 'WINDOW', 'POST_PIXEL'
+            )
 //! [handle_add]
 
 //! [handle_remove]
@@ -43,7 +44,8 @@ class RenderFigure(bpy.types.Operator):
     def __handle_remove(self, context):
         if RenderFigure.__handle is not None:
             bpy.types.SpaceView3D.draw_handler_remove(
-                RenderFigure.__handle, 'WINDOW')
+                RenderFigure.__handle, 'WINDOW'
+            )
             RenderFigure.__handle = None
 //! [handle_remove]
 

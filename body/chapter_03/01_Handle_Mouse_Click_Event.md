@@ -125,6 +125,10 @@
 
 [import:"unregister_properties", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_1.py)
 
+<div id="tips"></div>
+
+本節のサンプルでは、bpy.types.PropertyGroupを使ってクラス間で共有するプロパティを定義しました。ここで、[2-9節](../chapter_02/09_Control_Blender_UI_2.md) で説明したツール・シェルフへのプロパティ追加時にも、bpy.types.PropertyGroupを使えるのではないかと考える方がいると思います。しかし、layout.prop()に指定するのは「プロパティ変数名の文字列」であることから、グループ化してしまうと正しく動作しません。このため、ツール・シェルフやプロパティパネルに追加しない場合は、bpy.types.PropertyGroupでプロパティをグループ化しても良いですが、追加する場合はbpy.types.PropertyGroupでグループ化せずに個々のプロパティを宣言するようにしましょう。
+
 
 ### UIを作成する
 
