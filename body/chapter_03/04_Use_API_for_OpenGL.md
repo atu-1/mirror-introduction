@@ -88,6 +88,15 @@ BlenderはPythonからOpenGLへアクセスするためのAPIも用意してい�
 |<div id="box">3</div>|*図形* を *三角形* から *四角形* へ変更すると、プロパティパネルで4つの頂点座標を編集できるようになり、表示図形の変更と同時に *3Dビュー* エリア上に表示されている図形も変更されます。|![図の表示 手順4](https://dl.dropboxusercontent.com/s/1wr0l6uddp64emk/use_addon_4.png "図の表示 手順4")|
 |---|---|---|
 
+<div id="process_sep"></div>
+
+---
+
+<div id="process"></div>
+
+|<div id="box">4</div>|プロパティパネルの項目 *図形を表示* に配置されている *終了* ボタンをクリックすると、図形が描画されなくなります。||
+|---|---|---|
+
 <div id="process_start_end"></div>
 
 ---
@@ -194,26 +203,23 @@ OpenGLのプログラミングに慣れている方は、```RenderFigure.render(
 
 最後に ```bgl.glDisable(bgl.GL_BLEND)``` 関数を呼び出し、```bgl.glBegin()``` 関数で有効化したOpenGLの設定を無効化する必要があります。無効化しないまま描画関数を終えてしまうと、OpenGLの設定がすべてのBlenderのUIに対して適用されてしまいます。他のOpenGLの設定についても同様ですので、覚えておいてください。
 
-
-
-
-
 ### 図形を描画する関数を登録解除する
 
-登録した図形を描画する関数は、アドオン無効化時に登録を解除する必要があります。
+```bpy.types.SpaceView3D.draw_handler_add()``` 関数を使って登録した図形を描画する関数は、登録が解除されるまで呼ばれ続けます。このため、不要になった時（本節のサンプルでは、無効化時）に登録を解除する必要があります。図形描画関数を登録解除する処理を次に示します。
 
 [import:"handle_remove", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_4.py)
 
-描画関数の登録解除は、 ```bpy.types.SpaceView3D.draw_handler_remove()``` 関数で行います。
-
-描画関数の登録時に使用した ```bpy.types.SpaceView3D.draw_handler_add()``` 関数と同様、 ```SpaceView3D``` は描画関数を登録解除するエリアにより名前が異なります。
-
-```bpy.types.SpaceView3D.draw_handler_add()``` に指定可能な関数の引数は、以下の通りです。
+描画関数の登録解除は、```RenderFigure.__handle``` にハンドルが登録したことを確認した後に ```bpy.types.SpaceView3D.draw_handler_remove()``` 関数を呼び出して行います。```bpy.types.SpaceView3D.draw_handler_remove()``` 関数に指定する引数を次に示します。描画関数の登録時に使用した ```bpy.types.SpaceView3D.draw_handler_add()``` 関数と同様、```SpaceView3D``` は描画関数を登録解除するエリアによって記述を変える必要があります。
 
 |引数|意味|
 |---|---|
 |第1引数|ハンドル（```draw_handler_add()``` 関数の戻り値）|
-|第2引数|描画する *リージョン*|
+|第2引数|描画するリージョン|
+
+本節のサンプルでは、```RenderFigure.__handle``` にハンドルが保存されているため、```RenderFigure.__handle``` を第1引数に指定します。第2引数は、描画を解除するリージョンを指定しますが、本節のサンプルでは ```bpy.types.SpaceView3D.draw_handler_add()``` 関数の第3引数に指定したリージョン ```WINDOW``` を指定します。
+
+これで描画関数の登録が解除されました。解除後には ```RenderFigure.__handle``` に ```None``` を代入してハンドルが無効であることを明示します。描画関数登録/解除時に ```RenderFigure.__handle``` が ```None``` であるかを確認することを含め、本来はこの処理自体不要なものですが、登録解除後の不正なハンドルを利用してしまった場合にBlender内部で異常な状態になることを防ぐため、あえてこのような処理を追加しています。
+
 
 ### UIを構築する
 
@@ -221,22 +227,22 @@ OpenGLのプログラミングに慣れている方は、```RenderFigure.render(
 
 [import:"panel_class", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_4.py)
 
-[3-1節](01_Handle_Mouse_Click_Event.md) と同様、```bpy.types.Panel``` を継承したパネルクラスの中でUIを構築します。
+[3-1節](01_Handle_Mouse_Click_Event.md) と同様、```bpy.types.Panel``` を継承したパネルクラスの ```draw()``` メソッドに処理を記述してUIを構築します。
 
 最初に描画中か否かの判定を行った後、描画中であれば終了ボタンを、描画中でなければ開始ボタンを配置します。
 
-終了ボタンが押された（```sc.rf_running``` が ```True```）時には、```handle_remove()``` メソッドを実行して描画関数を登録解除し、描画を中断します。開始ボタンが押された（```sc.rf_running``` が ```False```）時には、スタティックメソッド ```RenderFigure.handle_add()``` メソッドを実行して描画関数を登録し、描画を開始します。
+図形描画中（```sc.rf_running``` が ```True``` ）の時は、図形描画関数の登録を解除して描画を停止するための *終了* ボタンを表示します。図形描画中では、描画する図形の種類や頂点の座標を指定できるようにするため、```layout.prop()``` 関数を用いてこれらの指定が可能なUIパーツを配置します。```layout.prop()``` 関数の詳細については、[2-9節](../chapter_02/09_Control_Blender_UI_2.md) を参照してください。四角形を描画する場合、ユーザが4つの頂点を指定できる必要があるため、描画する図形が四角形に選択されている場合は4つ目の頂点を指定するUIパーツを配置します。
 
-続いて、描画中であれば描画する図形や頂点の座標を指定できるようにするため、```layout.prop()``` 関数を用いてこれらのUIパーツを配置します。```layout.prop()``` 関数の詳細については、[2-9節](../chapter_02/09_Control_Blender_UI_2.md) を参照してください。四角形を描画する場合にはユーザが4つの頂点を指定できる必要があるため、描画する図形が四角形に選択されている場合は、4つ目の頂点を指定するUIパーツを配置します。
+図形描画中でない時（```sc.rf_running``` が ```False```の時）は、図形描画関数を登録して描画を開始するための *開始* ボタンのみを表示します。
 
 
 ## まとめ
 
-PythonからOpenGLへアクセスするためのAPIである ```bgl``` モジュールを用いて、3Dビューエリアで図形を描画する方法を紹介しました。
+PythonからOpenGLへアクセスするためのAPIを提供する ```bgl``` モジュールを使って、*3Dビュー* エリアで図形を描画するための方法を紹介しました。
 
-本節で紹介した ```bgl``` モジュールと [3.1節](01_Handle_Mouse_Click_Event.md) で紹介したマウスからのイベントを扱う方法を組み合わせることで、Blender専用のUIとは全く異なる独自のUIを構築することができます。
+本節で紹介した ```bgl``` モジュールと [3-1節](01_Handle_Mouse_Click_Event.md) と [3-2節](02_Handle_Keyboard_Key_Event.md) で紹介したユーザからのイベントを扱う処理を組み合わせることで、Blenderの枠組みで実現するUIとは全く異なる、独自のUIを構築することができます。
 
-OpenGLを利用するためのAPIが用意されているとはいっても、OpenGLの全ての機能に対してAPIが用意されているわけではありません。このため、 ```bgl``` モジュールを利用する際には、 [4.1節](../chapter_04/01_Research_official_Blender_API_for_Add-on.md) を参考にして、Blenderが提供するAPIを確認する必要があります。
+```bgl``` モジュールを使うとOpenGLが提供するAPIを利用することが可能ですが、```bgl``` モジュールは全てのOpenGLのAPIについて対応していません。このため、 ```bgl``` モジュールを利用する際には、[4-1節](../chapter_04/01_Research_official_Blender_API_for_Add-on.md) で説明する方法で、Blenderが提供するAPIを確認する必要があります。
 
 <div id="point"></div>
 
@@ -244,12 +250,11 @@ OpenGLを利用するためのAPIが用意されているとはいっても、Op
 
 <div id="point_item"></div>
 
-* OpenGLへアクセスするためのAPIを利用するためには、 ```bgl``` モジュールをインポートする必要がある
-* ```bgl``` モジュールを用いて、アドオン内でOpenGLを用いて描画するためには、 ```bpy.types.SpaceXXX.draw_handler_add()``` （XXX：描画するエリア）関数を用いて、描画用のスタティックメソッドまたは関数を登録する必要がある
-* 登録した描画用のスタティックメソッドまたは関数は、アドオン無効化時に ```bpy.types.SpaceXXX.draw_handler_remove()``` 関数を用いて、登録を解除する必要がある
+* OpenGLのAPIを利用するためには、```bgl``` モジュールをインポートする必要がある
+* ```bgl``` モジュールを用いて、アドオン内でOpenGLを用いて描画するためには、```bpy.types.XXX.draw_handler_add()``` （XXX：描画するエリアにより変わる）関数を用いて、描画用のスタティックメソッドまたは関数を登録する必要がある
+* 登録した描画用のスタティックメソッドまたは関数は、アドオン無効化時に ```bpy.types.XXX.draw_handler_remove()``` 関数を用いて登録を解除する必要がある
 * ```bgl``` モジュールは、オリジナルのOpenGLの使い方と似たような方法でOpenGLへアクセスするための手段を提供する
-* ```context.scene``` に登録したプロパティは、 パネルクラスの ```draw()``` メソッドで ```self.layout.prop()``` 関数を用いることによりUIパーツとして登録できる
-* ```bgl``` モジュールは、OpenGLの関数をすべてサポートしているわけではない。事前に使いたいAPIが用意されているかの確認が必要である
+* ```bgl``` モジュールは、OpenGLの関数をすべてサポートしているわけではない。事前に使いたいAPIが用意されているかを確認する必要がある
 * ```bgl.glEnable()``` 関数により有効化したOpenGLの設定は、描画関数を終える前に ```bgl.glDisable()``` を使って無効化する必要がある
 
 <div id="space_page"></div>
