@@ -152,7 +152,7 @@
 
 [3-1節](01_Handle_Mouse_Click_Event.md) や [3-2節](02_Handle_Keyboard_Key_Event.md) と同様に ```modal()``` メソッドの最初では、*3Dビュー* エリアの画面更新と ```modal()``` メソッドの終了判定処理を行います。
 
-[import:"handle_timer_event", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_3.py)
+[import:"handle_non_timer_event", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_3.py)
 
 [3-1節](01_Handle_Mouse_Click_Event.md) や [3-2節](02_Handle_Keyboard_Key_Event.md) で説明したように、```modal()``` メソッドはキーボードやマウスのイベントが発生した時にも呼ばれます。このためタイマイベントが発生した時のみオブジェクトを移動するようにしないと、キーボードやマウスの入力イベントが発生するたびにオブジェクトが移動してしまいます。そこで発生したイベントがタイマイベントではない時に ```{'PASS_THROUGH'}``` を返すことで、マウスやキーボードからのイベントが発生した時にオブジェクトが移動しないようにします。
 
