@@ -20,16 +20,6 @@ bl_info = {
 }
 
 
-# プロパティ
-class RT_Properties(bpy.types.PropertyGroup):
-
-    running = BoolProperty(
-        name="テキスト描画中",
-        description="テキスト描画中か？",
-        default=False
-    )
-
-
 # テキスト描画
 class RenderText(bpy.types.Operator):
 

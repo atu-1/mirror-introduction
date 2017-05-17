@@ -107,6 +107,15 @@
 [import:"import_blf", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_5.py)
 
 
+### アドオン内で利用するプロパティを定義する
+
+複数のクラス間で共有するプロパティを次に示します。本節のサンプルでは、共有するプロパティが1つであるため ```bpy.types.PropertyGroup``` によるプロパティのグループ化を行っていません。
+
+|変数|意味|
+|---|---|
+|```rt_running```|テキスト描画中の場合は ```True```|
+
+
 ### 描画関数を登録する
 
 [3-4節](04_Use_API_for_OpenGL.md) で ```bgl``` モジュールを使って図形を描画した時と同様、テキストを描画するためには描画関数を登録する必要があります。描画関数の登録は、```__handle_add()``` メソッド内の ```bpy.types.SpaceView3D.draw_handler_add()``` 関数で行ないます。具体的な引数の型については、[3-4節](04_Use_API_for_OpenGL.md) と同じのため説明は省略します。
