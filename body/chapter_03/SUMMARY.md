@@ -22,7 +22,7 @@ APIを理解するために毎回APIを使って調査するのは大変だと�
 4. [OpenGL向けのAPIを利用する](04_Use_API_for_OpenGL.md)
 5. [blfモジュールを使って文字列を描画する](05_Render_String_with_blf_Module.md)
 6. [オーディオファイルを再生する](06_Play_Audio_File.md)
-7. [アドオンを多言語に対応する](07_Multilingual_Support.md)
+7. [アドオンのUIを複数の言語に対応する](07_Multilingual_Support.md)
 8. [座標変換を活用する①](08_Use_Coordinate_Transformation_1.md)
 9. [座標変換を活用する②](09_Use_Coordinate_Transformation_2.md)
 10. [ユーザー・プリファレンスを活用する](10_Use_User_Preference.md)
