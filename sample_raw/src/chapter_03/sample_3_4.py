@@ -35,7 +35,7 @@ class RenderFigure(bpy.types.Operator):
         if RenderFigure.__handle is None:
             RenderFigure.__handle = bpy.types.SpaceView3D.draw_handler_add(
                 RenderFigure.__render,
-                (self, context), 'WINDOW', 'POST_PIXEL'
+                (context, ), 'WINDOW', 'POST_PIXEL'
             )
 //! [handle_add]
 
@@ -51,7 +51,7 @@ class RenderFigure(bpy.types.Operator):
 
 //! [render]
     @staticmethod
-    def __render(self, context):
+    def __render(context):
         sc = context.scene
 
         # OpenGLの設定
