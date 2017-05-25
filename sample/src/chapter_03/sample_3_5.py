@@ -60,7 +60,7 @@ class RenderText(bpy.types.Operator):
             if a.type == area_type:
                 area = a
                 break
-        if area is None:
+        else:
             return None
         # 指定されたリージョンを取得する
         for r in area.regions:
