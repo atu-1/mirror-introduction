@@ -10,7 +10,7 @@
   9. [3-9. 座標変換を活用する②](body/chapter_03/09_Use_Coordinate_Transformation_2.md)
   10. [3-10. ユーザー・プリファレンスを活用する](body/chapter_03/10_Use_User_Preference.md)
 4. [4. さらにその先へ](body/chapter_04/SUMMARY.md)
-  1. [4-1. Blenderが提供するアドオン向けのAPIを調べる](body/chapter_04/01_Research_official_Blender_API_for_Add-on.md)
+  1. [4-1. Blenderが提供するAPIを調べる](body/chapter_04/01_Research_official_Blender_API_for_Add-on.md)
   2. [4-2. アドオンをデバッグする](body/chapter_04/02_Debug_Add-on.md)
   3. [4-3. アドオンを公開する](body/chapter_04/03_Publish_your_Add-on.md)
   4. [4-4. アドオンのライセンスを決める](body/chapter_04/04_Determine_License_of_Add-on.md)

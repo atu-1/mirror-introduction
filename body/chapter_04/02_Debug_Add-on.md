@@ -6,23 +6,23 @@
 
 <div id="preface"></div>
 
-###### アドオン開発だけではなく、ソフトウェア開発にバグはつきものです。そして発生したバグの原因究明・修正（デバッグ）は、開発の大半の時間を占めることが少なくありません。そこで本節では、アドオンを開発する時のデバッグ方法について紹介します。
+###### プログラムを作ったことであれば誰でもご存知だと思いますが、ソフトウェアにバグはつきものです。そしてそれはBlenderアドオンでも同じです。発生したバグの原因を調べて修正するためにかかる時間は、アドオン開発の大半の時間を占めることが多いです。そこで本節では、アドオンを開発する時にバグの原因を効率的に調べる（デバッグ）方法について説明します。
 
 ## アドオンのデバッグ手段
 
-アドオンのデバッグ手段は色々ありますが、ここでは以下のデバッグ手段について紹介します。
+プログラムで発生したバグを取り除く作業は、一般的にデバッグと呼ばれます。Blenderのアドオン開発もプログラムを作ることと同じですので、ここでもバグを取り除く作業をデバッグと呼ぶことにします。Blenderのアドオン開発においてデバッグする手段はいくつかありますが、通常のプログラム開発と異なりデバッグ手段が確立していません。このため本節では、筆者が行っている次のデバッグ方法について説明します。
 
 * self.reportデバッグ
 * printデバッグ
 * 外部デバッガを利用したデバッグ
 * アドオン『BreakPoint』を利用したデバッグ
 
+
 ## self.reportデバッグ
 
-読んで字のごとく、 ```self.report()``` メソッドを用いたデバッグ手法です。
-```self.report()``` メソッドの第2引数に任意の文字列を入力できることを利用し、確認したい変数の値をスクリプト実行ログに表示させることでデバッグを行います。
+タイトルの通り、スクリプト実行ログに文字列を出力する ```self.report()``` メソッドを使ったデバッグ手法です。```self.report()``` メソッドの第2引数に出力する文字列を渡しますが、ここに確認したい変数の値を指定することで変数の値をスクリプト実行ログに表示させ、期待した値が保存されていることを確認しながらデバッグします。
 
-self.reportデバッグの例を以下に示します。以下の例では、 ```execute()``` メソッド内で定義された変数 ```a``` と ```b``` の値をスクリプト実行ログに表示することで、変数に正しい値が代入されていることを確認します。
+self.reportデバッグの例を次に示します。次の例では、```execute()``` メソッド内で定義された変数 ```a``` と ```b``` の値をスクリプト実行ログに表示することで、それぞれの変数に正しい値が代入されていることを確認します。
 
 ```python
 def execute(self, context):
@@ -31,21 +31,20 @@ def execute(self, context):
     self.report({'INFO'}, "a=%d, b=%f" % (a, b))
 ```
 
-```execute()``` メソッドが実行されると、スクリプト実行ログに以下のように表示されます。
+この例で ```execute()``` メソッドが実行されると、次のように変数 ```a``` と ```b``` の値がスクリプト実行ログに出力されます。
 
 ```python
 a=50, b=4.0
 ```
 
-self.reportデバッグは、変数を表示したい箇所に ```self.report()``` メソッドを記述するだけで良いため、他のデバッグ方法に比べて最も手軽にデバッグを行える点がメリットです。一方、 ```modal()``` メソッドなどの ```self.report()``` メソッドを利用できない処理中ではデバッグできない点がデメリットです。
+self.reportデバッグは、変数を表示したい箇所に ```self.report()``` メソッドを記述するだけで良いため、他のデバッグ方法に比べて最も手軽にデバッグを行える点がメリットです。ただし、```modal()``` メソッド内などの ```self.report()``` メソッドを利用できない処理中ではデバッグできないことに注意する必要があります。```modal()``` メソッド内で変数の値を表示したい場合は、次に紹介するprintデバッグを利用する必要があります。
+
 
 ## printデバッグ
 
-読んで字のごとく、```print()``` 関数を用いたデバッグ手法です。
+こちらもタイトル通り、コンソールウィンドウに文字列を出力する ```print()``` 関数を用いたデバッグ手法です。self.reportデバッグと同じように、確認したい変数の値を表示させてデバッグを行う方法ですが、self.reportデバッグでは確認できない ```modal()``` メソッドなどの処理で使用している変数を確認することができます。ただし ```print()``` 関数の出力先はコンソールウィンドウであるため、[1-3節](../chapter_01/03_Prepare_Add-on_development_environment.md) を参考にして、コンソールウィンドウからBlenderを起動する必要があります。
 
-self.reportデバッグと同じように、確認したい変数の値を表示させてデバッグを行う方法ですが、self.reportデバッグでは確認できなかった処理中の変数も確認することができます。ただし ```print()``` 関数の出力先はコンソールウィンドウであるため、[1-3節](../chapter_01/03_Prepare_Add-on_development_environment.md) を参考にして、コンソールウィンドウからBlenderを起動する必要があります。
-
-以下の例では、```execute()``` メソッド内で定義された変数 ```a``` と ```b``` の値をコンソールウィンドウに出力することで、変数に正しい値が代入されているかを確認します。
+次の例では、```execute()``` メソッド内で定義された変数 ```a``` と ```b``` の値をコンソールウィンドウに出力することで、変数に正しい値が代入されているかを確認します。
 
 ```python
 def execute(self, context):
@@ -54,7 +53,7 @@ def execute(self, context):
     print("a=%d, b=%f" % (a, b))
 ```
 
-```execute()``` メソッドが実行されると、コンソールウィンドウには以下のように表示されます。
+この例で ```execute()``` メソッドが実行されると、次のように変数 ```a``` と ```b``` の値がコンソールウィンドウに出力されます。
 
 ```python
 a=50, b=4.0
@@ -64,28 +63,29 @@ a=50, b=4.0
 
 Pythonコンソールウィンドウからbpy.ops.XXX（XXX：オペレーションクラスのbl_idname）を実行してアドオンの処理を行った場合、print()関数の出力先はPythonコンソールウィンドウになります。
 
+
 <div id="space_m"></div>
 
 
 ## 外部デバッガを利用したデバッグ
 
-これまで紹介した2つのデバッグ手法は、確認したい変数を表示するための処理をソースコード内に記載する必要があるため、あまり効率的ではありません。これらのデバッグ手法を採用した場合でもデバッグすることはできますが、デバッグが難航している場合は、外部のデバッガを利用してデバッグすることも検討するべきです。
+ここまでに紹介した2つのデバッグ手法は、確認したい変数を表示するための処理をソースコード内に毎回追加する必要があるため、あまり効率的ではありません。また、デバッグが終わったあとに追加した処理を削除する必要があり、削除中に誤って別の処理を削除するなどのバグが発生してしまう可能性があります。もちろん簡単なデバッグ目的であれば、これらの手法でデバッグしてもよいのですが、デバッグが難航している場合は、外部のデバッガを使ってデバッグすることも検討してみましょう。
 
-ここでは外部デバッガとしてPyDevを利用し、統合開発環境(IDE)であるEclipseを利用することで、GUIベースでデバッグできるようにします。外部デバッガを利用したデバッグの手順を以下に示します。
+ここでは外部デバッガとしてPyDevを利用し、統合開発環境（IDE）であるEclipseを利用することで、GUIベースでデバッグできるようにします。デバッグの手順の概要を次に示します。
 
 <div id="custom_ol"></div>
 
 1. PyDevとEclipseのインストール
-2. デバッグ用プロジョクトの作成
+2. デバッグ用Eclipseプロジョクトの作成
 3. デバッグ実行のためのPythonスクリプトの作成
 4. PyDevデバッグサーバの起動
 5. デバッグ開始
 
-これから各手順について詳細な手順を説明していきます。
+これからそれぞれの手順について、詳細な手順を説明していきます。
 
 ### 1. EclipseとPyDevのインストール
 
-デバッグを実行するために、EclipseとPyDevをインストールします。
+最初に、IDEのEclipseとデバッガPyDevをインストールします。
 
 #### Eclipseのインストール
 
@@ -98,9 +98,9 @@ Eclipseのホームページから、最新版のEclipseをダウンロードし
 |https://www.eclipse.org/downloads/|
 |![Eclipse ダウンロードページ](https://dl.dropboxusercontent.com/s/5jk44fvtrmkat80/eclipse_download.png "Eclipse ダウンロードページ")|
 
-Eclipseは、JavaやC/C++、PHPなど様々なプログラミング言語に対応しているIDEですが、ここではJava用のEclipseを利用します。
+Eclipseは、JavaやC/C++、PHPなど様々なプログラミング言語に対応しているIDEですが、ここではJava用のEclipseを利用します。Blenderのアドオンの言語がPythonであることから、PythonのプログラムをデバッグするのにJava用のEclipseを使えばよいのでは、と思うかもしれませんがPython向けに提供されているEclipseは存在しません。このため、Java用のEclipseにPython用のデバッガPyDevを追加することで、Pythonで書かれたプログラムをEclipseでデバッグできるようにします。
 
-Eclipseを利用するためにはJava SEがインストールされている必要があるため、もしインストールされていない場合はJava SEをインストールしてください。
+Eclipseを動作させるためには、Java SEがインストールされている必要があります。もしインストールされていない場合はJava SEのダウンロードページからダウンロードし、インストールしてください。
 
 <div id="webpage"></div>
 
@@ -109,11 +109,11 @@ Eclipseを利用するためにはJava SEがインストールされている必
 |http://www.oracle.com/technetwork/java/javase/downloads/index.html|
 |![Java SE ダウンロードページ](https://dl.dropboxusercontent.com/s/bc4nbfq66358u5h/javase_download.png "Java SE ダウンロードページ")|
 
+
 #### PyDevのインストール
 
-ダウンロードしたEclipseを起動します。
+続いて、Python用のデバッガPyDevをインストールします。ダウンロードしたEclipseを起動し、次の手順に従ってPyDevをインストールします。
 
-Eclipseが起動したら、以下の手順に沿ってPyDevをインストールします。
 
 <div id="process_title"></div>
 
@@ -121,7 +121,7 @@ Eclipseが起動したら、以下の手順に沿ってPyDevをインストー�
 
 <div id="process"></div>
 
-|<div id="box">1</div>|Help > Install New Software...をクリックします|![PyDevのインストール 手順1](https://dl.dropboxusercontent.com/s/n41n3g8fa4cytvv/install_pydev_1.png "PyDevのインストール 手順1")|
+|<div id="box">1</div>|メニューから *Help* > *Install New Software...* を実行します。|![PyDevのインストール 手順1](https://dl.dropboxusercontent.com/s/n41n3g8fa4cytvv/install_pydev_1.png "PyDevのインストール 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -130,7 +130,7 @@ Eclipseが起動したら、以下の手順に沿ってPyDevをインストー�
 
 <div id="process"></div>
 
-|<div id="box">2</div>|Available SoftwareウィンドウのAdd...をクリックします|![PyDevのインストール 手順2](https://dl.dropboxusercontent.com/s/9hwwncn3xeie2si/install_pydev_2.png "PyDevのインストール 手順2")|
+|<div id="box">2</div>|*Available Software* ウィンドウの *Add...* をクリックします。|![PyDevのインストール 手順2](https://dl.dropboxusercontent.com/s/9hwwncn3xeie2si/install_pydev_2.png "PyDevのインストール 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -139,7 +139,7 @@ Eclipseが起動したら、以下の手順に沿ってPyDevをインストー�
 
 <div id="process"></div>
 
-|<div id="box">3</div>|NameにPyDevを、Locationに http://pydev.org/updates を入力して OK をクリックします|![PyDevのインストール 手順3](https://dl.dropboxusercontent.com/s/mcs991y9iucacz6/install_pydev_3.png "PyDevのインストール 手順3")|
+|<div id="box">3</div>|*Name* に ```PyDev``` を、*Location* に ```http://pydev.org/updates``` を入力して *OK* ボタンをクリックします。|![PyDevのインストール 手順3](https://dl.dropboxusercontent.com/s/mcs991y9iucacz6/install_pydev_3.png "PyDevのインストール 手順3")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -148,7 +148,7 @@ Eclipseが起動したら、以下の手順に沿ってPyDevをインストー�
 
 <div id="process"></div>
 
-|<div id="box">4</div>|しばらく経つと、Available SoftwareウィンドウにPyDevが追加されると思いますので、選択後にContact all update sites during install to find required softwareのチェックボックスを外し、Next >をクリックします|![PyDevのインストール 手順4](https://dl.dropboxusercontent.com/s/xm1f3c7pytrs7j1/install_pydev_4.png "PyDevのインストール 手順4")|
+|<div id="box">4</div>|少し時間がかかりますが、*Available Software* ウィンドウに *PyDev* が追加されると思いますので、選択したあとに *Contact all update sites during install to find required software* のチェックボックスを外し、*Next >* ボタンをクリックします。|![PyDevのインストール 手順4](https://dl.dropboxusercontent.com/s/xm1f3c7pytrs7j1/install_pydev_4.png "PyDevのインストール 手順4")|
 |---|---|---|
 
 <div id="column"></div>
@@ -161,7 +161,7 @@ Eclipseが起動したら、以下の手順に沿ってPyDevをインストー�
 
 <div id="process"></div>
 
-|<div id="box">5</div>|Install DetailsウィンドウのNext >をクリックします|![PyDevのインストール 手順5](https://dl.dropboxusercontent.com/s/uogvhp6ltvsdt88/install_pydev_5.png "PyDevのインストール 手順5")|
+|<div id="box">5</div>|*Install Details* ウィンドウの *Next >* ボタンをクリックします。|![PyDevのインストール 手順5](https://dl.dropboxusercontent.com/s/uogvhp6ltvsdt88/install_pydev_5.png "PyDevのインストール 手順5")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -170,7 +170,7 @@ Eclipseが起動したら、以下の手順に沿ってPyDevをインストー�
 
 <div id="process"></div>
 
-|<div id="box">6</div>|Review Licensesウィンドウでライセンスに同意した後、Finishをクリックします|![PyDevのインストール 手順6](https://dl.dropboxusercontent.com/s/7qldtykqtvktsn3/install_pydev_6.png "PyDevのインストール 手順6")|
+|<div id="box">6</div>|*Review Licenses* ウィンドウでライセンスに同意し、*Finish* をクリックします。|![PyDevのインストール 手順6](https://dl.dropboxusercontent.com/s/7qldtykqtvktsn3/install_pydev_6.png "PyDevのインストール 手順6")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -179,7 +179,7 @@ Eclipseが起動したら、以下の手順に沿ってPyDevをインストー�
 
 <div id="process"></div>
 
-|<div id="box">7</div>|PyDevのインストールが完了します|![PyDevのインストール 手順7](https://dl.dropboxusercontent.com/s/pw6z8p67qk2tr3u/install_pydev_7.png "PyDevのインストール 手順7")|
+|<div id="box">7</div>|PyDevのインストールが完了します。|![PyDevのインストール 手順7](https://dl.dropboxusercontent.com/s/pw6z8p67qk2tr3u/install_pydev_7.png "PyDevのインストール 手順7")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -188,20 +188,23 @@ Eclipseが起動したら、以下の手順に沿ってPyDevをインストー�
 
 <div id="process"></div>
 
-|<div id="box">8</div>|Eclipseを再起動します|![PyDevのインストール 手順8](https://dl.dropboxusercontent.com/s/onj8yjj4723yl0j/install_pydev_8.png "PyDevのインストール 手順8")|
+|<div id="box">8</div>|Eclipseを再起動します。|![PyDevのインストール 手順8](https://dl.dropboxusercontent.com/s/onj8yjj4723yl0j/install_pydev_8.png "PyDevのインストール 手順8")|
 |---|---|---|
 
 <div id="process_start_end"></div>
 
 ---
 
-### 2. デバッグ用プロジョクトの作成
 
-デバッグ用のEclipseプロジェクトを作成します。
+### 2. デバッグ用Eclipseプロジョクトの作成
+
+アドオンをデバッグするためのEclipseプロジェクトを作成します。
+
 
 #### Eclipseプロジェクトの作成
 
-Eclipseプロジェクトを以下の手順に沿って作成します。
+Eclipseプロジェクトを次の手順に従って作成します。
+
 
 <div id="process_title"></div>
 
@@ -209,7 +212,7 @@ Eclipseプロジェクトを以下の手順に沿って作成します。
 
 <div id="process"></div>
 
-|<div id="box">1</div>|File - New - Project...をクリックします|![Eclipseプロジェクトの作成 手順1](https://dl.dropboxusercontent.com/s/htzmf81c1umkg3m/setup_eclipse_project_1.png "Eclipseプロジェクトの作成 手順1")|
+|<div id="box">1</div>|メニューから *File* > *New* > *Project...* を実行します。|![Eclipseプロジェクトの作成 手順1](https://dl.dropboxusercontent.com/s/htzmf81c1umkg3m/setup_eclipse_project_1.png "Eclipseプロジェクトの作成 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -218,7 +221,7 @@ Eclipseプロジェクトを以下の手順に沿って作成します。
 
 <div id="process"></div>
 
-|<div id="box">2</div>|Select a wizardウィンドウから、PyDev - PyDev Projectを選択し、Next >をクリックします|![Eclipseプロジェクトの作成 手順2](https://dl.dropboxusercontent.com/s/xzd20c7dj4oi4m8/setup_eclipse_project_2.png "Eclipseプロジェクトの作成 手順2")|
+|<div id="box">2</div>|*Select a wizard* ウィンドウから、*PyDev* > *PyDev Project* を選択し、*Next >* ボタンをクリックします。|![Eclipseプロジェクトの作成 手順2](https://dl.dropboxusercontent.com/s/xzd20c7dj4oi4m8/setup_eclipse_project_2.png "Eclipseプロジェクトの作成 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -227,7 +230,7 @@ Eclipseプロジェクトを以下の手順に沿って作成します。
 
 <div id="process"></div>
 
-|<div id="box">3</div>|PyDev ProjectウィンドウでProject nameにプロジェクト名を入力し（今回の例ではBlender-Addon-Debugging）、Grammer Versionを3.0、Interpreterをpythonに設定してNext >をクリックします|![Eclipseプロジェクトの作成 手順3](https://dl.dropboxusercontent.com/s/ono341pj3yl1cnf/setup_eclipse_project_3.png "Eclipseプロジェクトの作成 手順3")|
+|<div id="box">3</div>|*PyDev Project* ウィンドウで *Project name* にプロジェクト名を入力し（今回の例ではBlender-Addon-Debugging）、*Grammer Version*を *3.0*、*Interpreter* を *python* に設定して *Next >* ボタンをクリックします。|![Eclipseプロジェクトの作成 手順3](https://dl.dropboxusercontent.com/s/ono341pj3yl1cnf/setup_eclipse_project_3.png "Eclipseプロジェクトの作成 手順3")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -236,7 +239,7 @@ Eclipseプロジェクトを以下の手順に沿って作成します。
 
 <div id="process"></div>
 
-|<div id="box">4</div>|Finishをクリックします|![Eclipseプロジェクトの作成 手順4](https://dl.dropboxusercontent.com/s/o7vngybzvl4h4c5/setup_eclipse_project_4.png "Eclipseプロジェクトの作成 手順4")|
+|<div id="box">4</div>|*Reference page* ウィンドウが表示されたら、*Finish* をクリックします。|![Eclipseプロジェクトの作成 手順4](https://dl.dropboxusercontent.com/s/o7vngybzvl4h4c5/setup_eclipse_project_4.png "Eclipseプロジェクトの作成 手順4")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -245,16 +248,17 @@ Eclipseプロジェクトを以下の手順に沿って作成します。
 
 <div id="process"></div>
 
-|<div id="box">5</div>|Eclipseプロジェクトが作成されます|![Eclipseプロジェクトの作成 手順5](https://dl.dropboxusercontent.com/s/1qurjvwmtbmxbkw/setup_eclipse_project_5.png "Eclipseプロジェクトの作成 手順5")|
+|<div id="box">5</div>|Eclipseプロジェクトが作成されます。|![Eclipseプロジェクトの作成 手順5](https://dl.dropboxusercontent.com/s/1qurjvwmtbmxbkw/setup_eclipse_project_5.png "Eclipseプロジェクトの作成 手順5")|
 |---|---|---|
 
 <div id="process_start_end"></div>
 
 ---
 
+
 #### パスの設定
 
-プロジェクト作成後、Blenderに標準で備わっているPythonスクリプト等が置かれているパスを設定します。
+Eclipseプロジェクトを作成した直後では、```bpy``` モジュールなどのBlender本体と一緒に提供されるPythonモジュールなどへのパスが通っていないため、このままではBlenderのAPIを使うことができません。そこで、作成したEclipseプロジェクトに対してBlender関連のモジュールへのパスを設定します。
 
 <div id="space_xl"></div>
 
@@ -265,7 +269,7 @@ Eclipseプロジェクトを以下の手順に沿って作成します。
 
 <div id="process"></div>
 
-|<div id="box">1</div>|作成したプロジェクトを選択した状態で、Project > Propertiesをクリックします|![パスの設定 手順1](https://dl.dropboxusercontent.com/s/rxpoqtgrmbpr4rl/configure_path_1.png "パスの設定 手順1")|
+|<div id="box">1</div>|*Package Explorer* において作成したプロジェクトを選択した状態で、メニュー *Project* > *Properties* をクリックします。|![パスの設定 手順1](https://dl.dropboxusercontent.com/s/rxpoqtgrmbpr4rl/configure_path_1.png "パスの設定 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -274,7 +278,7 @@ Eclipseプロジェクトを以下の手順に沿って作成します。
 
 <div id="process"></div>
 
-|<div id="box">2</div>|左のメニューからPyDev - PYTHONPATHを選択します|![パスの設定 手順2](https://dl.dropboxusercontent.com/s/tkaqudo3ougnen2/configure_path_2.png "パスの設定 手順2")|
+|<div id="box">2</div>|表示されたウィンドウの左のメニューから *PyDev - PYTHONPATH* を選択します|![パスの設定 手順2](https://dl.dropboxusercontent.com/s/tkaqudo3ougnen2/configure_path_2.png "パスの設定 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -283,7 +287,7 @@ Eclipseプロジェクトを以下の手順に沿って作成します。
 
 <div id="process"></div>
 
-|<div id="box">3</div>|External Librariesを選択します|![パスの設定 手順3](https://dl.dropboxusercontent.com/s/itz2hzqa9q3oq9i/configure_path_3.png "パスの設定 手順3")|
+|<div id="box">3</div>|ウィンドウ右側のタブから *External Libraries* を選択します。|![パスの設定 手順3](https://dl.dropboxusercontent.com/s/itz2hzqa9q3oq9i/configure_path_3.png "パスの設定 手順3")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -292,10 +296,10 @@ Eclipseプロジェクトを以下の手順に沿って作成します。
 
 <div id="process"></div>
 
-|<div id="box">4</div>|Add source folderをクリックし、以下のパスを追加します <br> ```(BLENDER_BASE_SCRIPT_PATH)/addons``` <br>  ```(BLENDER_BASE_SCRIPT_PATH)/addons/modules``` <br>  ```(BLENDER_BASE_SCRIPT_PATH)/modules``` <br>  ```(BLENDER_BASE_SCRIPT_PATH)/startup```|![パスの設定 手順4](https://dl.dropboxusercontent.com/s/uko6g5ltb04yhqo/configure_path_4.png "パスの設定 手順4")|
+|<div id="box">4</div>|*Add source folder* ボタンをクリックし、以下のパスを追加します <br> ```(BLENDER_BASE_SCRIPT_PATH)/addons``` <br>  ```(BLENDER_BASE_SCRIPT_PATH)/addons/modules``` <br>  ```(BLENDER_BASE_SCRIPT_PATH)/modules``` <br>  ```(BLENDER_BASE_SCRIPT_PATH)/startup```|![パスの設定 手順4](https://dl.dropboxusercontent.com/s/uko6g5ltb04yhqo/configure_path_4.png "パスの設定 手順4")|
 |---|---|---|
 
-BLNEDER_BASE_SCRIPT_PATHは、以下に示すようにOS依存です。BLENDER_VERはBlenderのバージョンです。例えばバージョンが2.75aのBlenderを利用している場合は、BLENDER_VERは2.75となります。
+ここで ```BLENDER_BASE_SCRIPT_PATH``` は、次に示すようにOS依存です（```BLENDER_VER``` はBlenderのバージョンです）。例えばバージョンが2.75aのBlenderを利用している場合は、```BLENDER_VER``` は ```2.75``` となります。
 
 |OS|Blender<br>実行ファイルのパス例|BLENDER_BASE_SCRIPT_PATH|
 |---|---|---|
@@ -303,33 +307,32 @@ BLNEDER_BASE_SCRIPT_PATHは、以下に示すようにOS依存です。BLENDER_V
 |Mac|```/path/blender.app```|```/path/blender.app/Contents/Resources/``` <br> ```(BLENDER_VER)/scripts```|
 |Linux|```/path/blender```|```/path/(BLENDER_VER)/scripts```|
 
-必要に応じて個人用の作業ディレクトリのパスを追加しても良いです。ここでは上で示したパスに加えて、 ```debug.py``` と ```debuggee.py``` が置かれたディレクトリのパスを指定します。
-
-保存先は、[1-5節](../chapter_01/05_Install_own_Add-on.md) を参照してください。
+また、必要に応じて個人用の作業ディレクトリのパスを追加してもよいです。パスを追加することで作業用ディレクトリのファイルが、ウィンドウ左側の *PyDev Package Explorer* に表示されるようになります。ここでは上で示したパスに加えて、```debug.py``` と ```debuggee.py``` が置かれたディレクトリのパスを指定します。後ほど説明しますが、これらのファイルの置き場所は、本書でこれまで紹介してきたサンプルの場所と同じディレクトリです。
 
 <div id="process_start_end"></div>
 
 ---
 
+
 ### 3. デバッグ実行のためのPythonスクリプト作成
 
-デバッグ実行するためのPythonスクリプトを作成します。
-
-以下のようなスクリプトを、ファイル名 ```debug.py``` として作成してください。
+デバッグを行うためのプロジェクトの設定は終わったので、次にデバッグ実行するための関数が定義されたPythonモジュールを作成します。次に示すスクリプトを、ファイル名 ```debug.py``` として作成してください。
 
 [import](../../sample/src/chapter_04/sample_4_2/debug.py)
 
-ここで ```PYDEV_SRC_DIR``` にはPyDevが置かれたディレクトリを指定しますが、環境によりPyDevが置かれたディレクトリが異なるため、各自で確認する必要があります。筆者のMac環境ではPyDevの場所は ```~/.p2/pool/plugins/org.python.pydev_XXX/pysrc``` でした。（```XXX```はPyDevのバージョンです。）
+PyDevを使うためには、```pydevd``` モジュールをインポートして ```pydevd.settrace()``` を呼び出す必要があり、作成したモジュールでは ```start_debug()``` 関数がその役割を担っています。このためデバッグされる側のPythonスクリプトは、```debug``` をインポートして ```debug.start_debug()``` 関数を呼び出すことでデバッグを開始することができます。
 
-次に、デバッグ対象とするアドオンを用意します。本節のサンプルでは以下のデバッグ対象するアドオンを作成し、ファイル名 ```debugee.py``` として作成します。
+ここで ```pydevd``` モジュールをインポートする前に、PyDevのパスを ```sys.path``` に追加しています。パスを追加しないと ```pydevd``` が見つからずインポートできません。```PYDEV_SRC_DIR``` にはPyDevが置かれたディレクトリを指定しますが、環境によってPyDevが置かれるディレクトリが異なるため、各自で確認する必要があります。筆者のMac環境ではPyDevの場所は ```~/.p2/pool/plugins/org.python.pydev_XXX/pysrc``` でした。（```XXX```はPyDevのバージョンです。）
 
-なお、```debug.py``` と ```debugee.py``` は同じディレクトリに置く必要があります。本節のサンプルは、本書でこれまで紹介してきたサンプルの場所と同じディレクトリに保存します。保存先は、 [1-5節](../chapter_01/05_Install_own_Add-on.md) を参照してください。
+ちなみに、```debug.py``` には ```DEBUGGING``` というグローバル変数が定義されています。常にデバッグしたいとは限らないため、```DEBUGGING``` を ```True``` にした時のみデバッグするようにしています。
+
+続いて、デバッグ対象とするアドオンを作成します。ここでは次に示すアドオンを作成し、ファイル名 ```debugee.py``` として作成します。なお、```debug.py``` と ```debugee.py``` は同じディレクトリに置く必要があり、ここでは本書でこれまで紹介してきたサンプルの場所と同じディレクトリに保存します。保存先は、 [1-5節](../chapter_01/05_Install_own_Add-on.md) を参照してください。
 
 [import](../../sample/src/chapter_04/sample_4_2/debuggee.py)
 
-アドオン有効化時にデバッグを開始するために、 ```debug.py``` をインポートし、デバッグを開始する場所に ```debug.start_debug()``` 関数を追加します。
+最初に、先ほど作成した ```debug``` モジュールをインポートします。そして、アドオン有効化時にデバッグを開始するために、```register()``` 関数で ```debug.start_debug()``` 関数を実行します。これでアドオンを有効化すると同時に、デバッグが開始されるようになりました。なおここで紹介したアドオンは特に新しいことは行っていないため、具体的に解説しません。
 
-これで ```debug.start_debug()``` 関数を通ると、デバッグが開始されるようになりました。
+
 
 ### 4. PyDevデバッグサーバの起動
 
