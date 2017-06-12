@@ -336,9 +336,11 @@ PyDevを使うためには、```pydevd``` モジュールをインポートし�
 
 ### 4. PyDevデバッグサーバの起動
 
-#### EclipseにBlenderを登録
+3で作成したデバッグ実行のためのPythonスクリプトを実行するだけでは、デバッグすることはできません。PyDevにはデバッグサーバという機能があり、デバッグサーバにシグナルを送ることでデバッグを行います。このため、スクリプト実行前にPyDevデバッグサーバを事前に起動しておく必要があります。
 
-PyDevデバッグサーバをEclipseから起動するために、以下の方法でBlenderをEclipseから実行できるようにします。
+#### EclipseからBlenderを実行できるようにする
+
+BlenderをEclipseから実行できるように設定し、Blenderのアドオン処理中にPyDevデバッグサーバに対してシグナルを送れるようにします。
 
 <div id="space_m"></div>
 
@@ -349,7 +351,7 @@ PyDevデバッグサーバをEclipseから起動するために、以下の方�
 
 <div id="process"></div>
 
-|<div id="box">1</div>|Run > External Tools > External Tools Configurations...をクリックします|![EclipseにBlenderを登録 手順1](https://dl.dropboxusercontent.com/s/yudnrn16tz821op/register_blender_to_eclipse_1.png "EclipseにBlenderを登録 手順1")|
+|<div id="box">1</div>|メニューから *Run* > *External Tools* > *External Tools Configurations...* を実行します。|![EclipseにBlenderを登録 手順1](https://dl.dropboxusercontent.com/s/yudnrn16tz821op/register_blender_to_eclipse_1.png "EclipseにBlenderを登録 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -358,7 +360,7 @@ PyDevデバッグサーバをEclipseから起動するために、以下の方�
 
 <div id="process"></div>
 
-|<div id="box">2</div>|表示されたウィンドウで、Programをダブルクリックします|![EclipseにBlenderを登録 手順2](https://dl.dropboxusercontent.com/s/cjybhosb2649upd/register_blender_to_eclipse_2.png "EclipseにBlenderを登録 手順2")|
+|<div id="box">2</div>|表示されたウィンドウの左側にある、*Program*をダブルクリックします。|![EclipseにBlenderを登録 手順2](https://dl.dropboxusercontent.com/s/cjybhosb2649upd/register_blender_to_eclipse_2.png "EclipseにBlenderを登録 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -367,10 +369,10 @@ PyDevデバッグサーバをEclipseから起動するために、以下の方�
 
 <div id="process_noimg"></div>
 
-|<div id="box">3</div>|Mainタブを選択し、LocationにBlenderの実行ファイルのパス、Working DirectoryにBlenderの実行ファイルが置かれたディレクトリを入力します。<br>Nameには任意の名前を入力します。（ここでは、New_Configurationを入力しています）|
+|<div id="box">3</div>|ウィンドウ左側の *Main* タブを選択し、*Location* にBlenderの実行ファイルのパス、*Working Directory* にBlenderの実行ファイルが置かれたディレクトリを入力します。<br>*Name* には任意の名前を入力します。（ここでは、```New_Configuration``` を入力しています）|
 |---|---|---|
 
-OSごとのBlender実行ファイルのパスを以下に示します。Blenderのトップディレクトリ（Blenderを非インストーラ版(zip版)でダウンロードした時に、ダウンロードしたファイルを解凍したディレクトリ）を ```/path``` とした時のBlenderの実行ファイルのパスを示しています。
+Blenderの実行ファイルのパスは、OSごとに異なります。Blenderのトップディレクトリ（Blenderを非インストーラ版、すなわちzip版でダウンロードした時に、ダウンロードしたファイルを解凍したディレクトリ）を ```/path``` としたときの、Blenderの実行ファイルのパスを次に示します。
 
 |OS|パス|
 |---|---|
@@ -384,7 +386,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">4</div>|Applyをクリックします。|![EclipseにBlenderを登録 手順3](https://dl.dropboxusercontent.com/s/305zw5lym8bhoja/register_blender_to_eclipse_3.png "EclipseにBlenderを登録 手順3")|
+|<div id="box">4</div>|最後に、*Apply* ボタンをクリックします。|![EclipseにBlenderを登録 手順3](https://dl.dropboxusercontent.com/s/305zw5lym8bhoja/register_blender_to_eclipse_3.png "EclipseにBlenderを登録 手順3")|
 |---|---|---|
 
 <div id="process_start_end"></div>
@@ -393,7 +395,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 #### デバッグサーバの起動
 
-最後に以下の手順で、PyDevデバッグサーバを起動します。
+続いて、PyDevデバッグサーバを起動します。
 
 <div id="space_xxxl"></div>
 
@@ -404,7 +406,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">1</div>|Window > Perspective > Open Perspective > Other...をクリックします|![デバッグサーバの起動 手順1](https://dl.dropboxusercontent.com/s/srlqpa41rwqtcbg/run_debug_server_1.png "デバッグサーバの起動 手順1")|
+|<div id="box">1</div>|メニューから、*Window* > *Perspective* > *Open Perspective* > *Other...* を実行します。|![デバッグサーバの起動 手順1](https://dl.dropboxusercontent.com/s/srlqpa41rwqtcbg/run_debug_server_1.png "デバッグサーバの起動 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -413,7 +415,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">2</div>|Debugを選択し、OKボタンをクリックしてDebugパースペクティブを開きます|![デバッグサーバの起動 手順2](https://dl.dropboxusercontent.com/s/z2aqd3b3i8e1u3c/run_debug_server_2.png "デバッグサーバの起動 手順2")|
+|<div id="box">2</div>|表示されたウィンドウで *Debug* を選択し、*OK* ボタンをクリックして *Debugパースペクティブ* を開きます。|![デバッグサーバの起動 手順2](https://dl.dropboxusercontent.com/s/z2aqd3b3i8e1u3c/run_debug_server_2.png "デバッグサーバの起動 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -422,7 +424,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">3</div>|Pydev > Start Debug Serverをクリックします|![デバッグサーバの起動 手順3](https://dl.dropboxusercontent.com/s/zxrckr9gfrxrkxd/run_debug_server_3.png "デバッグサーバの起動 手順3")|
+|<div id="box">3</div>|メニューから *Pydev* > *Start Debug Server* を実行します。|![デバッグサーバの起動 手順3](https://dl.dropboxusercontent.com/s/zxrckr9gfrxrkxd/run_debug_server_3.png "デバッグサーバの起動 手順3")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -431,24 +433,25 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">4</div>|デバッグサーバが起動します|![デバッグサーバの起動 手順4](https://dl.dropboxusercontent.com/s/stxtk3q6glfo925/run_debug_server_4.png "デバッグサーバの起動 手順4")|
+|<div id="box">4</div>|デバッグサーバが起動します。|![デバッグサーバの起動 手順4](https://dl.dropboxusercontent.com/s/stxtk3q6glfo925/run_debug_server_4.png "デバッグサーバの起動 手順4")|
 |---|---|---|
 
 <div id="process_start_end"></div>
 
 ---
 
+
 ### 5. デバッグ開始
 
-ここまで順調に設定できていれば、以下のような画面が表示されているはずです。
+ここまで順調に設定できていれば、次のような画面が表示されているはずです。
 
 ![デバッグ開始 手順1](https://dl.dropboxusercontent.com/s/a4ktv1sy6bv7duc/start_debug_1.png "デバッグ開始 手順1")
 
-先ほど作成した ```debug.py``` と ```debuggee.py``` は、 ```PyDev Package Explorer``` の ```scripts/addons``` から参照することができます。
+3で作成したソースコード ```debug.py``` と ```debuggee.py``` は、*PyDev Package Explorer* の *scripts/addons*から参照することができます。
 
-なお、 ```PyDev Package Explorer``` には2つの ```scripts/addons``` が表示されていますが、片方はサポートレベルがOfficialであるアドオン群が格納されています。ここでは自分が作成したアドオンを参照する必要があるので、 ```debug.py``` と ```debuggee.py``` が格納されている ```scripts/addons``` を参照するようにしてください。
+なお、*PyDev Package Explorer* には2つの *scripts/addons* が表示されていますが、片方はサポートレベルがOfficialであるアドオンが配置されています。ここでは作成したアドオンのデバッグを行うため、```debug.py``` と ```debuggee.py``` が配置されているほうを参照するようにしてください。
 
-以下の手順に従って、EclipseからBlenderを起動してアドオンをデバッグします。ここでは、 ```debugee.py``` の28行目が実行された時にプログラムを一時的に止めて、デバッグモードになるようにします。
+さていよいよ、EclipseからBlenderを起動してアドオンをデバッグします。ここでは、 ```debugee.py``` に定義された ```DebugTestOps``` クラスの ```execute()``` メソッドの処理 ```debug_var = debug_var + 30.0``` が実行された時にプログラムを一時的に止めて、デバッグモードに移行するようにします。
 
 
 <div id="process_title"></div>
@@ -457,7 +460,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">1</div>|ソースコードの行番号の隣の灰色部分をクリックし、 ```debugee.py``` の28行目にブレークポイントを設定します。|![デバッグ開始 手順2](https://dl.dropboxusercontent.com/s/yo1ij0wqrf6fzw5/start_debug_2.png "デバッグ開始 手順2")|
+|<div id="box">1</div>|ソースコードの行番号の隣の灰色部分をクリックし、 ```debugee.py``` に定義された処理 ```debug_var = debug_var + 30.0``` にブレークポイントを設定します。|![デバッグ開始 手順2](https://dl.dropboxusercontent.com/s/yo1ij0wqrf6fzw5/start_debug_2.png "デバッグ開始 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -466,7 +469,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">2</div>|Run > External Tools > External Tools Configurations...をクリックします|![デバッグ開始 手順3](https://dl.dropboxusercontent.com/s/ma36nv5q2br1hvb/start_debug_3.png "デバッグ開始 手順3")|
+|<div id="box">2</div>|メニューから *Run* > *External Tools* > *External Tools Configurations...* を実行します。|![デバッグ開始 手順3](https://dl.dropboxusercontent.com/s/ma36nv5q2br1hvb/start_debug_3.png "デバッグ開始 手順3")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -475,7 +478,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">3</div>|New_Configurationを選択し、Runボタンをクリックします。<br>以降は、Run > External Tools > New_ConfigurationからBlenderを起動することができるようになります|![デバッグ開始 手順4](https://dl.dropboxusercontent.com/s/wdphxp2edjuvees/start_debug_4.png "デバッグ開始 手順4")<br><br>![デバッグ開始 手順5](https://dl.dropboxusercontent.com/s/wir3l0phuez9v1b/start_debug_5.png "デバッグ開始 手順5")|
+|<div id="box">3</div>|表示されたウィンドウの左側から *New_Configuration* を選択し、*Run* ボタンをクリックします。<br>なお、次回以降は *Run* > *External Tools* > *New_Configuration* からBlenderを起動することができるようになります。|![デバッグ開始 手順4](https://dl.dropboxusercontent.com/s/wdphxp2edjuvees/start_debug_4.png "デバッグ開始 手順4")<br><br>![デバッグ開始 手順5](https://dl.dropboxusercontent.com/s/wir3l0phuez9v1b/start_debug_5.png "デバッグ開始 手順5")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -484,7 +487,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">4</div>|Blenderが起動します|![デバッグ開始 手順6](https://dl.dropboxusercontent.com/s/lcy17hstd76pfe5/start_debug_6.png "デバッグ開始 手順6")|
+|<div id="box">4</div>|Blenderが起動します。|![デバッグ開始 手順6](https://dl.dropboxusercontent.com/s/lcy17hstd76pfe5/start_debug_6.png "デバッグ開始 手順6")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -493,7 +496,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">5</div>|作成したアドオンを有効化します|![デバッグ開始 手順7](https://dl.dropboxusercontent.com/s/w0en5mwd5fgpmm6/start_debug_7.png "デバッグ開始 手順7")|
+|<div id="box">5</div>|作成したアドオンを有効化します。|![デバッグ開始 手順7](https://dl.dropboxusercontent.com/s/w0en5mwd5fgpmm6/start_debug_7.png "デバッグ開始 手順7")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -502,7 +505,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">6</div>|デバッガが起動します|![デバッグ開始 手順8](https://dl.dropboxusercontent.com/s/876yphkm0qjolcp/start_debug_8.png "デバッグ開始 手順8")|
+|<div id="box">6</div>|デバッガが起動します。|![デバッグ開始 手順8](https://dl.dropboxusercontent.com/s/876yphkm0qjolcp/start_debug_8.png "デバッグ開始 手順8")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -511,7 +514,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">7</div>|Debugパースペクティブで、Resumeボタンを押します|![デバッグ開始 手順9](https://dl.dropboxusercontent.com/s/d211w8m59e5tubf/start_debug_9.png "デバッグ開始 手順9")|
+|<div id="box">7</div>|*Debugパースペクティブ* で、*Resume* ボタンを押します。|![デバッグ開始 手順9](https://dl.dropboxusercontent.com/s/d211w8m59e5tubf/start_debug_9.png "デバッグ開始 手順9")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -520,7 +523,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">8</div>|3Dビューのメニューで、追加 > メッシュ > デバッグのテストを実行します|![デバッグ開始 手順10](https://dl.dropboxusercontent.com/s/mg5rywpsvq17s0w/start_debug_10.png "デバッグ開始 手順10")|
+|<div id="box">8</div>|起動中のBlenderに戻り、*3Dビュー* エリアのメニューから、*追加* > *メッシュ* > *デバッグのテスト* を実行します。|![デバッグ開始 手順10](https://dl.dropboxusercontent.com/s/mg5rywpsvq17s0w/start_debug_10.png "デバッグ開始 手順10")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -529,7 +532,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">9</div>|設定したブレークポイントでプログラムが止まります。|![デバッグ開始 手順11](https://dl.dropboxusercontent.com/s/b51idbmcjdjyiuz/start_debug_11.png "デバッグ開始 手順11")|
+|<div id="box">9</div>|設定したブレークポイントで処理が止まります。|![デバッグ開始 手順11](https://dl.dropboxusercontent.com/s/b51idbmcjdjyiuz/start_debug_11.png "デバッグ開始 手順11")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -538,7 +541,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">10</div>|Debugパースペクティブで変数値などを参照することができます。<br>この他にもEclipseには様々な機能が備わっていますが、ここでは割愛します。|![デバッグ開始 手順12](https://dl.dropboxusercontent.com/s/m95irzuut9ngloh/start_debug_12.png "デバッグ開始 手順12")|
+|<div id="box">10</div>|*Debugパースペクティブ* で変数値などを参照することができます。<br>この他にもEclipseには様々な機能が備わっていますが、ここでは割愛します。|![デバッグ開始 手順12](https://dl.dropboxusercontent.com/s/m95irzuut9ngloh/start_debug_12.png "デバッグ開始 手順12")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -547,7 +550,7 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">11</div>|デバッグを終了するためには、DebugタブのNew_Configurationを選択した状態で赤い四角のボタンを押します。|![デバッグ開始 手順13](https://dl.dropboxusercontent.com/s/3kjwzrvham4yxtd/start_debug_13.png "デバッグ開始 手順13")|
+|<div id="box">11</div>|デバッグを終了するためには、*Debug* タブの *New_Configuration* を選択した状態で *赤い四角* のボタンを押します。|![デバッグ開始 手順13](https://dl.dropboxusercontent.com/s/3kjwzrvham4yxtd/start_debug_13.png "デバッグ開始 手順13")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -556,12 +559,16 @@ OSごとのBlender実行ファイルのパスを以下に示します。Blender�
 
 <div id="process"></div>
 
-|<div id="box">12</div>|デバッグが終了します。この時、Debug Serverは起動したままになります。もしDebug Serverも終了する場合は、DebugタブのDebug Serverを選択した状態で赤い四角のボタンを押します。|![デバッグ開始 手順14](https://dl.dropboxusercontent.com/s/70nztthhb4hm7wo/start_debug_14.png "デバッグ開始 手順14")|
+|<div id="box">12</div>|デバッグが終了します。この時、Debug Serverは起動したままになります。もしDebug Serverを終了したい場合は、*Debug* タブの *Debug Server* を選択した状態で *赤い四角* のボタンを押します。|![デバッグ開始 手順14](https://dl.dropboxusercontent.com/s/70nztthhb4hm7wo/start_debug_14.png "デバッグ開始 手順14")|
 |---|---|---|
 
 <div id="process_start_end"></div>
 
 ---
+
+
+
+
 
 ## アドオン『BreakPoint』を利用したデバッグ
 
