@@ -37,7 +37,7 @@ OpenGLを使って図形の描画方法を理解するため、次の仕様の�
 
 ## アドオンを作成する
 
-[1-5節](../chapter_01/05_Install_own_Add-on.md) を参考にして以下のソースコードをテキスト・エディタに入力し、ファイル名 ```sample_3_4.py``` として保存してください。
+[1-5節](../chapter_01/05_Install_own_Add-on.md) を参考にして以下のソースコードを入力し、ファイル名 ```sample_3_4.py``` として保存してください。
 
 [import](../../sample/src/chapter_03/sample_3_4.py)
 

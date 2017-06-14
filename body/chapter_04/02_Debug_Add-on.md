@@ -572,9 +572,9 @@ Blenderの実行ファイルのパスは、OSごとに異なります。Blender�
 
 ## アドオン『BreakPoint』を利用したデバッグ
 
-Eclipseを用いたデバッグは準備が非常に大変です。手間をかけずにデバッグしたい方は、アドオン『BreakPoint』の利用を検討しましょう。
+説明したとおり、EclipseとPyDevを用いたデバッグは準備に時間がかかります。少しだけデバッガを試してみたいという方にとっては、手を出しにくい方法となっています。そこで、手間をかけずにデバッグしたい人のために、アドオン『BreakPoint』を利用してデバッグを行う方法を紹介します。前準備はアドオンの導入だけでよいので、EclipseとPyDevによるデバッグとと違って、比較的すぐにデバッグ環境を整えることができます。
 
-アドオン『BreakPoint』を利用したデバッグは、以下の手順で行います。
+アドオン『BreakPoint』を利用してデバッグを行う手順を次に示します。
 
 <div id="custom_ol"></div>
 
@@ -583,9 +583,10 @@ Eclipseを用いたデバッグは準備が非常に大変です。手間をか�
 3. ブレークポイントをデバッグ対象のスクリプトに設定
 4. デバッグ開始
 
+
 ### 1. アドオン『BreakPoint』のインストール
 
-アドオン『BreakPoint』を以下のWebサイトからダウンロードし、インストールします。
+Webサイトからアドオン『BreakPoint』をダウンロードし、インストールします。アドオンのインストールの仕方がわからない場合は、[1-4節](../chapter_01/04_Understand_Install_Uninstall_Update_Add-on.md) を参考にしてください。
 
 <div id="webpage"></div>
 
@@ -601,30 +602,31 @@ Eclipseを用いたデバッグは準備が非常に大変です。手間をか�
 
 <div id="sidebyside"></div>
 
-|インストールしたアドオンを有効化します。|![『BreakPoint』の有効化](https://dl.dropboxusercontent.com/s/b6ofwmbcsw4qkyj/enable_breakpoint.png "『BreakPoint』の有効化")|
+|インストールしたアドオン『BreakPoint』を有効化します。|![『BreakPoint』の有効化](https://dl.dropboxusercontent.com/s/b6ofwmbcsw4qkyj/enable_breakpoint.png "『BreakPoint』の有効化")|
 |---|---|
 
 
 ### 3. ブレークポイントをデバッグ対象のスクリプトに設定
 
-以下のようなデバッグ対象のアドオンを作成し、 ```debuggee_2.py``` として保存します。
+デバッグ対象とするアドオンを作成し、```debuggee_2.py``` として保存します。
 
 [import](../../sample/src/chapter_04/sample_4_2/debuggee_2.py)
 
-ブレークポイントを設定する関数は ```bpy.types.bp.bp()``` ですが、毎回関数名を書くのは冗長ですので、以下のように ```breakpoint()``` と書くだけで呼び出せるようにします。
+ブレークポイントを設定するために ```bpy.types.bp.bp()``` 呼び出す必要がありますが、毎回関数名を書くのは面倒ですので、次のようにして ```breakpoint()``` と書くだけで呼び出せるようにすると、デバッグが少し楽になるかと思います。
 
-```python
-# ブレークポイント関数
-breakpoint = bpy.types.bp.bp
-```
+[import:"short_call", unindent:"true"](../../sample/src/chapter_04/sample_4_2/debuggee_2.py)
 
-以降ブレークポイントを設定する時は、ブレークポイントを設定したい場所で ```breakpoint()``` 関数を実行すれば良いです。
+以降、ブレークポイントを設定する時は、次のようにしてブレークポイントを設定したい場所で ```breakpoint()``` 関数を実行すればよいです。
 
-```breakpoint()``` 関数の第1引数には変数のスコープの辞書（ローカル変数であれば ```locals()``` 、グローバル変数であれば ```globals()```）、第2引数には確認したい変数を指定します。
+[import:"set_breakpoint", unindent:"true"](../../sample/src/chapter_04/sample_4_2/debuggee_2.py)
+
+```breakpoint()``` 関数の第1引数には、変数のスコープの辞書（ローカル変数であれば ```locals()``` 、グローバル変数であれば ```globals()```）、第2引数には確認したい変数を指定します。サンプルでは、ローカル変数である ```debug_var``` の値を出力するため、第1引数に ```locals()``` 、第2引数に ```globals()``` を指定します。
+
 
 ### 4. デバッグ開始
 
-以下の手順に従って、デバッグを開始します。
+これで、デバッグを行う準備が整いました。それでは、アドオン『BreakPoint』を使って実際にデバッグを行ってみましょう。
+
 
 <div id="process_title"></div>
 
@@ -632,7 +634,7 @@ breakpoint = bpy.types.bp.bp
 
 <div id="process"></div>
 
-|<div id="box">1</div>|*テキストエディター* エリアのメニューで、ビュー > プロパティを実行し、*テキストエディター* エリアのプロパティを表示します。|![デバッグ 手順1](https://dl.dropboxusercontent.com/s/bu01qdhpcstfb16/start_bp_debug_1.png "デバッグ 手順1")|
+|<div id="box">1</div>|*テキストエディター* エリアのメニューから *ビュー* > *プロパティ* を実行し、*テキストエディター* エリアのプロパティを表示します。|![デバッグ 手順1](https://dl.dropboxusercontent.com/s/bu01qdhpcstfb16/start_bp_debug_1.png "デバッグ 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -641,7 +643,7 @@ breakpoint = bpy.types.bp.bp
 
 <div id="process"></div>
 
-|<div id="box">2</div>|プロパティを表示すると、BreakPointメニューが追加されていることが確認できます。<br>BreakPointメニューを確認し、有効化されていることを確認します。|![デバッグ 手順2](https://dl.dropboxusercontent.com/s/quxp3yhoj9r9q01/start_bp_debug_2.png "デバッグ 手順2")|
+|<div id="box">2</div>|*プロパティ* を表示すると、項目 *BreakPoint* が追加されていることが確認できます。<br>*有効化* ボタンが選択されていることを確認します。|![デバッグ 手順2](https://dl.dropboxusercontent.com/s/quxp3yhoj9r9q01/start_bp_debug_2.png "デバッグ 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -650,7 +652,7 @@ breakpoint = bpy.types.bp.bp
 
 <div id="process"></div>
 
-|<div id="box">3</div>|3Dビューエリアのメニューで、追加 > メッシュ > デバッグのテスト2を実行します。|![デバッグ 手順3](https://dl.dropboxusercontent.com/s/wmmy34dyq4ktvvj/start_bp_debug_3.png "デバッグ 手順3")|
+|<div id="box">3</div>|*3Dビュー* エリアのメニューから、*追加* > *メッシュ* > *デバッグのテスト2* を実行します。|![デバッグ 手順3](https://dl.dropboxusercontent.com/s/wmmy34dyq4ktvvj/start_bp_debug_3.png "デバッグ 手順3")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -668,23 +670,25 @@ breakpoint = bpy.types.bp.bp
 
 <div id="column"></div>
 
-[1-3節](../chapter_01/03_Prepare_Add-on_development_environment.md) で紹介した方法でBlenderをコンソールウィンドウから開いた場合は、コンソールウィンドウにもデバッグ情報が表示されているはずです。  
-またコンソールウィンドウから起動した場合に限り、Blender本体からコンソールウィンドウに制御が移ります。制御が移っている間は、コンソールウィンドウでPythonインタープリタを使うことができますが、Blenderでいかなる操作も受け付けなくなります。  
-Blender本体に制御を戻す（アドオンの実行を再開する）場合は、WindowsではCtrl+Zキーを、 Mac/LinuxではCtrl+Dキーを押してください。
+[1-3節](../chapter_01/03_Prepare_Add-on_development_environment.md) で説明した方法でBlenderをコンソールウィンドウから開いた場合は、コンソールウィンドウにもデバッグ情報が表示されているはずです。  
+また、コンソールウィンドウから起動した場合に限り、Blender本体からコンソールウィンドウに制御が移ります。制御が移っている間は、コンソールウィンドウでPythonインタープリタを使うことができますが、Blender側ではいかなる操作も受け付けなくなります。  
+Blender本体に制御を戻す（アドオンの実行を再開する）場合は、Windowsでは *Ctrl* + *Z* キーを、 Mac/Linuxでは *Ctrl* + *D* キーを押してください。
+
 
 
 ## まとめ
 
-本節ではアドオンをデバッグする方法を紹介しましたが、本節で紹介したそれぞれのデバッグについて簡単にまとめました。
+本節ではアドオンをデバッグする方法を紹介しました。ここでは、本節で紹介したデバッグについて簡単にまとめます。
 
 |デバッグ方法|できること|前準備|
 |---|---|---|
-|self.report|スクリプト実行ログに出力可能な処理の中での変数値確認|ソースコードの調べたい箇所に ```self.report()``` メソッドを追加|
-|print|すべての変数値確認|コンソールウィンドウからBlenderを起動、ソースコードの調べたい箇所に ```print()``` 関数を追加|
-|外部デバッガ|ブレークポイント設定やコールトレース調査、変数値確認などEclipseが持つデバッガ機能の利用|EclipseやPyDevのインストール、EclipseとBlenderの連携、デバッグ実行用スクリプトの作成|
-|デバッガアドオン『BreakPoint』|ブレークポイント設定、変数値確認|アドオン『BreakPoint』のインストール、ブレークポイント設定のためのソースコード編集|
+|self.report|スクリプト実行ログに出力可能な処理中での変数値確認|ソースコードの調べたい箇所に ```self.report()``` メソッドを追加|
+|print|すべての変数値確認|ソースコードの調べたい箇所に ```print()``` 関数を追加し、コンソールウィンドウからBlenderを起動|
+|外部デバッガ|ブレークポイント設定やコールトレース調査、変数値確認など、Eclipseが持つデバッガ機能の利用|EclipseやPyDevのインストール、EclipseとBlenderの連携、デバッグ実行用スクリプトの作成|
+|アドオン『BreakPoint』|ブレークポイント設定、変数値確認|アドオン『BreakPoint』のインストール、ブレークポイント設定のためのソースコード編集|
 
-多くの情報を得ることのできるデバッグ方法は、必要な前準備が基本的に多くなる傾向があります。問題解決の難しさと準備時間を見極めて適宜デバッグ方法を選択すべきです。
+ここで示したように、より多くの情報をデバッグで得る場合は必要な前準備が多くなる傾向があります。解決しようとしている問題の難しさと前準備の時間を合わせて判断し、デバッグの仕方を変えていきましょう。
+
 
 <div id="point"></div>
 
@@ -692,7 +696,7 @@ Blender本体に制御を戻す（アドオンの実行を再開する）場合�
 
 <div id="point_item"></div>
 
-* Blenderをデバッグする方法として、確認対象の変数を出力する他に、外部デバッガやデバッグ用アドオンを用いる方法がある
-* 前準備が多いデバッグ方法は準備が大変な分、より多くの情報をデバッグ時に得ることができる
+* 確認対象の変数をスクリプト実行ログやコンソールウィンドウに出力する他に、外部デバッガやデバッグするためのアドオンを用いることでもデバッグすることができる
+* 前準備が多いデバッグ方法は準備が大変な分、デバッグするときにより多くの情報を得ることができる
 
 <div id="space_page"></div>
