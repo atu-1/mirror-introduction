@@ -87,6 +87,8 @@ class SelectObjectOnMouseover(bpy.types.Operator):
             for o in objs:
                 try:
                     # レイとオブジェクトの交差判定
+                    # 交差判定はオブジェクトのローカル座標で行われるため、
+                    # レイの始点と終点をローカル座標に変換する
                     mwi = o.matrix_world.inverted()
                     result = o.ray_cast(mwi * start, mwi * end)
                     # オブジェクトとレイが交差した場合は交差した面のインデックス、
