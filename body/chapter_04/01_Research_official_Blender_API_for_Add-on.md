@@ -324,6 +324,7 @@ Blender Stack Exchangeで質問するためには、Blender Artists Communityと
 
 本サイトでは、質問したり他人の質問に回答したり誤字や脱字などを編集したりすることで、各ユーザがポイントを得られる仕組みがあり、ユーザの貢献度を見ることができます。さらにポイントを獲得していくことで、PS4のトロフィーやXBoxの実績のようなバッジを獲得することができ、登録直後の段階で制限されていた機能が使えるようになる仕組みもあります。
 
+
 <div id="webpage"></div>
 
 |Blender.jp|
@@ -333,6 +334,22 @@ Blender Stack Exchangeで質問するためには、Blender Artists Communityと
 
 国内では最大と思われる、Blenderのコミュニティサイトです。本コミュニティサイトにはBlenderについて議論できるフォーラムがあり、かつてフォーラム内の質問板でアドオン開発について質問することができました。なお、現在はフォーラムはリードオンリーになっており、投稿することができなくなっています。
 
+
+<div id="webpage"></div>
+
+|reddit|
+|---|
+|https://www.reddit.com/|
+|![reddit]( "reddit")|
+
+ニュース記事などのトピックを立てて、コメントをもらうためのWebサービスです。電子掲示板のようなものと考えるとわかりやすいかもしれません。redditではプログラミングに関する質問を投稿することができ、数は多くないですがBlenderでのPythonスクリプトに関する投稿もされています（もちろんBlender本体に関する質問も投稿されています）。
+
+redditにはsubredditと呼ばれる、特定のジャンルに特化した投稿を見ることができる機能（他のWebサービスでのタグのようなもの）があります。BlenderのPythonに関する投稿を見る場合は、次に示すsubredditを確認するとよいと思います。
+
+* /r/blender - https://www.reddit.com/r/blender/
+  * Blender全般に関する投稿
+* /r/blenderpython - https://www.reddit.com/r/blenderpython/
+  * BlenderでのPythonスクリプトに関する投稿
 
 
 ### コミュニティサイトで質問する前に
