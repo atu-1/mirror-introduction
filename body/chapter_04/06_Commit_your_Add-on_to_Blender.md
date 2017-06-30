@@ -224,7 +224,7 @@ Thanks.
 |![Blender Wiki (Blender Add-ons Catalog)](https://dl.dropboxusercontent.com/s/eqhblsox8zibbh8/blender_add-on_catalog.png "Blender Wiki (Blender Add-ons Catalog)")|
 
 
-Wikiページの編集の仕方については、本書では説明しません。Wikiページの編集の仕方やWikiページに掲載する内容がわからない場合は、他のアドオンのWikiページを見ながら作成していくとよいと思います。もし仮にWikiページの内容に不備がある場合は、D.B.Oで作成したタスクなどで指摘を受けると思うので、その時に直せば十分です。参考のため、筆者が作成したアドオン『Magic UV』のWikiページのリンクを次に示します。なおこの例のように、GitHubやBlender Artistsなど、すでに他のWebサイトで情報を提供している場合は、そのWebサイトへのリンクを追加するだけでもよいです。
+Wikiページの編集の仕方については、本書では説明しません。Wikiページの編集の仕方やWikiページに掲載する内容がわからない場合は、他のアドオンのWikiページを見ながら作成していくとよいと思います。もし仮にWikiページの内容に不備がある場合は、D.B.Oで作成したタスクなどで指摘を受けると思うので、その時に直せば十分です。参考のため、筆者が作成したアドオン『Magic UV』のWikiページのリンクを次に示します。なおこの例のように、GitHubやBlender Artists Communityなど、すでに他のWebサイトで情報を提供している場合は、そのWebサイトへのリンクを追加するだけでもよいです。
 
 https://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/UV/Magic_UV
 
@@ -239,11 +239,9 @@ Blenderの公式WikiページのアカウントはD.B.Oのアカウントとは�
 
 ### 5. アドオンのソースコードレビューを受ける
 
-機能レビューに合格し、アドオンのWikiページを作成したら、アドオンのソースコードをレビューしてもらいます。
+機能レビューに合格してアドオンのWikiページを作成したら、アドオンのソースコードをBlender開発者にレビューしてもらいます。機能レビューと同じく、D.B.Oでソースコードのレビューを依頼します。
 
-機能レビューと同様、アドオンのソースコードレビューはdeveloper.blender.orgで行います。
-
-ソースコードレビューを受けるまでの流れを以下に示します。なお、BlenderのWikiページにもソースコードレビューの手順が書かれていますので、こちらも参考にしてみてください。
+ソースコードレビューを依頼する流れを次に示します。なお、BlenderのWikiページにもソースコードレビューの手順が書かれていますので、こちらも参考にするとよいと思います。
 
 <div id="webpage"></div>
 
@@ -253,11 +251,11 @@ Blenderの公式WikiページのアカウントはD.B.Oのアカウントとは�
 |![Blender Wiki (Code Review)](https://dl.dropboxusercontent.com/s/ugfs7ecqh0t4fao/code_review.png "Blender Wiki (Code Review)")|
 
 
-#### 最新のBlenderリポジトリを取得
+#### 最新のBlenderのアドオンのリポジトリを取得
 
-Blenderのリポジトリを取得します。
+最初に、Blenderのアドオンのリポジトリを取得します。リポジトリに対してどのような変更が加えられたかをレビュワーが確認できるようにするため、この作業が必要になります。
 
-取得するリポジトリは、Blenderのサポートレベルに応じて異なります。機能レビュー時に、サポートレベルがReleaseかContribのどちらかに決まりますので、サポートレベルに対応したリポジトリを取得してください。以降では、サポートレベルがContribの場合について解説します。
+取得するリポジトリは、Blenderのサポートレベルに応じて異なることに注意が必要です。機能レビューを行ったときに、サポートレベルがReleaseまたはContribのどちらかに決まりますので、サポートレベルに対応したリポジトリを取得してください。以降では、サポートレベルがContribの場合について解説します。サポートレベルがReleaseの場合については、本節の後半で説明します。
 
 |サポートレベル|リポジトリ|
 |---|---|
@@ -267,8 +265,10 @@ Blenderのリポジトリを取得します。
 
 <div id="tips"></div>
 
-サポートレベルがReleaseとして登録されるアドオンは、アドオンがすでに完成していてすぐにでもBlenderに取り込むべきものであると判断された場合です。一方サポートレベルがContribは、レビュー時に開発中のアドオンである場合やアドオンの有用度をユーザに判断を仰ぎたい場合に登録されます。
+サポートレベルがReleaseとして登録されるアドオンは、アドオンがすでに完成していてすぐにでもBlenderに取り込むべきものであると判断された場合です。一方、レビュー時に開発中のアドオンである場合や、アドオンの有用度をユーザに判断を仰ぎたい場合は、Contribのサポートレベルとして登録されます。
 
+
+アドオンのリポジトリを取得する方法を説明します。
 
 <div id="process_title"></div>
 
@@ -276,7 +276,7 @@ Blenderのリポジトリを取得します。
 
 <div id="process_noimg"></div>
 
-|<div id="box">1</div>|以下のコマンドを実行し、最新のBlenderのリポジトリを取得します。|
+|<div id="box">1</div>|次のコマンドを実行し、最新のBlenderのリポジトリ（サポートレベルがContribであるリポジトリ）を取得します。|
 |---|---|
 
 ```sh
@@ -290,7 +290,7 @@ $ git clone git://git.blender.org/blender-addons-contrib.git
 
 <div id="process_noimg"></div>
 
-|<div id="box">2</div>|以下のコマンドを実行し、リポジトリ取得後に作成したアドオンをリポジトリへコピーします。|
+|<div id="box">2</div>|次のコマンドを実行し、作成したアドオンを取得したリポジトリのディレクトリへコピーします。|
 |---|---|
 
 ```sh
@@ -304,7 +304,7 @@ $ cp [作成したプラグイン] .
 
 <div id="process_noimg"></div>
 
-|<div id="box">3</div>|以下のコマンドを実行してソースコードの差分を出力し、出力結果をコピーします。|
+|<div id="box">3</div>|次のコマンドを実行してソースコードの差分を出力し、出力結果をコピーします。|
 |---|---|
 
 ```sh
@@ -317,7 +317,7 @@ $ git diff
 
 <div id="process"></div>
 
-|<div id="box">4</div>|developer.blender.orgの左側にあるDifferentialをクリックします|![Create Diff 手順1](https://dl.dropboxusercontent.com/s/2wcu3f3ho59x3ia/create_diff_1.png "Create Diff 手順1")|
+|<div id="box">4</div>|D.B.Oの左側にあるメニューから、*Differential* をクリックします。|![Create Diff 手順1](https://dl.dropboxusercontent.com/s/2wcu3f3ho59x3ia/create_diff_1.png "Create Diff 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -326,7 +326,7 @@ $ git diff
 
 <div id="process"></div>
 
-|<div id="box">5</div>|Create Diffをクリックします。|![Create Diff 手順2](https://dl.dropboxusercontent.com/s/w9rhl9pwcwqjef3/create_diff_2.png "Create Diff 手順2")|
+|<div id="box">5</div>|続いて、*Create Diff* をクリックします。|![Create Diff 手順2](https://dl.dropboxusercontent.com/s/w9rhl9pwcwqjef3/create_diff_2.png "Create Diff 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -335,7 +335,7 @@ $ git diff
 
 <div id="process"></div>
 
-|<div id="box">6</div>|コピーしたソースコードの差分をRaw Diffにペーストし、RepositoryにrBAC Blender Add-ons Contribを入力した後、一番下のCreate Diffのボタンをクリックします。|![Create Diff 手順3](https://dl.dropboxusercontent.com/s/c37hha0316mh124/create_diff_3.png "Create Diff 手順3")|
+|<div id="box">6</div>|3でコピーしたソースコードの差分を *Raw Diff* にペーストし、*Repository* に ```rBAC Blender Add-ons Contrib``` と入力したあと、一番下の *Create Diff* ボタンをクリックします。|![Create Diff 手順3](https://dl.dropboxusercontent.com/s/c37hha0316mh124/create_diff_3.png "Create Diff 手順3")|
 |---|---|---|
 
 <div id="process_start_end"></div>
@@ -343,11 +343,12 @@ $ git diff
 ---
 
 
-ソースコードレビューでは、作成したソースコードに対して指摘されることがあります。少なくとも指摘された部分についてはソースコードを読んだ人が気になった部分ですので、たとえ反映不要な指摘であっても反映するように心がけましょう。
+ソースコードレビューでは、作成したソースコードに対して指摘されることがあります。指摘された部分は、少なくともレビュワーが読んでが気になった部分ですので、たとえアドオンの動作に影響を与えないような指摘であってもきちんと反映するように心がけましょう。
 
-### 6. Blenderリポジトリへの登録
 
-ソースコードレビューが完了したら、以下の手順に従ってBlenderのリポジトリに登録します。
+### 6. リポジトリへの登録
+
+ソースコードレビューが完了したら、次の手順に従ってリポジトリに修正内容を登録（push）します。
 
 <div id="process_title"></div>
 
@@ -355,7 +356,7 @@ $ git diff
 
 <div id="process_noimg"></div>
 
-|<div id="box">1</div>|Blenderのリポジトリへソースコードを登録（commit）するためは、リポジトリ管理者からリポジトリへのcommit権をもらう必要があります。<br>執筆時点で、リポジトリの管理はIdeasmanさんという方が行っているようです。commit権をもらうためには、IRC(チャットのようなもの)に入ってIdeasmanさんに話しかける必要があります。<br> IRCでは英語でのチャットになりますが、わからない単語をWebで調べつつこちらが言いたいことを片言でも良いので、伝えていけばなんとかなるでしょう。|
+|<div id="box">1</div>|Blenderのアドオンのリポジトリへソースコードをpushするためは、リポジトリ管理者からリポジトリへのpush権を与えてもらう必要があります。<br>執筆時点では、アドオンのリポジトリの管理はMeta-Androctoさんという方が担当されているようです。push権をもらうためには、IRC（チャットのようなもの）に入ってMeta-Androctoさんに話しかけるか、Blender Artists Communityでメッセージを送るのが一番確実かと思います。場合によっては、D.B.O上でやり取りしていく中でpush権をもらえるかもしれません。<br>なお、IRCではすぐに反応を得られる反面、英語でのチャットになるため、英語がある程度できないと間違いなく苦戦します。|
 |---|---|
 
 <div id="webpage"></div>
@@ -367,7 +368,8 @@ $ git diff
 
 <div id="column"></div>
 
-Blender開発者専用のチャンネルは#blendercodersですので、Channelsに#blendercodersを入力し、Nicknameに自分のニックネームを入力しましょう。   ・・・ちなみにチャットに入るときには、必ず自分のニックネームを入力しましょう。筆者はコミット権をもらった当初はIRCの使い方がわからず、話したい人の名前を入力するのかと思っていたので、Ideasmanというニックネームで入ってしまい色々と騒ぎになってしまいました。（筆者の無知さが面白かったから気にしないでなど、厳しいコメントはありませんでしたがさすがに焦りました。）
+Blender開発者専用のチャンネルは#blendercodersですので、Channelsに#blendercodersを入力し、Nicknameに自分のニックネームを入力しましょう。  
+・・・ちなみにチャットに入るときには、必ず自分のニックネームを入力しましょう。筆者はpush権をもらった当初はIRCの使い方がわからず、チャットで話したい人の名前を入力するのかと思っていたので、Ideasman（当初のリポジトリ管理者であり、Blenderの開発者としてはかなり有名な人）というニックネームで入ってしまい色々と騒ぎになってしまいました。（筆者の無知さが面白かったから気にしないでなどと、チャットに参加していた方々からの厳しいコメントはありませんでしたが、さすがに焦りました。）
 
 <div id="process_sep"></div>
 
@@ -375,7 +377,7 @@ Blender開発者専用のチャンネルは#blendercodersですので、Channels
 
 <div id="process_noimg"></div>
 
-|<div id="box">2</div>|commit権をもらったら、Blenderのリポジトリを取得します。<br>リポジトリの取得については、以下の手順で行います。BlenderのWikiページも参考になると思います。|
+|<div id="box">2</div>|push権を与えてもらったら、Blenderのアドオンのリポジトリを取得します。<br>リポジトリの取得については、以前説明した部分と重複する部分もありますが、次の手順で行います。4つ目以降のコマンドでリポジトリの最新化を行っているところがポイントです。リポジトリが古い状態のままpushしてしまうと、rejectされてしまいます。なお、BlenderのWikiページも参考になります。|
 |---|---|
 
 <div id="webpage"></div>
@@ -400,14 +402,15 @@ $ git submodule foreach --recursive git pull --rebase origin master
 
 ---
 
+
 <div id="process_noimg"></div>
 
-|<div id="box">3</div>|リポジトリへcommitする前に以下のコマンドを実行し、commitを行った時に付加する、commitした人の名前や連絡先を設定します。この設定を一度行っておけば、設定を変えたりOSを変えたりしない限り、再び実施する必要はありません。|
+|<div id="box">3</div>|ローカルリポジトリへcommitする前に以下のコマンドを実行し、commit時に付加される、commitした人の名前や連絡先を設定します。この設定を一度行っておけば、設定を変えたりOSを変えたりしない限り、再度行う必要はありません。|
 |---|---|
 
 ```sh
-git config --global user.name "[名前（ニックネーム可）]"
-git config --global user.email "[連絡先メールアドレス]"
+git config --global user.name "[名前（ニックネーム可、できればD.B.Oのアカウント名と合わせる）]"
+git config --global user.email "[連絡先メールアドレス（できればD.B.Oで利用しているメールアドレスに合わせる）]"
 ```
 
 <div id="process_sep"></div>
@@ -416,10 +419,9 @@ git config --global user.email "[連絡先メールアドレス]"
 
 <div id="process_noimg"></div>
 
-|<div id="box">4</div>|commit先を設定します。|
+|<div id="box">4</div>|次のコマンドを実行し、push先のリモートリポジトリを設定します。|
 |---|---|
 
-以下のコマンドを実行し、commit先の設定を行います。
 
 ```sh
 $ git remote set-url origin git@git.blender.org:blender-addons-contrib.git
@@ -431,18 +433,18 @@ $ git remote set-url origin git@git.blender.org:blender-addons-contrib.git
 
 <div id="process_noimg"></div>
 
-|<div id="box">5</div>|ssh鍵を登録します。|
+|<div id="box">5</div>|ssh鍵をD.B.Oに登録します。|
 |---|---|
 
-以下のコマンドを実行し、ssh鍵を作成します。
+ssh鍵は、次のコマンドにより作成することができます。
 
 ```sh
 $ ssh-keygen
 ```
 
-作成したssh鍵の公開鍵は~/.ssh/id_rsa.pubに置かれているので、これをD.B.Oに登録します。
+上記のコマンドを実行すると、作成したssh鍵の公開鍵が~/.ssh/id_rsa.pubに配置されますので、これをD.B.Oに登録します。
 
-D.B.Oの右上の工具マークをクリックし、左メニューのSSH Public Keysをクリックします。そして、Upload Public Keyをクリックし、Public Keyに ```id_rsa.pub``` の内容をコピー＆ペーストします。Nameに適当な名前をつけてAdd Keyをクリックすることで、ssh鍵の登録が完了します。
+D.B.Oの右上の *工具マーク* をクリックして表示されたページの左のメニューから *SSH Public Keys* をクリックします。次に、*Upload Public Key* をクリックし、公開鍵 ```id_rsa.pub``` のファイルの中身をコピーしたものを、*Public Key* にペーストします。*Name* に適当な名前をつけて *Add Key* ボタンをクリックすることで、ssh鍵の登録が完了します。これで、リモートリポジトリに対して修正をpushすることができるようになりました。以降、リモートリポジトリに対してpushする時は、自分がpushした内容がBlenderのリポジトリにダイレクトに反映できるようになっていることを意識し、修正内容をきちんと確認したうえで行ってください。最悪、すべてのアドオンを消去することができてしまいます。もちろん、これは悪意の持ったユーザがいる場合あまりに危険な状態ですので、元に戻す方法はきちんと用意されています。ただ、Blender開発者は忙しいため、このようなミスは非常に迷惑をかけることになるのは覚えておいてください。
 
 <div id="process_sep"></div>
 
@@ -450,10 +452,9 @@ D.B.Oの右上の工具マークをクリックし、左メニューのSSH Publi
 
 <div id="process_noimg"></div>
 
-|<div id="box">6</div>|登録するアドオンのソースコードをリポジトリ内に配置します。|
+|<div id="box">6</div>|登録するアドオンのソースコードをリポジトリ内に配置します。ここでは、```blender-addons-contrib``` 直下にアドオンのソースコードを置いた場合のコマンドの実行例を示します。|
 |---|---|
 
-以下では、 ```blender-addons-contrib``` 直下にアドオンのソースコードを置いています。
 
 ```sh
 $ cd blender-addons-contrib
@@ -466,19 +467,18 @@ $ cp [作成したアドオンのソースコード] .
 
 <div id="process_noimg"></div>
 
-|<div id="box">7</div>|ローカルリポジトリへcommitします。|
+|<div id="box">7</div>|次のコマンドを実行し、ローカルリポジトリへcommitします。|
 |---|---|
-
-以下のコマンドを実行し、ローカルのリポジトリへcommitします。
 
 ```sh
 $ git add [作成したアドオンのソースコード]
 $ git commit
 ```
 
-なお ```git commit``` を実行するとエディタが開きますので、commitメッセージを入力します。
+なお、```git commit``` を実行するとエディタが開きますので、コミットメッセージを入力します。
 
-コミットメッセージはcommitした内容がわかるように英語で記載します。コミットメッセージの書き方については、以下のWikiページが参考になると思います。
+コミットメッセージには、commitした内容がわかるように英語で記載します。コミットメッセージの書き方については、次のWikiページが参考になると思います。ただ、```git log``` コマンドで過去のコミットメッセージを見てもらえればわかると思いますが、Wikiページに書かれていることが守られているかというと、必ずしもそうではありません。```git log``` コマンドで他の人のコミットメッセージを参考にして書けばよいと思いますが、修正内容がすぐに理解できるようなコミットメッセージを書くように心がけてください。
+
 
 <div id="webpage"></div>
 
@@ -494,19 +494,19 @@ $ git commit
 
 <div id="process_noimg"></div>
 
-|<div id="box">8</div>|いよいよアドオンの登録も最終段階です。<br>リモートリポジトリ（Blender本体のリポジトリ）へソースコードを登録(push)します。|
+|<div id="box">8</div>|リポジトリへのアドオンの登録も最後の段階まできました。<br>いよいよ、リモートリポジトリへ修正内容をpushします。次のコマンドを実行し、リモートリポジトリへ修正内容をpushしてください。リポジトリを最初に取得したときからリモートリポジトリに変更があった場合を想定し、push前に ```git pull --rebase``` でローカルリポジトリを最新化しているところがポイントです。|
 |---|---|
 
-以下のコマンドを実行し、アドオンをBlender本体のリポジトリに登録します。
 
 ```sh
 $ git pull --rebase
 $ git push
 ```
 
-おめでとうございます！これで作成したアドオンがBlender本体へ取り込まれました。今回はContribのサポートレベルですので、テストビルドされたBlender本体にあなたの作成したアドオンが含まれることになります。
+おめでとうございます！これで作成したアドオンがBlender本体へ取り込まれました。ここで説明した手順はContribのサポートレベルを対象としていますので、作成したアドオンは、テストビルドされたBlender本体に含まれることになります。
 
-リポジトリへの取り込み作業はこれで終わりですが、最後の作業として作成したアドオンの宣伝＆バグ修正報告のためのサポートページを作成しましょう。
+リポジトリへの取り込み作業はこれで終わりですが、最後の作業として作成したアドオンの宣伝やバグ修正報告のためのサポートページを作成しましょう。
+
 
 ### 7. サポートページの開設
 
@@ -518,7 +518,7 @@ Blender本体にアドオンが取り込まれるとユーザも増えますの�
 
 アドオンのレビューの結果、サポートレベルContribとしてアドオンを登録することになった場合、レビューを依頼することでReleaseレベルへサポートレベルを上げることができます。
 
-ContribからReleaseへサポートレベルを上げるためには、例えば以下の方法があります。なお、筆者が開発しているアドオン『Magic UV』は、Blender 2.79に登録すべきアドオンをBlender Artistsでユーザから募集しているときに、ユーザから推薦いただいたのがきっかけとなり、Blenderのアドオン開発代表者であるMeta-Androcto氏からReleaseレベルに招待をいただきました。
+ContribからReleaseへサポートレベルを上げるためには、例えば以下の方法があります。なお、筆者が開発しているアドオン『Magic UV』は、Blender 2.79に登録すべきアドオンをBlender Artists Communityでユーザから募集しているときに、ユーザから推薦いただいたのがきっかけとなり、Blenderのアドオン開発代表者であるMeta-Androcto氏からReleaseレベルに招待をいただきました。
 
 * Blenderのアドオン関係のメーリングリストbf-python(bf-python@blender.org)へReleaseサポートレベルへのレビュー申請メールを出し、ユーザの判断を仰ぐ
 * Blenderの新バージョンをリリースする時に、Blenderのアドオン開発代表者（Meta-Androcto氏など）から招待を受ける
