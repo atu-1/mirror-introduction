@@ -18,15 +18,31 @@
 
 第2版では誤字の修正をはじめとして、筆者が初版で不足していると感じた話題を新たに執筆しました。また第2版では、基本的な内容である1章と2章から構成される前編と、多少応用的な内容を扱っている3章と4章から構成される後編に分けました。本来であれば分冊にせず1冊でまとめたほうが良いのですが、ページ数の関係上このような形をとらせていただきました。
 
+また第2版では、本節で解説した内容を組み合わせて作成したサンプル集を、新しく追加した章である5章で紹介します。複数のAPIを組み合わせることで、アドオンとして実現できることが広がるということを、5章で紹介するサンプルから感じ取っていただければと思います。
+
 {% if book.volume == "1" %}
 
-第2版の前編に追加した内容を以下にまとめましたので、必要に応じて参考にしてください。なお初版と同様、サンプルを用いて実際に手を動かしながら理解していく方針で説明しています。
+第2版の前編に追加した内容を以下にまとめましたので、必要に応じて参考にしてください。なお初版と同様、サンプルを用いて実際に手を動かしながら理解していく方針で説明します。
 
 * より詳細なアドオンのインストール方法・アンインストール方法・アップデート方法（[1-4節](body/chapter_01/04_Understand_Install_Uninstall_Update_Add-on.md)）
 * アドオンのソースコードを複数のファイルに分割する方法（[2-7節](body/chapter_02/07_Divide_Add-on_Source_into_Multiple_Files.md)）
 * BlenderのUI制御方法（[2-8節](body/chapter_02/08_Control_Blender_UI_1.md)、[2-9節](body/chapter_02/09_Control_Blender_UI_2.md)、[2-10節](body/chapter_02/10_Control_Blender_UI_3.md)）
 
 {% elif book.volume == "2" %}
+
+第2版の後編に追加した内容を以下にまとめましたので、必要に応じて参考にしてください。ご覧の通り、後編の大部分は第2版で新規に追加執筆となっています。なお初版や第2版と同様、サンプルを用いて実際に手を動かしながら理解していく方針で説明します。
+
+* キーボードのキーイベントを扱う方法（[3-2節](body/chapter_03/02_Handle_Keyboard_Key_Event.md)）
+* タイマイベントを扱う方法（[3-3節](body/chapter_03/03_Handle_Timer_Event.md)）
+* blfモジュールを使ってテキストを描画する方法（[3-5節](body/chapter_03/05_Render_String_with_blf_Module.md)）
+* オーディオファイルを再生する方法（[3-6節](body/chapter_03/06_Play_Audio_File.md)）
+* アドオンのUIを複数の言語に対応する方法（[3-7節](body/chapter_03/07_Multilingual_Support.md)）
+* 座標変換の活用（[3-8節](body/chapter_03/08_Use_Coordinate_Transformation_1.md)、[3-9節](body/chapter_03/09_Use_Coordinate_Transformation_2.md)）
+* ユーザー・プリファレンスの活用（[3-10節](body/chapter_03/10_Use_User_Preference.md)）
+* アドオンのライセンスの決め方（[4-4節](body/chapter_04/04_Determine_License_of_Add-on.md)）
+* アドオンの動作テストを自動化する方法（[4-5節](body/chapter_04/05_Test_Add-on_Automatically.md)）
+* アドオンのサンプル集（[5章](body/chapter_05/SUMMARY.md)）
+
 
 {% endif %}
 
