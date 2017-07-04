@@ -180,7 +180,7 @@ Blenderが提供するAPIの大半は ```bpy``` モジュールに含まれる�
 
 ### オブジェクトの軌跡を表示する
 
-選択中のオブジェクトの軌跡を表示するのは ```__render()``` スタティックメソッドです。```__render()``` スタティックメソッドでは、次の手順に従ってオブジェクトの軌跡を表示しています。
+選択中のオブジェクトの軌跡を表示するのは ```DrawObjectTrajectory.__render()``` スタティックメソッドです。```DrawObjectTrajectory.__render()``` スタティックメソッドでは、次の手順に従ってオブジェクトの軌跡を表示しています。
 
 1. オブジェクトの位置座標を取得する
 2. オブジェクトの位置座標をリージョン座標に変換する
@@ -207,7 +207,7 @@ Blenderが提供するAPIの大半は ```bpy``` モジュールに含まれる�
 [import:"loc_to_region", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_8.py)
 
 
-3Dリージョン情報は、スペース情報の ```region_3d``` メンバ変数から取得することができます。座標変換対象のリージョンとスペースは ```__get_region_space()``` スタティックメソッドで取得します。```__get_region_space()``` スタティックメソッドは、[3-5節](05_Render_String_with_blf_Module.md) で説明した ```__get_region()``` スタティックメソッドを改良したものです。
+3Dリージョン情報は、スペース情報の ```region_3d``` メンバ変数から取得することができます。座標変換対象のリージョンとスペースは ```DrawObjectTrajectory.__get_region_space()``` スタティックメソッドで取得します。```DrawObjectTrajectory.__get_region_space()``` スタティックメソッドは、[3-5節](05_Render_String_with_blf_Module.md) で説明した ```RenderText.__get_region()``` スタティックメソッドを改良したものです。
 
 [import:"get_region_space", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_8.py)
 
@@ -215,17 +215,17 @@ Blenderが提供するAPIの大半は ```bpy``` モジュールに含まれる�
 引数 ```area_type``` で指定されたエリア上の ```region_type``` に指定されたリージョン情報を返すことに加えて、引数 ```space_type``` に指定されたスペース情報も返します。エリア ```area``` に関するスペース情報は ```area.spaces``` に保存されているため、```s.type``` と引数 ```space_type``` が一致したものが、必要としていたスペース情報になります。サンプルでは、*3Dビュー* エリアのウィンドウリージョンを座標変換対象にしたいため、```region_type``` が ```WINDOW``` であるリージョン情報と```space_type``` が ```VIEW_3D``` であるスペース情報を取得します。
 
 
-```__get_region()``` スタティックメソッドを使って取得した情報を用いて ```view3d_utils.location_3d_to_region_2d()``` 関数を呼び出します。第1引数には取得したリージョン情報を、第2引数にスペース情報の ```region_3d``` メンバ変数を、第3引数にオブジェクトデータの ```location``` メンバ変数を指定して呼び出すことで、第3引数に指定したオブジェクトの座標をリージョン座標に変換することができます。変換後のリージョン座標は ```view3d_utils.location_3d_to_region_2d()``` 関数の戻り値として取得できるため、```self.__loc_history``` メンバ変数に保存します。```self.__loc_history``` の末尾に追加することで先頭が最も古い位置情報、末尾が最新の位置情報となります。
+```DrawObjectTrajectory.__get_region_space()``` スタティックメソッドを使って取得した情報を用いて ```view3d_utils.location_3d_to_region_2d()``` 関数を呼び出します。第1引数には取得したリージョン情報を、第2引数にスペース情報の ```region_3d``` メンバ変数を、第3引数にオブジェクトデータの ```location``` メンバ変数を指定して呼び出すことで、第3引数に指定したオブジェクトの座標をリージョン座標に変換することができます。変換後のリージョン座標は ```view3d_utils.location_3d_to_region_2d()``` 関数の戻り値として取得できるため、クラス変数 ```DrawObjectTrajectory.__loc_history``` に保存します。クラス変数 ```DrawObjectTrajectory.__loc_history``` の末尾に追加することで先頭が最も古い位置情報、末尾が最新の位置情報となります。
 
 #### 3. 古い位置情報を削除する
 
-位置情報の履歴は一定量を超えた時に削除しないと、画面が四角形で埋め尽くされてしまいます。このため、次の処理により位置情報の履歴数が100以上になった時に最も古い位置情報（```self.__loc_history``` の先頭の要素）を削除します。
+位置情報の履歴は一定量を超えた時に削除しないと、画面が四角形で埋め尽くされてしまいます。このため、次の処理により位置情報の履歴数が100以上になった時に最も古い位置情報（クラス変数 ```DrawObjectTrajectory.__loc_history``` の先頭の要素）を削除します。
 
 [import:"delete_oldest_loc", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_8.py)
 
 #### 4. 変換したリージョン座標に四角形を描画する
 
-最後に、変換したリージョン座標に四角形を描画します。四角形の描画は ```bgl``` モジュールを使い、```self.__loc_history``` に保存されたすべての要素について [3-4節](04_Use_API_for_OpenGL.md) で説明した方法で描画します。描画処理については、新しいことは行っていないので具体的な処理の説明は省略します。
+最後に、変換したリージョン座標に四角形を描画します。四角形の描画は ```bgl``` モジュールを使い、クラス変数 ```DrawObjectTrajectory.__loc_history``` に保存されたすべての要素について [3-4節](04_Use_API_for_OpenGL.md) で説明した方法で描画します。描画処理については、新しいことは行っていないので具体的な処理の説明は省略します。
 
 [import:"render_rect", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_8.py)
 

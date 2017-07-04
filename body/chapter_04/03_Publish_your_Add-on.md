@@ -86,7 +86,7 @@ GitHubが登場する前は、SourceForgeがソースコード管理サイトの
 |PasteAll.org|
 |---|
 |http://pasteall.org/|
-|![PasteAll.org]( "PasteAll.org")|
+|![PasteAll.org](https://dl.dropboxusercontent.com/s/jh5wl8u0jcnfnen/pasteall.png "PasteAll.org")|
 
 リポジトリを作るまでもなく、ただ単にソースコードを公開したい場合に便利なのが、ここで紹介するPasteAll.orgです。ユーザ登録することなくソースコードを公開でき、公開したソースコードをWeb上から参照したり編集したりすることができます。Pythonスクリプトや単純なアドオンを公開する場合など、ソースコードの規模が小さいものを他の人と共有したいときに便利です。
 
@@ -96,7 +96,7 @@ GitHubが登場する前は、SourceForgeがソースコード管理サイトの
 |GitHub Gist|
 |---|
 |https://gist.github.com/|
-|![GitHub Gist]( "GitHub Gist")|
+|![GitHub Gist](https://dl.dropboxusercontent.com/s/7pfptouegbpzunj/github_gist.png "GitHub Gist")|
 
 PasteAll.orgと同じようにソースコードを公開するだけであれば、GitHub Gistもソースコードを公開する場合に便利です。PasteAll.orgの機能であるソースコード編集機能はありませんが、コメントやお気に入り機能に加えて、複数ファイルを扱えたり編集履歴を参照できたりするので、PasteAll.orgと比較して高機能です。
 
@@ -108,7 +108,7 @@ Gistにソースコードを公開するためには、GitHubのアカウント�
 |Gumroad|
 |---|
 |https://gumroad.com/|
-|![Gumroad]( "Gumroad")|
+|![Gumroad](https://dl.dropboxusercontent.com/s/5zg1t07pdnvdanl/gumroad.png "Gumroad")|
 
 Gumroadは、もともと画像などのコンテンツを個人で販売するためのWebサービスですが、最近では、BlenderのアドオンをGumroadで販売することが多くなってきています。販売価格は0円から指定が可能です。販売価格を0円に指定した場合は基本無料で配布されていますが、アドオン作成者としては寄付されることを望んでいると考えた方がよいでしょう。
 
@@ -219,9 +219,10 @@ Blenderで作成したCG作品を公開するコミュニティが多いよう�
 |reddit|
 |---|
 |https://www.reddit.com/|
-|![reddit]( "reddit")|
+|![reddit](https://dl.dropboxusercontent.com/s/87uc4hxatstwxst/reddit_blender.png "reddit")|
 
 [4-1節](../chapter_04/01_Research_official_Bender_API_for_Add-on.md) で紹介した、Webサービスです。筆者は一度も投稿したことがないのですが、redditでBlenderのアドオンを宣伝することもできるようです。実際に執筆時点で、Blenderアドオンの宣伝目的のための投稿がいくつかありました。しかし、アドオンの宣伝目的での利用はあまり活発ではなさそうなので、これまでに紹介した宣伝サイトに比べて宣伝効果は小さいかもしれません。
+
 
 
 ### Bleder本体に取り込んでもらう

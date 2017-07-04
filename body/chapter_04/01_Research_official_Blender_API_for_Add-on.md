@@ -217,6 +217,17 @@ Blenderの公式Wikiページです。アドオン開発のチュートリアル
 Blenderを使っている方はおそらくご存知であろう、BLUG.jpさんによるまとめサイトです。BlenderPythonのページにアドオン開発の情報があります。BlenderPythonのページは現在も更新され続けていますので、アドオン開発者はブックマークして時々見に行くとよいでしょう。Blenderのアドオン開発に慣れてきて、ぜひ他のアドオン開発者のために情報を共有したい、ということであれば、BlenderPythonページの更新を依頼してみてください。BLUG.jpさん（Twitter：@blug_jp）に連絡すれば、編集権限を与えてもらえるかもしれません。
 
 
+<div id="webpage"></div>
+
+|Qiita|
+|---|
+|https://qiita.com|
+|![Qiita](https://dl.dropboxusercontent.com/s/hfbzff310mmph6m/qiita.png "Qiita")|
+
+
+Qiitaはプログラマのための情報共有サイトです。数は多くないですが、Blenderに関係する投稿がいくつかあります。Blenderに関する投稿の一覧は、Blenderタグ（http://qiita.com/tags/blender）で確認できます。
+
+
 ## 他者が作成したアドオンのソースコードを読む
 
 BlenderのアドオンはPythonのソースコードとして配布されていますので、他者が作成したアドオンのソースコードを読むことでも、Blenderが提供するAPIを調べることができます。もしアドオンを作っている時に、実現しようとしている処理が他のアドオンでも使われていれば、そのアドオンのソースコードを参照することで、実装方法や使われているAPIを知ることができます。なお、ソースコードを参照して処理を流用する場合は、[4-4節](04_Determine_License_of_Add-on.md) で説明するアドオンのソースコードに適用されているライセンスに気をつけてください。ライセンスによっては流用できない場合もありますし、流用に必要な条件が設定されている場合もあります。
@@ -340,7 +351,7 @@ Blender Stack Exchangeで質問するためには、Blender Artists Communityと
 |reddit|
 |---|
 |https://www.reddit.com/|
-|![reddit]( "reddit")|
+|![reddit](https://dl.dropboxusercontent.com/s/k0bsrmk29gyuta4/reddit_blender_python.png "reddit")|
 
 ニュース記事などのトピックを立てて、コメントをもらうためのWebサービスです。電子掲示板のようなものと考えるとわかりやすいかもしれません。redditではプログラミングに関する質問を投稿することができ、数は多くないですがBlenderでのPythonスクリプトに関する投稿もされています（もちろんBlender本体に関する質問も投稿されています）。
 
