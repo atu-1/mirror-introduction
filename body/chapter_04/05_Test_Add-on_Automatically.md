@@ -174,7 +174,7 @@ Travis CIでテストを実行するためには、```.travis.yml``` ファイ�
 項目 ```script``` には、```--python``` と ```--addons``` 、```--background``` オプションを指定し、アドオン ```testee``` を有効化した上でテストスクリプト ```test.py``` をCUIモードで実行します。また、オーディオを無効化する ```-noaudio``` オプションや初期状態で起動する ```--factory-startup``` オプションを指定します。```-noaudio``` オプションを指定しないで実行すると、オーディオライブラリ関連のエラーがログに出力され、ログが非常に見づらくなります。ダウンロードを実行した直後にBlenderを実行するため、Blenderは初期状態で起動することになります。このため ```--factory-startup``` は本来不要ですが、念のために指定しています。
 
 
-<div id="tips">
+<div id="tips"></diov>
 
 Blenderのコマンドラインオプションの一覧は、--helpオプションを指定してBlenderを実行することで表示することができます。
 
@@ -266,6 +266,9 @@ $ git push origin master    # リモートリポジトリへ修正を反映（pu
 
 |期待した通りテストが失敗し、#で始まるビルド番号の隣にfailedと表示されます。|![テスト失敗時の表示確認1](https://dl.dropboxusercontent.com/s/3cfuwl2hkmhnyd0/check_test_failed_result_1.png "テスト失敗時の表示確認1")|
 |---|---|
+
+
+<div id="sidebyside"></div>
 
 |テストが失敗した原因を確認するためにログを見ると、test_ops_2が失敗していることがわかります。Cubeを削除したことによって、オペレータクラス ```TestOps2``` の ```execute()``` が ```{'CANCELLED'}``` を返し、asset文で期待した ```{'FINISHED'}``` と一致しなかったためです。|![テスト失敗時の表示確認2](https://dl.dropboxusercontent.com/s/ljo7ty7uin68v58/check_test_failed_result_2.png "テスト失敗時の表示確認2")|
 |---|---|

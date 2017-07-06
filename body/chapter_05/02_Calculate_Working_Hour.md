@@ -61,7 +61,7 @@
 
 <div id="process"></div>
 
-|<div id="box">2</div>|*3Dビュー* エリア上に配置されているオブジェクトを選択します。|![作業時間計測ツール 手順2](https://dl.dropboxusercontent.com/s/vyxov95xx3724pj/use_add-on_2.png "作業時間計測ツール 手順2")|
+|<div id="box">2</div>|*3Dビュー* エリア上に配置されている、作業時間を表示したいオブジェクトを選択します。|![作業時間計測ツール 手順2](https://dl.dropboxusercontent.com/s/vyxov95xx3724pj/use_add-on_2.png "作業時間計測ツール 手順2")|
 |---|---|---|
 
 

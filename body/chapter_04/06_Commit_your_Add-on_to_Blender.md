@@ -69,7 +69,7 @@ Blenderのアドオン開発では、**文法チェッカーflake8によるコ�
 |flake8|
 |---|
 |https://pypi.python.org/pypi/flake8|
-|![flake8]( "flake8")|
+|![flake8](https://dl.dropboxusercontent.com/s/d9hx6l3lgolp5vi/flake8.png "flake8")|
 
 
 コーティング規約を守るだけでなく、Blender本体に取り込まれるアドオンは処理自体も効率的でなければなりません。アドオンを使う人にとっては、少しでも速くアドオンの処理が終わるほうがBlenderでの作業効率が向上するので、考えてみれば当たり前のことです。
@@ -80,7 +80,7 @@ Blenderのアドオン開発では、**文法チェッカーflake8によるコ�
 
 |Best Practice (API documentation - Blender 2.75a)|
 |---|
-|https://www.blender.org/api/blender_python_api_2_75a_release/info_best_practice.html|
+|https://docs.blender.org/api/blender_python_api_2_75a_release/info_best_practice.html|
 |![Best Practice](https://dl.dropboxusercontent.com/s/30rrshlzu3jnajy/best_practice.png "Best Practice")|
 
 
@@ -141,7 +141,7 @@ D.B.Oへの会員登録が完了したら、次の手順に従って機能レビ
 
 <div id="process"></div>
 
-|<div id="box">1</div>|右上のアイコン *+* をクリックして表示されるメニューから *Maniphest Task* をクリックします。|![Create New Task 手順1](https://dl.dropboxusercontent.com/s/3zzr089rpl1i244/create_new_task_1.png "Create New Task 手順1")|
+|<div id="box">1</div>|右上のアイコン *★* をクリックして表示されるメニューから *Maniphest Task* をクリックします。|![Create New Task 手順1](https://dl.dropboxusercontent.com/s/3zzr089rpl1i244/create_new_task_1.png "Create New Task 手順1")|
 |---|---|---|
 
 <div id="process_sep"></div>
@@ -164,11 +164,15 @@ D.B.Oへの会員登録が完了したら、次の手順に従って機能レビ
 |---|---|
 |Title|タスクのタイトルを入力します。<br>作成したアドオンの機能が分かるようなタイトルを入力します。|
 |Assigned To|タスクの担当者を指定します。<br>D.B.O上で知り合いがいる場合はレビューに参加してもらえる可能性があるため、追加するとよいと思います。ここで無理して追加しなくてもタスクを見た人がレビューしてくれますので、特に知り合いがいない場合は何も追加しなくても問題ありません。ちなみに筆者自身もD.B.Oに登録しているため、タスクを割り当てていただければレビューできるかもしれません。（ユーザ名：Nutti）|
-|CC|自分自身を含む、開発関係者を入力します。|
+|Status|タスクの状態を指定します。新たにタスクを作成する場合は、```Open``` を指定すれば問題ありません。|
 |Priority|タスクの緊急度を設定します。<br>新規機能は ```Normal``` を設定します。既存機能のバグ修正に関してタスクを投稿する場合は、優先度を高めに指定してもよいと思います。|
-|Projects|プロジェクト名を指定します。<br>アドオンに関するタスクであるため、```Addons``` を指定します。|
-|Type|新規機能のアドオンであれば ```Patch``` を選択し、バグ報告やバグ修正であれば ```Bug``` を指定します。|
 |Description|作成したアドオンの詳細を記載します。<br>フォーマットは特に決められていませんが、筆者がよく利用する下記のテンプレートが参考になるかもしれません。（★はコメントです）|
+|Visible To|タスクの公開範囲を設定します。通常は、```Public (No Login Required)``` を指定すれば問題ありません。|
+|Editable By|タスクの編集可能範囲を設定します。タスクの内容に合わせて自由に選んで問題ありません。```All Users``` などの公開範囲が広いほうが、タスクに書き込んでくれる人が増えるかもしれません。|
+|Tags|プロジェクト名を指定します。<br>アドオンに関するタスクであるため、```Addons``` を指定します。|
+|Subscribers|自分自身を含む、タスクをみてもらいたい人を指定します。|
+|Type|新規機能のアドオンであれば ```Patch``` を選択し、バグ報告やバグ修正であれば ```Bug``` を指定します。|
+
 
 
 ```
@@ -444,7 +448,7 @@ $ ssh-keygen
 
 上記のコマンドを実行すると、作成したssh鍵の公開鍵が~/.ssh/id_rsa.pubに配置されますので、これをD.B.Oに登録します。
 
-D.B.Oの右上の *工具マーク* をクリックして表示されたページの左のメニューから *SSH Public Keys* をクリックします。次に、*Upload Public Key* をクリックし、公開鍵 ```id_rsa.pub``` のファイルの中身をコピーしたものを、*Public Key* にペーストします。*Name* に適当な名前をつけて *Add Key* ボタンをクリックすることで、ssh鍵の登録が完了します。これで、リモートリポジトリに対して修正をpushすることができるようになりました。以降、リモートリポジトリに対してpushする時は、自分がpushした内容がBlenderのリポジトリにダイレクトに反映できるようになっていることを意識し、修正内容をきちんと確認したうえで行ってください。最悪、すべてのアドオンを消去することができてしまいます。もちろん、これは悪意の持ったユーザがいる場合あまりに危険な状態ですので、元に戻す方法はきちんと用意されています。ただ、Blender開発者は忙しいため、このようなミスは非常に迷惑をかけることになるのは覚えておいてください。
+D.B.Oの右上の *自分で設定したアイコン* をクリックして表示されるメニューから *Settings* をクリックします。そして、表示されるページの左のメニューから *SSH Public Keys* をクリックします。次に、*SSH Key Actions* をクリックして表示される *Upload Public Key* をクリックし、公開鍵 ```id_rsa.pub``` のファイルの中身をコピーしたものを、*Public Key* にペーストします。*Name* に適当な名前をつけて *Add Key* ボタンをクリックすることで、ssh鍵の登録が完了します。これで、リモートリポジトリに対して修正をpushすることができるようになりました。以降、リモートリポジトリに対してpushする時は、自分がpushした内容がBlenderのリポジトリにダイレクトに反映できるようになっていることを意識し、修正内容をきちんと確認したうえで行ってください。最悪、すべてのアドオンを消去することができてしまいます。もちろん、これは悪意の持ったユーザがいる場合あまりに危険な状態ですので、元に戻す方法はきちんと用意されています。ただ、Blender開発者は忙しいため、このようなミスは非常に迷惑をかけることになるのは覚えておいてください。
 
 <div id="process_sep"></div>
 
@@ -637,10 +641,10 @@ $ git push
 
 <div id="webpage"></div>
 
-|Blender Wiki (Release Notes 2.75)|
+|Blender Wiki (Release Notes 2.75a)|
 |---|
 |https://wiki.blender.org/index.php/Dev:Ref/Release_Notes/2.75|
-|![Blender Wiki (Release Notes 2.75)]( "Blender Wiki (Release Notes 2.75)")|
+|![Blender Wiki (Release Notes 2.75a)](https://dl.dropboxusercontent.com/s/v2wt20vv88wltjc/release_notes_2_75a.png "Blender Wiki (Release Notes 2.75a)")|
 
 Blender本体の機能はもちろんのこと、Blender本体と一緒に提供されるReleaseサポートレベルのアドオンについても、アドオンに機能を追加した場合や機能を更新した場合には、Release Noteを書く必要があります。実際にBlenderのRelease Noteを確認するとわかると思いますが、アドオンのRelease Noteを書くためのページが用意されています。
 
@@ -662,7 +666,7 @@ Release Noteの書き方について特に明確なルールは設けられて�
 |Blender Wiki（Release Note 2.79 Add-ons）|
 |---|
 |https://wiki.blender.org/index.php/Dev:Ref/Release_Notes/2.79/Add-ons|
-|![Blender Wiki（Release Note 2.79 Add-ons）]( "Release Note 2.79 Add-ons")|
+|![Blender Wiki（Release Note 2.79 Add-ons）](https://dl.dropboxusercontent.com/s/4r3o0ra7bk6awoy/release_notes_2_79.png "Release Note 2.79 Add-ons")|
 
 
 ### Releaseサポートレベルへの登録にあたり注意したいこと
@@ -679,7 +683,7 @@ ReleaseサポートレベルのアドオンはBlender本体と一緒に提供さ
 |Blender Wiki（Process Addons）|
 |---|
 |https://wiki.blender.org/index.php/Dev:Doc/Process/Addons|
-|![Blender Wiki（Process Addons）]( "Blender Wiki（Process Addons）")|
+|![Blender Wiki（Process Addons）](https://dl.dropboxusercontent.com/s/c95eh6ycsjrqevq/addons.png "Blender Wiki（Process Addons）")|
 
 
 ## まとめ

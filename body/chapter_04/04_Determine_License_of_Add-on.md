@@ -43,7 +43,7 @@ Blenderはオープンソースソフトウェアでソースコードが公開�
 |blender.org (License)|
 |---|
 |https://www.blender.org/about/license/|
-|![blender.org (License)]( "blender.org (License)")|
+|![blender.org (License)](https://dl.dropboxusercontent.com/s/9f6yy3d5opbnvui/blender_license.png "blender.org (License)")|
 
 
 Blenderのソースコードには、基本的に **GPLv2** が適用されています。基本的にと書いたのは、一部のソースコードにはGPLv2以外のライセンスが適用されているからです。例えば、Cyclesは **Apache 2.0** ライセンスが適用されているほか、Blenderのビルドに必要なライブラリには **MIT** ライセンスや **BSD** ライセンスなどが適用されています。ただし、アドオンを開発する場合、BlenderにはGPLv2のライセンスが適用されていると覚えておけば問題ありません。
@@ -59,7 +59,7 @@ BlenderのライセンスにはGPLv2が適用されていることを説明し�
 |GNUオペレーティング・システム|
 |---|
 |http://www.gnu.org/licenses/license-list.html|
-|![GNUオペレーティング・システム]( "GNUオペレーティング・システム")|
+|![GNUオペレーティング・システム](https://dl.dropboxusercontent.com/s/bul66fd826qhg1e/gpl.png "GNUオペレーティング・システム")|
 
 
 さて、ライセンスについてここで初めて知ったという方は、どのライセンスを選んだらよいか迷っていると思います。基本的にGPLv3互換であれば何でもよいのですが、公開されているアドオンのライセンスを見ると **GPLやMITライセンスが適用されているものが多い** ように思います。Blender公式のリポジトリに登録されたアドオン（サポートレベルがOfficialまたはContribのアドオン）は、Blenderと一緒にオープンソースとして公開されることからGPLの適用が必須です。一方、公式のリポジトリに登録されていない個人で開発されたアドオン（サポートレベルがExternalのアドオン）は、GPLv3互換であるMITライセンスが適用されていることが多いです。
