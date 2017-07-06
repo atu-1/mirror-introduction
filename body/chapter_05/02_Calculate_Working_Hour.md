@@ -27,7 +27,7 @@
   * プロパティパネルにおけるUI構築
 * [3-3. タイマのイベントを扱う](../chapter_03/03_Handle_Timer_Event.md)
   * タイマイベントの扱い方
-* [3-5. blfモジュールを使ってテキストを描画する](../chapter_05/05_Render_String_with_blf_Module.md)
+* [3-5. blfモジュールを使ってテキストを描画する](../chapter_03/05_Render_String_with_blf_Module.md)
   * ```blf``` モジュールを利用したテキスト描画の方法
 * [3-10. ユーザー・プリファレンスを活用する](../chapter_03/10_Use_User_Preference.md)
   * ユーザー・プリファレンスにアドオン設定情報を配置する方法

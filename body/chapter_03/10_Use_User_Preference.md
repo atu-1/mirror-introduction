@@ -33,8 +33,9 @@
 
 <div id="process_noimg"></div>
 
-|<div id="box">2</div>|*情報* エリアの *ファイル* > *ユーザ設定...* を実行して表示されるユーザー・プリファレンスで *アドオン* タブを選択し、『Magic UV』を有効化した状態で左の矢印をクリックしてアドオンの詳細情報を表示します。|
+|<div id="box">2</div>|*情報* エリアのメニュー *ファイル* > *ユーザ設定...* を実行して表示されるユーザー・プリファレンスで *アドオン* タブを選択し、『Magic UV』を有効化した状態で左の矢印をクリックしてアドオンの詳細情報を表示します。|![3-10節 ユーザー・プリファレンス 手順1](https://dl.dropboxusercontent.com/s/8vcgyw6kju9r3i1/user_preferences_1.png "3-10節 ユーザー・プリファレンス 手順1")|
 |---|---|---|
+
 
 <div id="process_sep"></div>
 
@@ -43,7 +44,7 @@
 
 <div id="process"></div>
 
-|<div id="box">2</div>|*ユーザ設定:* と表示されているところが、本節で説明するアドオンの設定情報になります。|![3-10節 ユーザー・プリファレンス 手順1](https://dl.dropboxusercontent.com/s/q64ns5ju4lh7dut/user_preferences_2.png "3-10節 ユーザー・プリファレンス 手順1")|
+|<div id="box">3</div>|*ユーザ設定:* と表示されているところが、本節で説明するアドオンの設定情報になります。|![3-10節 ユーザー・プリファレンス 手順2](https://dl.dropboxusercontent.com/s/q64ns5ju4lh7dut/user_preferences_2.png "3-10節 ユーザー・プリファレンス 手順2")|
 |---|---|---|
 
 <div id="process_sep"></div>

@@ -34,7 +34,7 @@ Blenderが提供するAPIについても、Blenderの公式のドキュメント
 
 |API documentation|
 |---|
-|http://www.blender.org/api/|
+|https://docs.blender.org/api/|
 |![API documentation](https://dl.dropboxusercontent.com/s/3pgs57v7b29ngo8/blender_api_doc.png "API documentation")|
 
 
@@ -46,7 +46,7 @@ Blenderの公式は、過去のBlenderのバージョン含めてすべてのバ
 
 |API documentation (Blender 2.75a)|
 |---|
-|http://www.blender.org/api/blender_python_api_2_75a_release/|
+|https://docs.blender.org/api/blender_python_api_2_75a_release/|
 |![API documentation 2.75a](https://dl.dropboxusercontent.com/s/hmzkcciai4ooigb/blender_api_doc_2_75a.png "API documentation 2.75a")|
 
 
@@ -164,7 +164,7 @@ APIドキュメントの使い方を理解するために、*3Dビュー* エリ
 
 これらの一連の動作から、```select``` はオブジェクトが選択状態か非選択状態かを調べるためのAPIであると予想できます。
 
-ここで、Blender公式のAPIドキュメント(```http://www.blender.org/api/blender_python_api_2_75a_release/bpy.types.Object.html#bpy.types.Object.select```)を調べてみると、次のように記載されています。
+ここで、Blender公式のAPIドキュメント(```https://docs.blender.org/api/blender_python_api_2_75a_release/bpy.types.Object.html#bpy.types.Object.select```)を調べてみると、次のように記載されています。
 
 <div id="quote"></div>
 
@@ -177,7 +177,7 @@ APIドキュメントの使い方を理解するために、*3Dビュー* エリ
 
 <div id="sidebyside"></div>
 
-|BlenderでPythonスクリプトを書く人向けに、Blenderはスクリプトのテンプレートを用意しています。テンプレートはBlender本体が提供しているため、正常に動作することが保証されています。実現したい処理のテンプレートが存在する場合は、一度確認してみるとよいでしょう。また、Blenderが提供するAPIの概要をひととおり学んでおきたい場合にも、本サンプルは参考になると思います。|![テンプレート 手順1](https://dl.dropboxusercontent.com/s/bvnb1360j99fd1t/template_1.png "テンプレート 手順1")|
+|BlenderでPythonスクリプトを書く人向けに、Blenderはスクリプトのテンプレートを用意しています。<br>テンプレートはBlender本体が提供しているため、正常に動作することが保証されています。実現したい処理のテンプレートが存在する場合は、一度確認してみるとよいでしょう。また、Blenderが提供するAPIの概要をひととおり学んでおきたい場合にも、本サンプルは参考になると思います。<br>テンプレートは、*テキストエディター* エリアのメニュー *テンプレート* > *Python* から参照することができます。|![テンプレート 手順1](https://dl.dropboxusercontent.com/s/bvnb1360j99fd1t/template_1.png "テンプレート 手順1")|
 |---|---|
 
 
@@ -200,7 +200,7 @@ Blenderが提供するAPIを調べる手段として、Blenderアドオン開発
 
 |Blender Wiki|
 |---|
-|http://wiki.blender.org/index.php/Dev:2.5/Py/Scripts|
+|https://wiki.blender.org/index.php/Dev:Py/Scripts|
 |![Blender Wiki](https://dl.dropboxusercontent.com/s/wjaloh1eov0ij73/blender_wiki.png "Blender Wiki")|
 
 Blenderの公式Wikiページです。アドオン開発のチュートリアルやベストプラクティスなど、アドオンの開発に必要な知識を得ることができます。特にテーマに応じて簡単なサンプルを紹介しているCode Snippetsは、特定の処理を実現する時に非常に役立つでしょう。

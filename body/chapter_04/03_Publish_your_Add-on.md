@@ -142,7 +142,7 @@ Webには、Blenderのアドオンを宣伝できるサイトがたくさんあ�
 |http://blenderartists.org/forum/|
 |![Blender Artists Community](https://dl.dropboxusercontent.com/s/vhzjvb3gx2rt96a/blender_artists.png "Blender Artists Community")|
 
-[4-1節](../chapter_04/01_Research_official_Bender_API_for_Add-on.md) でも紹介した、Blenderコミュニティサイトです。Blenderコミュニティサイトの中でも最大級のサイトで、毎日のようにアドオンの投稿や投稿したアドオンに関する議論が行なわれています。ここにアドオンを投稿すれば海外の人にアドオンを使ってもらえる可能性が非常に高くなります。
+[4-1節](../chapter_04/01_Research_official_Blender_API_for_Add-on.md) でも紹介した、Blenderコミュニティサイトです。Blenderコミュニティサイトの中でも最大級のサイトで、毎日のようにアドオンの投稿や投稿したアドオンに関する議論が行なわれています。ここにアドオンを投稿すれば海外の人にアドオンを使ってもらえる可能性が非常に高くなります。
 
 Blender Artists Communityにアドオンを投稿すると、かなり高い確率で質問やアドオンの改善のためのレスがつくと思いますので、可能な限り対応するようにしましょう。レスしてくれた人は、アドオンに対して興味を持ってくれていると考えられるので、丁寧に対応するようにしましょう。
 
@@ -158,7 +158,7 @@ Blender Artists Communityにアドオンを投稿すると、かなり高い確�
 |https://blender.jp|
 |![Blender.jp](https://dl.dropboxusercontent.com/s/9zq781cuxyigwf9/blender_jp.png "Blender.jp")|
 
-こちらも [4-1節](../chapter_04/01_Research_official_Bender_API_for_Add-on.md) で紹介した、国内のBlenderのコミュニティサイトです。かつては、フォーラムの *Pythonスクリプト・Plug-in* 板を利用して、開発したアドオンを投稿・宣伝することができました。執筆時点では、フォーラム全体に対して投稿ができなくなっています。このため、開発したアドオンを投稿・宣伝できる国内のコミュニティサイトは次に紹介するblug.jpまとめサイトしかありません。
+こちらも [4-1節](../chapter_04/01_Research_official_Blender_API_for_Add-on.md) で紹介した、国内のBlenderのコミュニティサイトです。かつては、フォーラムの *Pythonスクリプト・Plug-in* 板を利用して、開発したアドオンを投稿・宣伝することができました。執筆時点では、フォーラム全体に対して投稿ができなくなっています。このため、開発したアドオンを投稿・宣伝できる国内のコミュニティサイトは次に紹介するblug.jpまとめサイトしかありません。
 
 
 <div id="webpage"></div>
@@ -168,7 +168,7 @@ Blender Artists Communityにアドオンを投稿すると、かなり高い確�
 |https://sites.google.com/site/blugjp/blenderpython|
 |![blugjpまとめサイト](https://dl.dropboxusercontent.com/s/aegu3vcdu4ky9jq/blugjp.png "blugjpまとめサイト")|
 
-[4-1節](../chapter_04/01_Research_official_Bender_API_for_Add-on.md) で紹介した、BLUG.jpさんによるまとめサイトです。BlenderPythonのページにて、アドオンを継続して開発されている方がリストアップされています。TwitterやBlender Artists Communityなどでアドオンを宣伝している方が中心に登録されているようです。アドオン開発者として登録してもらいたい場合は、アドオンの宣伝を積極的に行って管理人さんにアピールすることが大切です。ただ、BLUG.jpさんが常にアドオンの宣伝を見ているとは限らないので、どうしてもアドオン開発者としてまとめサイトに載せてもらいたいのであれば、TwitterなどでBLUG.JPさんに直接お願いしたほうがよいでしょう。
+[4-1節](../chapter_04/01_Research_official_Blender_API_for_Add-on.md) で紹介した、BLUG.jpさんによるまとめサイトです。BlenderPythonのページにて、アドオンを継続して開発されている方がリストアップされています。TwitterやBlender Artists Communityなどでアドオンを宣伝している方が中心に登録されているようです。アドオン開発者として登録してもらいたい場合は、アドオンの宣伝を積極的に行って管理人さんにアピールすることが大切です。ただ、BLUG.jpさんが常にアドオンの宣伝を見ているとは限らないので、どうしてもアドオン開発者としてまとめサイトに載せてもらいたいのであれば、TwitterなどでBLUG.JPさんに直接お願いしたほうがよいでしょう。
 
 
 <div id="webpage"></div>
@@ -221,7 +221,7 @@ Blenderで作成したCG作品を公開するコミュニティが多いよう�
 |https://www.reddit.com/|
 |![reddit](https://dl.dropboxusercontent.com/s/87uc4hxatstwxst/reddit_blender.png "reddit")|
 
-[4-1節](../chapter_04/01_Research_official_Bender_API_for_Add-on.md) で紹介した、Webサービスです。筆者は一度も投稿したことがないのですが、redditでBlenderのアドオンを宣伝することもできるようです。実際に執筆時点で、Blenderアドオンの宣伝目的のための投稿がいくつかありました。しかし、アドオンの宣伝目的での利用はあまり活発ではなさそうなので、これまでに紹介した宣伝サイトに比べて宣伝効果は小さいかもしれません。
+[4-1節](../chapter_04/01_Research_official_Blender_API_for_Add-on.md) で紹介した、Webサービスです。筆者は一度も投稿したことがないのですが、redditでBlenderのアドオンを宣伝することもできるようです。実際に執筆時点で、Blenderアドオンの宣伝目的のための投稿がいくつかありました。しかし、アドオンの宣伝目的での利用はあまり活発ではなさそうなので、これまでに紹介した宣伝サイトに比べて宣伝効果は小さいかもしれません。
 
 
 

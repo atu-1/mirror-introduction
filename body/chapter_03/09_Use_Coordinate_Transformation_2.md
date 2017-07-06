@@ -32,6 +32,7 @@
 サンプル3-9: アドオン「サンプル3-9」が有効化されました。
 ```
 
+<div id="sidebyside"></div>
 
 |*3Dビュー* エリアのプロパティパネルを表示し、項目 *マウスオーバでオブジェクト選択* が追加されていることを確認します。|![3-9節 アドオン有効化](https://dl.dropboxusercontent.com/s/ilcmmt4j5vfm5tg/enable_add-on.png "3-9節 アドオン有効化")|
 |---|---|
