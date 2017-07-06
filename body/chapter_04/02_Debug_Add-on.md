@@ -614,11 +614,11 @@ Webサイトからアドオン『BreakPoint』をダウンロードし、イン�
 
 ブレークポイントを設定するために ```bpy.types.bp.bp()``` 呼び出す必要がありますが、毎回関数名を書くのは面倒ですので、次のようにして ```breakpoint()``` と書くだけで呼び出せるようにすると、デバッグが少し楽になるかと思います。
 
-[import:"short_call", unindent:"true"](../../sample/src/chapter_04/sample_4_2/debuggee_2.py)
+[import:"short_call", unindent:"true"](../../sample_raw/src/chapter_04/sample_4_2/debuggee_2.py)
 
 以降、ブレークポイントを設定する時は、次のようにしてブレークポイントを設定したい場所で ```breakpoint()``` 関数を実行すればよいです。
 
-[import:"set_breakpoint", unindent:"true"](../../sample/src/chapter_04/sample_4_2/debuggee_2.py)
+[import:"set_breakpoint", unindent:"true"](../../sample_raw/src/chapter_04/sample_4_2/debuggee_2.py)
 
 ```breakpoint()``` 関数の第1引数には、変数のスコープの辞書（ローカル変数であれば ```locals()``` 、グローバル変数であれば ```globals()```）、第2引数には確認したい変数を指定します。サンプルでは、ローカル変数である ```debug_var``` の値を出力するため、第1引数に ```locals()``` 、第2引数に ```globals()``` を指定します。
 
