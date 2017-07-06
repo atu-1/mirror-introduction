@@ -80,6 +80,7 @@ conchan-akita 様, sariew 様, AWA 様, うにっこ 様
 |||
 |---|---|
 |Mail|nutti.metro@gmail.com |
+|Homepage|http://colorful-pico.net/|
 |Blog|http://colorful-pico.hatenablog.jp |
 |Twitter|@nutti\_\_（https://twitter.com/nutti__） |
 |Google+|https://plus.google.com/100058529622539760372 |
