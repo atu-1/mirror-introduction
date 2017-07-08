@@ -189,7 +189,7 @@ D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\09_Use_Coordi
 本節のサンプルでは ```ray_cast()``` の処理を ```try``` ブロックで囲み、例外処理を行っています。これは、メッシュ型のオブジェクトを作成したときに、作成タイミングの問題で ```ray_cast()``` の処理を実行できずに例外が発生してしまう場合があるからです。このため、```ray_cast()``` の処理を ```try``` ブロックで囲んで、処理が中断してしまうことを回避しています。なお、この問題はタイミングによる問題であるため、常に発生するものではありませんが、安全面を重視してこのような例外処理を追加しています。
 
 
-<div id="tips"></div>
+<div id="column"></div>
 
 ここで紹介した、ray_cast()関数以外の他のAPIでも同じことですが、ray_cast()関数はBlenderのバージョン間で外部仕様が大きく変わっているようです。本書が対象とするバージョン2.75では、ray_cast()関数の戻り値はレイが交差した座標・面の法線・面のインデックスの3個でした。一方、バージョン2.77では、レイとオブジェクトとの交差結果（交差した場合はTrue）に加えて交差した座標・面の法線・面のインデックスなど6個の要素から構成されるタプルが、ray_cast()関数の戻り値になります。また、ray_cast()関数の引数についても、バージョン2.75ではレイの始点と終点の2個を指定するのに対し、2.77ではレイの原点と方向および長さの3個の引数を指定します。  
 このように、BlenderのバージョンによってAPIの外部仕様が変わることはよくあることで、アドオンのバグ報告の大半がBlender本体のバージョンに関係したものになっています。[4-1節](../chapter_04/01_Research_official_Blender_API_for_Add-on.md)を参考にして、アドオンの開発を行なっているバージョンのAPIの仕様を確認し、[2-1節](../chapter_02/01_Basic_of_Add-on_Development.md)で説明したサポート対象のBlenderのバージョンを正しく設定しましょう。  
@@ -310,7 +310,7 @@ for o in objs:
 
 [import:"transform_global_to_pers", unindent:"true"](../../sample_raw/src/chapter_03/transform_wo_view3d_utils.py)
 
-<div id="tips"></div>
+<div id="column"></div>
 
 space.region_3d.perspective_matrixは、space.region_3d.window_matrix * space.region_3d.view_matrixで求めることができます。
 

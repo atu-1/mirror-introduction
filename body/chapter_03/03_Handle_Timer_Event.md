@@ -68,7 +68,7 @@ D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\03_Handle_Tim
 
 ---
 
-<div id="tips"></div>
+<div id="column"></div>
 
 開始ボタンを押した後の移動中も、通常と同じ方法でオブジェクトを移動することができますが、タイマイベントを契機に元の場所に自動的に戻ります。
 
@@ -210,7 +210,7 @@ D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\03_Handle_Tim
 |```SPEAKER```|スピーカー|
 
 
-<div id="tips"></div>
+<div id="column"></div>
 
 サンプルでは、obj.location.copy()のように、copy()メソッドを用いて位置情報を示すVectorオブジェクトのコピーを作っています。これは、Vector オブジェクトのコピーを作らないと、\__orig_obj_locはオブジェクトの位置情報の「参照」を持ち続けることになってしまうからです。obj.locationへの参照を持つということは、\__update_object_location() メソッドでobj.locationを更新されたときに、更新された位置情報を持つことと同じことになるため、\__orig_obj_locを利用するオブジェクトの位置更新処理が正しく動作しません。このように、BlenderのAPIを変数に代入する場合は、参照コピーなのか実体コピーなのかを気をつけて実装する必要があります。
 
@@ -240,7 +240,7 @@ D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\03_Handle_Tim
 |```POSE```|ポーズモード|
 
 
-<div id="tips"></div>
+<div id="column"></div>
 
 オブジェクトモードかエディットモードかを判定する方法として、bpy.context.modeを参照して'OBJECT'であることを確かめる方法もあります。また、オブジェクトモード時のみプロパティパネルに項目を表示したい場合は、[2-8節](../chapter_02/08_Control_Blender_UI_1.md)で示したパネルクラスのクラス変数bl_contextにobjectmodeを指定することでも実現可能です。
 

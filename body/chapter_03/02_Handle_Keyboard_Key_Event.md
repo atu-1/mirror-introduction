@@ -165,7 +165,7 @@ D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\02_Handle_Key
 |```event.shift```|*Shift*|
 
 
-<div id="tips"></div>
+<div id="column"></div>
 
 キーボードのキーを一定時間以上押し続けると、キーを連続して押したり離したりした状態になります。これは一般的にキーリピートと呼ばれているもので、Blenderでもキーリピートによる連続したイベントを受け取ることができます。  
 例えば本節のサンプルでは、Xキーを一定時間押しっぱなしにすると、選択したオブジェクトがX軸の正方向へ連続して平行移動します。

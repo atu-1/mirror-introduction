@@ -1,4 +1,3 @@
-D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\01_Handle_Mouse_Click_Event.md
 <div id="sect_title_img_3_1"></div>
 
 <div id="sect_title_text"></div>
@@ -47,7 +46,8 @@ D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\01_Handle_Mou
 
 ##### Work
 
-<div id="process_noimg"></div>
+
+<div id="process"></div>
 
 |<div id="box">1</div>|*3Dビュー* エリア上でモードを *編集モード* に変更し、選択方法を面選択に変更します。|![マウスの右クリックで面を削除 手順1](https://dl.dropboxusercontent.com/s/1glnrvwsysrjxcs/use_add-on_1.png "マウスの右クリックで面を削除 手順1")|
 |---|---|---|
@@ -129,7 +129,7 @@ D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\01_Handle_Mou
 
 [import:"unregister_properties", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_1.py)
 
-<div id="tips"></div>
+<div id="column"></div>
 
 本節のサンプルでは、bpy.types.PropertyGroupを使ってクラス間で共有するプロパティを定義しました。ここで、[2-9節](../chapter_02/09_Control_Blender_UI_2.md)で説明したツール・シェルフへのプロパティ追加時にも、bpy.types.PropertyGroupを使えるのではないかと思うかもしれません。しかし、layout.prop()に指定するのは「プロパティ変数名の文字列」であることから、グループ化してしまうと正しく動作しません。このため、プロパティをツール・シェルフやプロパティパネルに追加しない場合は、bpy.types.PropertyGroupを使ってプロパティをグループ化してよいです。しかし、プロパティをツール・シェルフやプロパティパネルに追加する場合は、bpy.types.PropertyGroupでグループ化せず、個別にプロパティを宣言する必要があります。
 
@@ -300,7 +300,7 @@ D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\01_Handle_Mou
 |```6```|```geom``` に面を指定した時は値に ```3``` を入力した時と同じ効果<br>辺を指定した時は値に ```4``` を入力した時と同じ効果<br>頂点を指定した時は値に ```1``` を入力した時と同じ効果|
 
 
-<div class="tips"></div>
+<div id="column"></div>
 
 Blender本体のソースコードを参照することで、contextに指定する値を調べることができます。対象となるソースコードは source/blender/bmesh/intern/bmesh_operator_api.h で、enum として値が定義されています。頂点の削除であれば、DEL_VERTS = 1 と書かれています。いずれにせよ、値を直に入力する方法は移植性が低いので、文字列などで入力できるようになることを期待します。
 

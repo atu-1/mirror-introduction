@@ -267,7 +267,7 @@ Blenderの公式WikiページのアカウントはD.B.Oのアカウントとは�
 |Contrib|```git://git.blender.org/blender-addons-contrib.git```|
 
 
-<div id="tips"></div>
+<div id="column"></div>
 
 サポートレベルがReleaseとして登録されるアドオンは、アドオンがすでに完成していてすぐにでもBlenderに取り込むべきものであると判断された場合です。一方、レビュー時に開発中のアドオンである場合や、アドオンの有用度をユーザに判断を仰ぎたい場合は、Contribのサポートレベルとして登録されます。
 
