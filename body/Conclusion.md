@@ -97,7 +97,7 @@ conchan-akita 様, sariew 様, AWA 様, うにっこ 様
 |Mouse Click Merge|https://github.com/nutti/Mouse-Click-Merge |External|3DCGソフト「メタセコイア」のように、マウスクリックによる隣接頂点結合や面の対角線を反転させることができるアドオン|
 |Index Visualizer|https://github.com/nutti/Index-Visualizer |External|View3Dエリアのオブジェクトの頂点・辺・面のインデックス番号を表示するアドオン|
 |Face To Transform Orientation|https://github.com/nutti/Face-To-Transform-Orientation |External|View3Dエリアのオブジェクトを、Transform Orientationの方向に向かせるアドオン|
-|Blender Add-on Manager||-|GitHubに登録されたアドオンのインストール・アンインストール・アップデートを行うことができるツール（アドオンではない）<br>Windows/Mac OSX/Linuxに対応|
+|Blender Add-on Manager|https://github.com/nutti/Blender-Add-on-Manager |-|GitHubに登録されたアドオンのインストール・アンインストール・アップデートを行うことができるツール（アドオンではない）<br>Windows/Mac OSX/Linuxに対応|
 
 
 
