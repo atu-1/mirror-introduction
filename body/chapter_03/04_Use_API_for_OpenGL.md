@@ -1,4 +1,3 @@
-D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\04_Use_API_for_OpenGL.md
 <div id="sect_title_img_3_4"></div>
 
 <div id="sect_title_text"></div>

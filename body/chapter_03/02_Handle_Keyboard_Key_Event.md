@@ -1,4 +1,3 @@
-D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\02_Handle_Keyboard_Key_Event.md
 <div id="sect_title_img_3_2"></div>
 
 <div id="sect_title_text"></div>

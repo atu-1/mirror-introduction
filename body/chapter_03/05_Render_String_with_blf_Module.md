@@ -1,4 +1,3 @@
-D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\05_Render_String_with_blf_Module.md
 <div id="sect_title_img_3_5"></div>
 
 <div id="sect_title_text"></div>

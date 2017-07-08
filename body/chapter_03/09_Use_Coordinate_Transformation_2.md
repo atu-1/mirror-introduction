@@ -1,4 +1,3 @@
-D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\09_Use_Coordinate_Transformation_2.md
 <div id="sect_title_img_3_9"></div>
 
 <div id="sect_title_text"></div>
@@ -119,11 +118,15 @@ D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\09_Use_Coordi
 
 マウスカーソルの位置に向けて発した、レイと交差するオブジェクトを選択するための手順を次に示します。
 
+
+<div id="custom_ol"></div>
+
 1. マウスカーソルのリージョン座標を取得する
 2. リージョン座標から、レイの向きとレイの発生源の座標を求める
 3. レイの始点と終点の座標を求める
 4. レイと *3Dビュー* エリアに配置されているオブジェクトとの交差判定を行う
 5. レイと交差したオブジェクトを選択する
+
 
 これらの処理は全て、```SelectObjectOnMouseover``` クラスの ```modal()``` メソッドで行います。
 
@@ -265,10 +268,14 @@ for o in objs:
 
 リージョン情報とスペース情報を取得をしたあとは、次に示す順番で座標変換を行ないます。
 
+
+<div id="custom_ol"></div>
+
 1. 選択中の頂点のローカル座標を取得する
 2. ローカル座標からグローバル座標へ、座標変換する
 3. グローバル座標から射影座標へ、座標変換する
 4. 射影座標からリージョン座標へ、座標変換する
+
 
 ### 1. 選択中の頂点のローカル座標を取得する
 

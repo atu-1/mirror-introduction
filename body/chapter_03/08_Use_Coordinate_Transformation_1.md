@@ -1,5 +1,4 @@
-﻿D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\08_Use_Coordinate_Transformation_1.md
-<div id="sect_title_img_3_8"></div>
+﻿<div id="sect_title_img_3_8"></div>
 
 <div id="sect_title_text"></div>
 
@@ -187,6 +186,9 @@ Blenderが提供するAPIの大半は ```bpy``` モジュールに含まれる�
 ### オブジェクトの軌跡を表示する
 
 本節のサンプルでは、選択中のオブジェクトを移動した時に、オブジェクトの中心座標の軌跡を表示します。選択中のオブジェクトの軌跡を表示するのは、```DrawObjectTrajectory.__render()``` スタティックメソッドです。```DrawObjectTrajectory.__render()``` スタティックメソッドでは次の手順に従って、オブジェクトの軌跡を表示します。
+
+
+<div id="custom_ol"></div>
 
 1. オブジェクトの位置座標を取得する
 2. オブジェクトの位置座標をリージョン座標に変換する

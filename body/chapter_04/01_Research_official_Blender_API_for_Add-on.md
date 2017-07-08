@@ -225,7 +225,7 @@ Blenderを使っている方はおそらくご存知であろう、BLUG.jpさん
 |![Qiita](https://dl.dropboxusercontent.com/s/hfbzff310mmph6m/qiita.png "Qiita")|
 
 
-Qiitaはプログラマのための情報共有サイトです。数は多くないですが、Blenderに関係する投稿がいくつかあります。Blenderに関する投稿の一覧は、Blenderタグ（http://qiita.com/tags/blender）で確認できます。
+Qiitaはプログラマのための情報共有サイトです。数は多くないですが、Blenderに関係する投稿がいくつかあります。Blenderに関する投稿の一覧は、Blenderタグ（http://qiita.com/tags/blender ）で確認できます。
 
 
 ## 他者が作成したアドオンのソースコードを読む

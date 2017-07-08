@@ -1,4 +1,3 @@
-D:\b\Introduction-to-Add-on-Development-in-Blender\body\chapter_03\03_Handle_Timer_Event.md
 <div id="sect_title_img_3_3"></div>
 
 <div id="sect_title_text"></div>

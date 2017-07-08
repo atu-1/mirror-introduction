@@ -127,9 +127,9 @@ $ch_img_list: 'https://dl.dropboxusercontent.com/s/p8n04m7bbogsm86/ch_title_img_
 .page {
     .section {
         @include chapter_title_img();
-        @include chapter_title_text(1.95em, -240.0px, 90px);
+        @include chapter_title_text(1.95em, -340.0px, -50px);
         @include chapter_body(0.8em, 190px, -30px, -110px);
-        @include chapter_toc(0.8em, 0px, 0px);
+        @include chapter_toc(0.8em, 50px, 50px);
         @include space_chapter();
         @include space_chapter_before_toc();
     }
