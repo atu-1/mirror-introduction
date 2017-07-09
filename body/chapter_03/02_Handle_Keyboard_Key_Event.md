@@ -147,9 +147,9 @@
 
 #### オブジェクト並進移動モード時のキー入力状態の確認
 
-[import:"check_key_state", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_2.py)
-
 オブジェクト並進移動モードでは、利用するキーの状態を確認してオブジェクトを並進移動する必要があります。次に示すコードにより、キーの入力を確認してオブジェクトの移動量を設定します。
+
+[import:"check_key_state", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_2.py)
 
 基本的にはモーダルモード終了処理と同様に、イベント情報 ```event``` を利用します。ただし、*Shift* キーを押した時に反対方向へ並進移動させる必要があるため、*Shift* キーが押されていることを判定する必要があります。
 
