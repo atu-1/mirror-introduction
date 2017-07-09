@@ -325,6 +325,9 @@ for o in objs:
 space.region_3d.perspective_matrixは、space.region_3d.window_matrix * space.region_3d.view_matrixで求めることができます。
 
 
+<div id="space_s"></div>
+
+
 ### 4. 射影座標からリージョン座標へ、座標変換する
 
 最後に、手順3で求めた射影座標からリージョン座標へ、座標変換します。座標変換は次の計算で行います。
