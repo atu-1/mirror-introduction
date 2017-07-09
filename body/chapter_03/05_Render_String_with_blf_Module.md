@@ -107,6 +107,9 @@
 [import:"import_blf", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_5.py)
 
 
+<div id="space_m"></div>
+
+
 ### アドオン内で利用するプロパティを定義する
 
 複数のクラス間で共有するプロパティを次に示します。本節のサンプルでは、共有するプロパティが1つであるため ```bpy.types.PropertyGroup``` によるプロパティのグループ化を行っていません。
