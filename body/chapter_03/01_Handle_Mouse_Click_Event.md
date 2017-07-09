@@ -88,7 +88,7 @@
 ---
 
 
-<div id="space_m"></div>
+<div id="space_l"></div>
 
 
 ### アドオンを無効化する

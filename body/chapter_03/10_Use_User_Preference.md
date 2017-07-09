@@ -106,7 +106,7 @@
 有効化したアドオンの機能を使い、動作を確認します。
 
 
-<div id="space_x3l"></div>
+<div id="space_xxxl"></div>
 
 
 <div id="process_title"></div>

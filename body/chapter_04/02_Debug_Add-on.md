@@ -120,7 +120,7 @@ Eclipseを動作させるためには、Java SEがインストールされてい
 続いて、Python用のデバッガPyDevをインストールします。ダウンロードしたEclipseを起動し、次の手順に従ってPyDevをインストールします。
 
 
-<div id="space_x3l"></div>
+<div id="space_xxxl"></div>
 
 
 <div id="process_title"></div>
