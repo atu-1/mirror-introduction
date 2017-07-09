@@ -569,6 +569,8 @@ ContribからReleaseへサポートレベルを上げるためには、例えば
 Contribサポートレベルと同じように、D.B.Oでアドオンのソースコードのレビューを受ける必要があります。Releaseレベルのリポジトリが ```git://git.blender.org/blender-addons.git``` であり、リポジトリの取得元が異なること以外は、Contribと手順はほとんど同じです。
 
 
+<div id="process_title"></div>
+
 ##### Work
 
 <div id="process_noimg"></div>

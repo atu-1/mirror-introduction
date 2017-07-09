@@ -184,6 +184,9 @@ Travis CIでテストを実行するためには、```.travis.yml``` ファイ�
 Blenderのコマンドラインオプションの一覧は、--helpオプションを指定してBlenderを実行することで表示することができます。
 
 
+<div id="space_s"></div>
+
+
 #### Blenderが採用しているPythonのバージョンを調べる方法
 
 Blenderが採用しているPythonは、Blenderのバージョンごとに異なります。このため、テストを実行するBlenderが採用しているPythonのバージョンを調べる必要があります。Blenderが採用しているPythonのバージョンを調べるためには、次のスクリプトを *Pythonコンソール* で実行します。実行結果には、```major``` と ```minor``` 、```micro``` が出力されていますが、これらの値がBlenderが採用しているPythonのバージョンを示しています。```<major>.<minor>.<micro>``` が、Blenderが採用するPythonのバージョンとなります。例えば、次のスクリプト実行結果からは、バージョン2.75のBlenderでは、バージョン ```3.4.2``` のPythonが使われていることがわかります。
