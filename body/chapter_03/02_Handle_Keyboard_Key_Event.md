@@ -142,6 +142,9 @@
 キーボードの *Q* キーが押されたとき、```event.type``` には ```Q``` 、```event.value``` に ```PRESS``` が保存されます。本節のサンプルではこのことを利用し、```event.type``` が ```Q``` 、```event.value``` が ```PRESS``` のときに、```props.running``` を ```False``` に設定したあと ```{'FINISHED'}``` を返すことでモーダルモードを終了します。
 
 
+<div id="space_s"></div>
+
+
 #### オブジェクト並進移動モード時のキー入力状態の確認
 
 [import:"check_key_state", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_2.py)
