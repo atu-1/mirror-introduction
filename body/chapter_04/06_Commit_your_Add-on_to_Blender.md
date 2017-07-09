@@ -372,6 +372,9 @@ $ git diff
 |![IRC](https://dl.dropboxusercontent.com/s/wnfps2d61f88rqu/irc.png "IRC")|
 
 
+<div id="space_s"></div>
+
+
 <div id="column"></div>
 
 Blender開発者専用のチャンネルは#blendercodersですので、Channelsに#blendercodersを入力し、Nicknameに自分のニックネームを入力しましょう。  

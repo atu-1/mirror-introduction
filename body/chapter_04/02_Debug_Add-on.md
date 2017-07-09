@@ -120,9 +120,6 @@ Eclipseを動作させるためには、Java SEがインストールされてい
 続いて、Python用のデバッガPyDevをインストールします。ダウンロードしたEclipseを起動し、次の手順に従ってPyDevをインストールします。
 
 
-<div id="space_xxxl"></div>
-
-
 <div id="process_title"></div>
 
 ##### Work
@@ -337,9 +334,6 @@ PyDevを使うためには、```pydevd``` モジュールをインポートし�
 [import](../../sample/src/chapter_04/sample_4_2/debuggee.py)
 
 最初に、先ほど作成した ```debug``` モジュールをインポートします。そして、アドオン有効化時にデバッグを開始するために、```register()``` 関数で ```debug.start_debug()``` 関数を実行します。これでアドオンを有効化したときに、デバッグが開始されるようになりました。なお、ここで紹介したアドオンは特に新しいことは行っていないため、ソースコードの解説はしません。
-
-
-<div id="space_s"></div>
 
 
 ### 4. PyDevデバッグサーバの起動
@@ -588,9 +582,6 @@ EclipseとPyDevを用いたデバッグは、準備に時間がかかります�
 2. アドオン『BreakPoint』の有効化
 3. ブレークポイントをデバッグ対象のスクリプトに設定
 4. デバッグ開始
-
-
-<div id="space_x4l"></div>
 
 
 ### 1. アドオン『BreakPoint』のインストール
