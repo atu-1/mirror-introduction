@@ -95,7 +95,7 @@
 
 ---
 
-<div id="space_s"></div>
+<div id="space_l"></div>
 
 
 ### アドオンを無効化する

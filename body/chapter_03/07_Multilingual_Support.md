@@ -38,6 +38,9 @@ Sample3-7: Enabled add-on 'Sample3-7'
 ```
 
 
+<div id="space_m"></div>
+
+
 ### アドオンの機能を使用する
 
 有効化したアドオンの機能を使い、動作を確認します。[3-1節](01_Handle_Mouse_Click_Event.md)と同じ機能を持つアドオンであるため、本節ではUIの言語を変えたときの動作確認方法の手順のみ説明します。

@@ -42,6 +42,9 @@
 ---
 
 
+<div id="space_m"></div>
+
+
 <div id="process"></div>
 
 |<div id="box">3</div>|*ユーザ設定:* と書かれているところが、本節で説明するアドオンの設定情報の配置先になります。|![3-10節 ユーザー・プリファレンス 手順2](https://dl.dropboxusercontent.com/s/q64ns5ju4lh7dut/user_preferences_2.png "3-10節 ユーザー・プリファレンス 手順2")|
