@@ -42,6 +42,9 @@
 
 有効化したアドオンの機能を使い、動作を確認します。
 
+<div id="space_l"></div>
+
+
 <div id="process_title"></div>
 
 ##### Work
