@@ -261,6 +261,9 @@
 3. 面を削除
 
 
+<div id="space_l"></div>
+
+
 ##### 1. クリック時にマウスカーソルの位置にある面を選択
 
 [import:"select_clicked_face", unindent:"true"](../../sample_raw/src/chapter_03/sample_3_1.py)

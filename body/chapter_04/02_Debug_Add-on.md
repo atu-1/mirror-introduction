@@ -590,6 +590,9 @@ EclipseとPyDevを用いたデバッグは、準備に時間がかかります�
 4. デバッグ開始
 
 
+<div id="space_x4l"></div>
+
+
 ### 1. アドオン『BreakPoint』のインストール
 
 Webサイトからアドオン『BreakPoint』をダウンロードし、インストールします。アドオンのインストールの仕方がわからない場合は、[1-4節](../chapter_01/04_Understand_Install_Uninstall_Update_Add-on.md)を参考にしてください。
