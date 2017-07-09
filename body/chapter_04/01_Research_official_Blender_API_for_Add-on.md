@@ -74,8 +74,6 @@ Application Modulesである ```bpy``` モジュールは、非常に大きな�
 |```bpy.app```|Blenderのバージョンなど、Blender本体の情報を取得するためのAPI群|
 |```bpy.props```|プロパティクラス|
 
-<div id="space_s"></div>
-
 
 ### Standalone Modules
 
@@ -183,8 +181,6 @@ APIドキュメントの使い方を理解するために、*3Dビュー* エリ
 
 |提供されているテンプレートの中で最も簡単なテンプレートは、右図に示す *Operator Simple* です。*Operator Simple* は、*3Dビュー* エリアにあるオブジェクトの一覧をコンソールウィンドウに表示するスクリプトです。|![テンプレート 手順2](https://dl.dropboxusercontent.com/s/8nt0v8zdkhl1egd/template_2.png "テンプレート 手順2")|
 |---|---|
-
-<div id="space_m"></div>
 
 
 ## Blenderアドオン開発の参考サイトを読む
@@ -391,5 +387,3 @@ redditにはsubredditと呼ばれる、特定のジャンルに特化した投�
 * Blenderが提供するAPIは、公式のリファレンスやサンプルを読む以外にも、他者が作成したソースコードを読んだり、実際にAPIを実行して確かめたりすることでも調査できる
 * 一番効率的なAPIの調査方法は、他者が作成したアドオンのソースコードを読んでAPIの具体的な使い方を知ることである
 * コミュニティサイトで質問する場合は、自分自身が可能な範囲で調査を行ってから、質問を投稿しよう
-
-<div id="space_page"></div>

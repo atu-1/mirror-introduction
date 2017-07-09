@@ -173,7 +173,7 @@
 
 最初に、*開始* ボタンが押されたとき（```props.running``` の値が ```False``` の状態でボタンが押されたとき）の処理について説明します。
 
-面の削除処理中は、変数 ```props.running``` の値が ```True``` に設定されていなければならないため、変数 ```props.running``` を ```True``` に設定した後、```DFRC_Properties``` の各クラス変数を初期値に設定します。そして、```context.window_manager.modal_handler_add()``` 関数を実行してモーダルクラスを登録し、```{'RUNNING_MODAL'}``` を返してモーダルモードへ移行します。
+面の削除処理中は、変数 ```props.running``` の値が ```True``` に設定されていなければならないため、変数 ```props.running``` を ```True``` に設定した後、```DFRC_Properties``` の各クラス変数を初期値に設定します。そして、```context.window_manager.modal_handler_add()``` 関数を実行してオペレータクラスを登録し、```{'RUNNING_MODAL'}``` を返してモーダルモードへ移行します。
 
 本節のアドオンでは、 ```invoke()``` メソッドと ```modal()``` メソッドを同一のクラスで定義しているため、 ```context.window_manager.modal_handler_add()``` 関数の引数に自身のインスタンスである ```self``` を指定します。
 
@@ -184,8 +184,6 @@
 面の削除処理中でない場合は、変数 ```props.running``` の値が ```False``` に設定されていなければなりません。このため、変数 ```props.running``` を ```False``` に設定します。そして、面の削除処理中に削除した面の数を出力します。
 
 最後に ```invoke()``` メソッドは、 ```{'FINISHED'}``` を返して処理を完了します。
-
-<div id="space_l"></div>
 
 
 #### modal()メソッド
