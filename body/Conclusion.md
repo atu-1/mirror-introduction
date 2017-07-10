@@ -101,5 +101,7 @@ conchan-akita 様, sariew 様, AWA 様, うにっこ 様
 |Blender Add-on Manager|https://github.com/nutti/Blender-Add-on-Manager |-|GitHubに登録されたアドオンのインストール・アンインストール・アップデートを行うことができるツール（正確にはアドオンではない）<br>Windows/Mac OSX/Linuxに対応|
 
 
+<div id="space_page"></div>
+
 
 ![背表紙](https://dl.dropboxusercontent.com/s/v6zq4lyp06wo6v7/back_cover.png)
