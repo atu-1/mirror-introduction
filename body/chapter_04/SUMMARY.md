@@ -24,3 +24,5 @@ Blenderの内部データにアクセスするAPIをはじめとして、入力�
 4. [アドオンのライセンスを決める](04_Determine_License_of_Add-on.md)
 5. [アドオンの動作テストを自動化する](05_Test_Add-on_Automatically.md)
 6. [アドオンをBlender本体に取り込んでもらう](06_Commit_your_Add-on_to_Blender.md)
+
+<div id="space_page"></div>

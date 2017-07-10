@@ -229,3 +229,5 @@
 <div id="point_item"></div>
 
 * ユーザー・プリファレンスのアドオンの設定情報は、モジュール名やパッケージ名を ```context.user_preferences.addons``` のキーに指定することで参照できる
+
+<div id="space_page"></div>

@@ -260,3 +260,5 @@
 * タイマを登録することで、一定間隔でタイマイベントを発生させることができる
 * タイマの登録は ```context.window_manager.event_timer_add()``` 関数で行い、不要になったタイマは ```context.window_manager.event_timer_remove()``` 関数で登録を解除する
 * タイマイベントが発生すると、```context.window_manager.modal_handler_add()``` の引数に指定したインスタンスの ```modal()``` メソッドが呼び出され、引数 ```event``` のメンバ変数 ```event.type``` に ```TIMER``` が設定される
+
+<div id="space_page"></div>
