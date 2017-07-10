@@ -2,11 +2,11 @@
 
 <div id="sect_title_text"></div>
 
-# OpenGL向けのAPIを利用する
+# OpenGLにアクセスするAPIを利用する
 
 <div id="preface"></div>
 
-###### [2-9節](../chapter_02/09_Control_Blender_UI_2.md)では、Blenderが提供しているフレームワークの中で、ボタンやメニューなどのUIを構築する方法を紹介しました。しかし、アドオンの機能によっては独自のUIを構築するほうが便利な場合があります。例えば、押したキーボードやマウスのボタンを表示するアドオン「Screencast Key Status」は独自のUIを構築しているアドオンの1つです。押したキーボードのキーをメニューなどに表示しても見づらいため、「Screencast Key Status」はBlenderが提供しているOpenGL向けのAPIを使い、独自のUIを構築しています。
+###### [2-9節](../chapter_02/09_Control_Blender_UI_2.md)では、Blenderが提供しているフレームワークの中で、ボタンやメニューなどのUIを構築する方法を紹介しました。しかし、アドオンの機能によっては、独自のUIを構築するほうが便利な場合があります。例えば、押したキーボードのキーやマウスのボタンを表示するアドオン「Screencast Key Status」は独自のUIを構築しているアドオンの1つです。押したキーボードのキーなどをメニューなどに表示しても見づらいため、「Screencast Key Status」は、Blenderが提供しているOpenGLにアクセスするAPIを使って独自のUIを構築しています。
 
 ## OpenGLとは？
 
