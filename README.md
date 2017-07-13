@@ -90,17 +90,9 @@ Blenderで作成した3Dモデルにテクスチャを設定する時、最近�
 
 https://github.com/nutti/Introduction-to-Add-on-Development-in-Blender/releases/download/v1/sample_v1.zip
 
-または
-
-https://github.com/nutti/Introduction-to-Add-on-Development-in-Blender/tree/v1/sample/src
-
 {% elif book.edition == 2.0 %}
 
 https://github.com/nutti/Introduction-to-Add-on-Development-in-Blender/releases/download/v2/sample_v2.zip
-
-または
-
-https://github.com/nutti/Introduction-to-Add-on-Development-in-Blender/tree/v2/sample/src
 
 {% endif %}
 
